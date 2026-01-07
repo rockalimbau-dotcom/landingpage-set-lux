@@ -2,11 +2,8 @@
 
 import { ArrowRight } from 'lucide-react'
 import Logo from './Logo'
-import { useTheme } from '../contexts/ThemeContext'
 
 const CTA = () => {
-  const { theme } = useTheme()
-  const isDark = theme === 'dark'
   
   return (
     <section className="relative py-24 overflow-hidden">

@@ -21,14 +21,11 @@ const Hero = () => {
       
       const rect = sectionRef.current.getBoundingClientRect()
       const x = e.clientX - rect.left
-      const y = e.clientY - rect.top
       
       // Calcular la posición relativa (0-1)
       const relativeX = x / rect.width
-      const relativeY = y / rect.height
       
       // Si el ratón está en la mitad izquierda, modo claro, si está en la derecha, modo oscuro
-      // O podemos usar una combinación de X e Y
       const threshold = 0.5
       setIsDark(relativeX > threshold)
     }
