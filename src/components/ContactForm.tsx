@@ -2,8 +2,11 @@
 
 import { useState } from 'react'
 import { Send, Mail } from 'lucide-react'
+import { useTheme } from '../contexts/ThemeContext'
 
 const ContactForm = () => {
+  const { theme } = useTheme()
+  const isDark = theme === 'dark'
   const [formData, setFormData] = useState({
     nombre: '',
     apellido: '',
@@ -70,16 +73,16 @@ const ContactForm = () => {
   return (
     <div className="max-w-2xl mx-auto">
       <div className="text-center mb-8">
-        <div className="inline-flex items-center justify-center w-16 h-16 rounded-full mb-4" style={{ backgroundColor: '#0476D9' }}>
+        <div className="inline-flex items-center justify-center w-16 h-16 rounded-full mb-4" style={{ backgroundColor: isDark ? '#F27405' : '#0476D9' }}>
           <Mail className="w-8 h-8 text-white" />
         </div>
         <h2 
           className="text-4xl md:text-5xl font-bold mb-4"
-          style={{ color: '#0476D9' }}
+          style={{ color: isDark ? '#F27405' : '#0476D9' }}
         >
           Contacta con nosotros
         </h2>
-        <p className="text-lg text-gray-600">
+        <p className={`text-lg transition-colors duration-700 ${isDark ? 'text-gray-300' : 'text-black'}`}>
           ¿Tienes alguna pregunta? Estamos aquí para ayudarte.
         </p>
       </div>
@@ -88,7 +91,7 @@ const ContactForm = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {/* Nombre */}
           <div>
-            <label htmlFor="nombre" className="block text-sm font-semibold text-gray-700 mb-2">
+            <label htmlFor="nombre" className={`block text-sm font-semibold mb-2 transition-colors duration-700 ${isDark ? 'text-white' : 'text-black'}`}>
               Nombre *
             </label>
             <input
@@ -98,14 +101,14 @@ const ContactForm = () => {
               required
               value={formData.nombre}
               onChange={handleChange}
-              className="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500/20 transition-all duration-300"
+              className="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-orange-500 focus:outline-none focus:ring-2 focus:ring-orange-500/20 transition-all duration-300"
               placeholder="Tu nombre"
             />
           </div>
 
           {/* Apellido */}
           <div>
-            <label htmlFor="apellido" className="block text-sm font-semibold text-gray-700 mb-2">
+            <label htmlFor="apellido" className={`block text-sm font-semibold mb-2 transition-colors duration-700 ${isDark ? 'text-white' : 'text-black'}`}>
               Apellido *
             </label>
             <input
@@ -115,7 +118,7 @@ const ContactForm = () => {
               required
               value={formData.apellido}
               onChange={handleChange}
-              className="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500/20 transition-all duration-300"
+              className="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-orange-500 focus:outline-none focus:ring-2 focus:ring-orange-500/20 transition-all duration-300"
               placeholder="Tu apellido"
             />
           </div>
@@ -123,7 +126,7 @@ const ContactForm = () => {
 
         {/* Rol */}
         <div>
-          <label htmlFor="rol" className="block text-sm font-semibold text-gray-700 mb-2">
+          <label htmlFor="rol" className={`block text-sm font-semibold mb-2 transition-colors duration-700 ${isDark ? 'text-white' : 'text-black'}`}>
             Rol *
           </label>
           <select
@@ -132,7 +135,7 @@ const ContactForm = () => {
             required
             value={formData.rol}
             onChange={handleChange}
-            className="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500/20 transition-all duration-300 bg-white"
+            className="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-orange-500 focus:outline-none focus:ring-2 focus:ring-orange-500/20 transition-all duration-300 bg-white"
           >
             <option value="">Selecciona tu rol</option>
             <option value="gaffer">Gaffer</option>
@@ -148,7 +151,7 @@ const ContactForm = () => {
 
         {/* Mensaje */}
         <div>
-          <label htmlFor="mensaje" className="block text-sm font-semibold text-gray-700 mb-2">
+          <label htmlFor="mensaje" className={`block text-sm font-semibold mb-2 transition-colors duration-700 ${isDark ? 'text-white' : 'text-black'}`}>
             Mensaje
           </label>
           <textarea
@@ -157,7 +160,7 @@ const ContactForm = () => {
             rows={5}
             value={formData.mensaje}
             onChange={handleChange}
-            className="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500/20 transition-all duration-300 resize-none"
+            className="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-orange-500 focus:outline-none focus:ring-2 focus:ring-orange-500/20 transition-all duration-300 resize-none"
             placeholder="Escribe tu mensaje aquí..."
           />
         </div>
@@ -168,7 +171,7 @@ const ContactForm = () => {
             type="submit"
             disabled={isSubmitting}
             className="w-full text-white px-8 py-4 rounded-xl font-bold text-lg shadow-xl transform hover:-translate-y-1 hover:scale-[1.02] transition-all duration-300 flex items-center justify-center gap-3 disabled:opacity-50 disabled:cursor-not-allowed"
-            style={{ backgroundColor: '#0476D9' }}
+            style={{ backgroundColor: isDark ? '#F27405' : '#0476D9' }}
           >
             {isSubmitting ? (
               <>

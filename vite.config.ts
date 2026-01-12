@@ -7,7 +7,7 @@ export default defineConfig({
   plugins: [react()],
   server: {
     port: 5175,
-    host: true,
+    host: 'localhost',
     strictPort: true,
     hmr: {
       protocol: 'ws',

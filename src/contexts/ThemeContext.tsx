@@ -20,7 +20,7 @@ export const ThemeProvider = ({ children }: { children: ReactNode }) => {
     
     setMounted(true)
     
-    // Check localStorage first
+    // Check localStorage first - solo si hay una preferencia guardada
     try {
       const savedTheme = localStorage.getItem('setlux-theme') as Theme
       if (savedTheme === 'light' || savedTheme === 'dark') {
@@ -31,14 +31,8 @@ export const ThemeProvider = ({ children }: { children: ReactNode }) => {
       // Ignorar errores de localStorage
     }
     
-    // Check system preference
-    try {
-      if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-        setTheme('dark')
-      }
-    } catch (e) {
-      // Ignorar errores
-    }
+    // Por defecto siempre en modo claro si no hay preferencia guardada
+    setTheme('light')
   }, [])
 
   useEffect(() => {

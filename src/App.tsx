@@ -1,11 +1,10 @@
 import { useState } from 'react'
-import Hero from './components/Hero'
-import Features from './components/Features'
-import Benefits from './components/Benefits'
-import UseCases from './components/UseCases'
-import CTA from './components/CTA'
-import Footer from './components/Footer'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import TheaterIntro from './components/TheaterIntro'
+import Home from './pages/Home'
+import Caracteristicas from './pages/Caracteristicas'
+import CasosDeUso from './pages/CasosDeUso'
+import Ventajas from './pages/Ventajas'
 
 function App() {
   const [showIntro, setShowIntro] = useState(true)
@@ -18,14 +17,14 @@ function App() {
     <div className="min-h-screen bg-white">
       {showIntro && <TheaterIntro onComplete={handleIntroComplete} />}
       {!showIntro && (
-        <>
-          <Hero />
-          <Features />
-          <Benefits />
-          <UseCases />
-          <CTA />
-          <Footer />
-        </>
+        <Router>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/caracteristicas" element={<Caracteristicas />} />
+            <Route path="/casos-de-uso" element={<CasosDeUso />} />
+            <Route path="/ventajas" element={<Ventajas />} />
+          </Routes>
+        </Router>
       )}
     </div>
   )

@@ -1,9 +1,10 @@
 
 
-import { Calendar, Users, FileText, BarChart3, DollarSign, ClipboardList } from 'lucide-react'
+import { Calendar, Users, FileText, BarChart3, DollarSign, ClipboardList, ArrowRight } from 'lucide-react'
+import { Link } from 'react-router-dom'
 import { useTheme } from '../contexts/ThemeContext'
 
-const features = [
+const allFeatures = [
   {
     icon: FileText,
     title: 'Condiciones Laborales',
@@ -42,29 +43,15 @@ const features = [
   },
 ]
 
+// Mostrar solo las 4 principales en la landing
+const features = allFeatures.slice(0, 4)
+
 const Features = () => {
   const { theme } = useTheme()
   const isDark = theme === 'dark'
   
   return (
-    <section id="features" className="py-24 relative overflow-hidden" style={{ backgroundColor: '#fff7ed' }}>
-      {/* Background decoration */}
-      <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
-        <div 
-          className="absolute top-20 right-10 w-72 h-72 rounded-full blur-3xl transition-colors duration-500"
-          style={{
-            backgroundColor: '#0476D9',
-            opacity: isDark ? 0.1 : 0.05,
-          }}
-        ></div>
-        <div 
-          className="absolute bottom-20 left-10 w-96 h-96 rounded-full blur-3xl transition-colors duration-500"
-          style={{
-            backgroundColor: '#F27405',
-            opacity: isDark ? 0.1 : 0.05,
-          }}
-        ></div>
-      </div>
+    <section id="features" className="py-16 relative overflow-hidden transition-colors duration-700" style={{ backgroundColor: isDark ? '#1e293b' : '#fff7ed' }}>
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-20">
@@ -77,17 +64,17 @@ const Features = () => {
             </span>
           </div>
           <h2 
-            className="text-5xl md:text-6xl font-bold mb-6 transition-colors duration-300"
+            className="text-4xl md:text-5xl font-bold mb-6 transition-colors duration-300"
             style={{ color: '#0476D9' }}
           >
-            Todo lo que necesitas
+            Características principales
           </h2>
-          <p className="text-xl md:text-2xl max-w-3xl mx-auto text-gray-600">
-            Una plataforma completa para gestionar tu departamento de iluminación
+          <p className="text-lg md:text-xl max-w-3xl mx-auto text-gray-600">
+            Las herramientas esenciales para gestionar tu departamento
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
           {features.map((feature, index) => {
             const Icon = feature.icon
             const isBlue = feature.color === 'blue'
@@ -112,12 +99,24 @@ const Features = () => {
                 >
                   {feature.title}
                 </h3>
-                <p className="leading-relaxed text-gray-600">
-                  {feature.description}
+                <p className="leading-relaxed text-gray-600 text-sm">
+                  {feature.description.split('.')[0]}.
                 </p>
               </div>
             )
           })}
+        </div>
+
+        {/* Botón ver más */}
+        <div className="text-center">
+          <Link
+            to="/caracteristicas"
+            className="inline-flex items-center gap-2 text-white px-8 py-4 rounded-xl font-semibold text-lg shadow-xl transform hover:-translate-y-1 hover:scale-105 transition-all duration-300"
+            style={{ backgroundColor: '#0476D9' }}
+          >
+            Ver todas las características
+            <ArrowRight className="w-5 h-5" />
+          </Link>
         </div>
       </div>
     </section>
@@ -125,3 +124,4 @@ const Features = () => {
 }
 
 export default Features
+export { allFeatures }

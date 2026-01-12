@@ -1,128 +1,108 @@
 
 
 import { Mail, Instagram } from 'lucide-react'
+import { Link } from 'react-router-dom'
 import Logo from './Logo'
-import ContactForm from './ContactForm'
+import { useTheme } from '../contexts/ThemeContext'
 
 const Footer = () => {
+  const { theme } = useTheme()
+  const isDark = theme === 'dark'
+
   return (
     <>
-      {/* Contact Form Section */}
-      <section id="contact" className="py-24" style={{ backgroundColor: '#fff7ed' }}>
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <ContactForm />
-        </div>
-      </section>
-
       {/* Footer */}
       <footer 
-        className="py-16 relative overflow-hidden"
+        className="py-16 relative overflow-hidden transition-colors duration-700"
         style={{
-          backgroundColor: '#fff7ed',
+          backgroundColor: isDark ? '#1e293b' : '#fff7ed',
         }}
       >
-        {/* Background decoration */}
-        <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div 
-            className="absolute top-0 left-0 w-96 h-96 rounded-full blur-3xl"
-            style={{
-              backgroundColor: '#F27405',
-              opacity: 0.1,
-            }}
-          ></div>
-          <div 
-            className="absolute bottom-0 right-0 w-96 h-96 rounded-full blur-3xl"
-            style={{
-              backgroundColor: '#0476D9',
-              opacity: 0.1,
-            }}
-          ></div>
-        </div>
 
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
             {/* Brand */}
-            <div>
+            <div className="flex flex-col">
               <div className="flex items-center mb-6">
-                <Logo size="lg" isDark={false} className="mr-3" />
+                <Logo size="lg" isDark={isDark} className="mr-3" />
                 <div>
-                  <span className="text-3xl font-bold text-gray-800 block">SetLux</span>
+                  <span className={`text-3xl font-bold block transition-colors duration-700 ${isDark ? 'text-gray-200' : 'text-gray-800'}`}>SetLux</span>
                   <span 
-                    className="text-sm font-semibold"
-                    style={{ color: '#F27405' }}
+                    className="text-sm font-semibold transition-colors duration-700"
+                    style={{ color: isDark ? '#F27405' : '#0476D9' }}
                   >
                     ALL IN ONE
                   </span>
                 </div>
               </div>
-              <p className="text-gray-700 mb-4 leading-relaxed">
+              <p className={`leading-relaxed transition-colors duration-700 ${isDark ? 'text-gray-300' : 'text-black'}`}>
                 La solución completa para la gestión del departamento de iluminación 
                 en producciones audiovisuales.
               </p>
             </div>
 
             {/* Quick Links */}
-            <div>
-              <h3 className="text-gray-800 font-bold mb-6 text-lg">Enlaces</h3>
-              <ul className="space-y-3">
+            <div className="flex flex-col">
+              <h3 className={`font-bold mb-6 text-lg transition-colors duration-700 ${isDark ? 'text-gray-200' : 'text-gray-800'}`}>Enlaces</h3>
+              <ul className="space-y-3 flex-1">
                 <li>
-                  <a 
-                    href="#features" 
-                    className="hover:opacity-80 transition-opacity flex items-center group text-gray-700"
-                    style={{ color: '#0476D9' }}
+                  <Link 
+                    to="/#features" 
+                    className="hover:opacity-80 transition-opacity block relative pl-0 group"
+                    style={{ color: isDark ? '#F27405' : '#0476D9' }}
                   >
-                    <span className="w-2 h-2 rounded-full mr-3 opacity-0 group-hover:opacity-100 transition-opacity" style={{ backgroundColor: '#0476D9' }}></span>
-                    Características
-                  </a>
+                    <span className="w-2 h-2 rounded-full absolute left-0 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity" style={{ backgroundColor: isDark ? '#ffffff' : '#000000' }}></span>
+                    <span className="pl-0 group-hover:pl-5 transition-all duration-200">Características</span>
+                  </Link>
                 </li>
                 <li>
-                  <a 
-                    href="#benefits" 
-                    className="hover:opacity-80 transition-opacity flex items-center group text-gray-700"
-                    style={{ color: '#0476D9' }}
+                  <Link 
+                    to="/#benefits" 
+                    className="hover:opacity-80 transition-opacity block relative pl-0 group"
+                    style={{ color: isDark ? '#F27405' : '#0476D9' }}
                   >
-                    <span className="w-2 h-2 rounded-full mr-3 opacity-0 group-hover:opacity-100 transition-opacity" style={{ backgroundColor: '#0476D9' }}></span>
-                    Ventajas
-                  </a>
+                    <span className="w-2 h-2 rounded-full absolute left-0 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity" style={{ backgroundColor: isDark ? '#ffffff' : '#000000' }}></span>
+                    <span className="pl-0 group-hover:pl-5 transition-all duration-200">Ventajas</span>
+                  </Link>
                 </li>
                 <li>
-                  <a 
-                    href="#use-cases" 
-                    className="hover:opacity-80 transition-opacity flex items-center group text-gray-700"
-                    style={{ color: '#0476D9' }}
+                  <Link 
+                    to="/#use-cases" 
+                    className="hover:opacity-80 transition-opacity block relative pl-0 group"
+                    style={{ color: isDark ? '#F27405' : '#0476D9' }}
                   >
-                    <span className="w-2 h-2 rounded-full mr-3 opacity-0 group-hover:opacity-100 transition-opacity" style={{ backgroundColor: '#F27405' }}></span>
-                    Casos de Uso
-                  </a>
+                    <span className="w-2 h-2 rounded-full absolute left-0 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity" style={{ backgroundColor: isDark ? '#ffffff' : '#000000' }}></span>
+                    <span className="pl-0 group-hover:pl-5 transition-all duration-200">Casos de Uso</span>
+                  </Link>
                 </li>
               </ul>
             </div>
 
             {/* Contact */}
-            <div>
-              <h3 className="text-gray-800 font-bold mb-6 text-lg">Contacto</h3>
-              <ul className="space-y-4">
+            <div className="flex flex-col">
+              <h3 className={`font-bold mb-6 text-lg transition-colors duration-700 ${isDark ? 'text-gray-200' : 'text-gray-800'}`}>Contacto</h3>
+              <ul className="space-y-3 flex-1">
                 <li className="flex items-center">
-                  <Mail className="w-5 h-5 mr-3" style={{ color: '#0476D9' }} />
+                  <Mail className="w-5 h-5 mr-3 flex-shrink-0" style={{ color: isDark ? '#ffffff' : '#000000' }} />
                   <a 
                     href="mailto:setluxapp@gmail.com" 
-                    className="hover:opacity-80 transition-opacity text-gray-700"
-                    style={{ color: '#0476D9' }}
+                    className="hover:opacity-80 transition-opacity"
+                    style={{ color: isDark ? '#F27405' : '#0476D9' }}
                   >
                     setluxapp@gmail.com
                   </a>
                 </li>
-                <li className="flex items-center mt-6">
+                <li className="flex items-center">
+                  <Instagram className="w-5 h-5 mr-3 flex-shrink-0" style={{ color: isDark ? '#ffffff' : '#000000' }} />
                   <a 
                     href="https://instagram.com/setluxapp" 
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="hover:opacity-80 transition-opacity p-2 hover:bg-gray-200 rounded-lg flex items-center gap-2" 
+                    className="hover:opacity-80 transition-opacity" 
                     aria-label="Instagram"
-                    style={{ color: '#0476D9' }}
+                    style={{ color: isDark ? '#F27405' : '#0476D9' }}
                   >
-                    <Instagram className="w-6 h-6" />
-                    <span className="text-gray-700">@setluxapp</span>
+                    @setluxapp
                   </a>
                 </li>
               </ul>
@@ -130,11 +110,11 @@ const Footer = () => {
           </div>
 
           {/* Bottom Bar */}
-          <div className="border-t border-gray-300 pt-8 text-center">
-            <p className="text-gray-600 mb-2">
+          <div className={`border-t pt-8 text-center transition-colors duration-700 ${isDark ? 'border-gray-700' : 'border-gray-300'}`}>
+            <p className={`mb-2 transition-colors duration-700 ${isDark ? 'text-white' : 'text-black'}`}>
               © {new Date().getFullYear()} SetLux. Todos los derechos reservados.
             </p>
-            <p className="text-sm text-gray-500">
+            <p className={`text-sm transition-colors duration-700 ${isDark ? 'text-white' : 'text-black'}`}>
               Diseñado específicamente para profesionales del departamento de iluminación.
             </p>
           </div>

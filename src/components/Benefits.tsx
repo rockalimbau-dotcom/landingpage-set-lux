@@ -1,9 +1,10 @@
 
 
-import { Clock, Shield, FileCheck, TrendingUp, Users, CheckCircle } from 'lucide-react'
+import { Clock, Shield, FileCheck, TrendingUp, Users, CheckCircle, ArrowRight } from 'lucide-react'
+import { Link } from 'react-router-dom'
 import { useTheme } from '../contexts/ThemeContext'
 
-const benefits = [
+const allBenefits = [
   {
     icon: Clock,
     title: 'Ahorra Tiempo',
@@ -42,56 +43,41 @@ const benefits = [
   },
 ]
 
+// Mostrar solo las 3 principales en la landing
+const benefits = allBenefits.slice(0, 3)
+
 const Benefits = () => {
   const { theme } = useTheme()
   const isDark = theme === 'dark'
   
   return (
-    <section id="benefits" className="py-24 relative overflow-hidden" style={{ backgroundColor: '#fff7ed' }}>
-      {/* Background decoration */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div 
-          className="absolute top-0 left-1/4 w-96 h-96 rounded-full blur-3xl transition-colors duration-500"
-          style={{
-            backgroundColor: '#F27405',
-            opacity: isDark ? 0.1 : 0.05,
-          }}
-        ></div>
-        <div 
-          className="absolute bottom-0 right-1/4 w-96 h-96 rounded-full blur-3xl transition-colors duration-500"
-          style={{
-            backgroundColor: '#0476D9',
-            opacity: isDark ? 0.1 : 0.05,
-          }}
-        ></div>
-      </div>
+    <section id="benefits" className="py-16 relative overflow-hidden transition-colors duration-700" style={{ backgroundColor: isDark ? '#1e293b' : '#fff7ed' }}>
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-20">
           <div className="inline-block mb-4">
             <span 
               className="text-white px-6 py-2 rounded-full text-sm font-semibold transition-colors duration-300"
-              style={{ backgroundColor: '#F27405' }}
+              style={{ backgroundColor: isDark ? '#F27405' : '#0476D9' }}
             >
               VENTAJAS
             </span>
           </div>
           <h2 
-            className="text-5xl md:text-6xl font-bold mb-6 transition-colors duration-300"
-            style={{ color: '#F27405' }}
+            className="text-4xl md:text-5xl font-bold mb-6 transition-colors duration-300"
+            style={{ color: isDark ? '#F27405' : '#0476D9' }}
           >
-            Ventajas Competitivas
+            Ventajas principales
           </h2>
-          <p className="text-xl md:text-2xl max-w-3xl mx-auto text-gray-600">
-            Transforma la gestión de tu departamento de iluminación
+          <p className={`text-lg md:text-xl max-w-3xl mx-auto transition-colors duration-700 ${isDark ? 'text-white' : 'text-black'}`}>
+            Beneficios clave de usar SetLux
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
           {benefits.map((benefit, index) => {
             const Icon = benefit.icon
-            const isBlue = benefit.color === 'blue'
-            const bgColor = isBlue ? '#0476D9' : '#F27405'
+            const bgColor = isDark ? '#F27405' : '#0476D9' // Naranja en oscuro, azul en claro
             
             return (
               <div
@@ -107,17 +93,29 @@ const Benefits = () => {
                 </div>
                 
                 <h3 
-                  className="text-2xl font-bold mb-4 transition-colors duration-300"
+                  className="text-xl font-bold mb-3 transition-colors duration-300"
                   style={{ color: bgColor }}
                 >
                   {benefit.title}
                 </h3>
-                <p className="leading-relaxed text-lg text-gray-600">
-                  {benefit.description}
+                <p className={`leading-relaxed text-sm transition-colors duration-700 ${isDark ? 'text-gray-600' : 'text-black'}`}>
+                  {benefit.description.split('.')[0]}.
                 </p>
               </div>
             )
           })}
+        </div>
+
+        {/* Botón ver más */}
+        <div className="text-center">
+          <Link
+            to="/ventajas"
+            className="inline-flex items-center gap-2 text-white px-8 py-4 rounded-xl font-semibold text-lg shadow-xl transform hover:-translate-y-1 hover:scale-105 transition-all duration-300"
+            style={{ backgroundColor: isDark ? '#F27405' : '#0476D9' }}
+          >
+            Ver todas las ventajas
+            <ArrowRight className="w-5 h-5" />
+          </Link>
         </div>
       </div>
     </section>
@@ -125,3 +123,4 @@ const Benefits = () => {
 }
 
 export default Benefits
+export { allBenefits }

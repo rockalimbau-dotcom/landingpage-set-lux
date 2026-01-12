@@ -1,7 +1,8 @@
-import { Film, Video } from 'lucide-react'
+import { Film, Video, ArrowRight } from 'lucide-react'
+import { Link } from 'react-router-dom'
 import { useTheme } from '../contexts/ThemeContext'
 
-const useCases = [
+const allUseCases = [
   {
     icon: Film,
     title: 'Producción de Ficción',
@@ -33,51 +34,33 @@ const UseCases = () => {
   const isDark = theme === 'dark'
   
   return (
-    <section id="use-cases" className="py-24 relative overflow-hidden" style={{ backgroundColor: '#fff7ed' }}>
-      {/* Background decoration */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div 
-          className="absolute top-10 left-1/4 w-96 h-96 rounded-full blur-3xl transition-colors duration-500"
-          style={{
-            backgroundColor: '#0476D9',
-            opacity: isDark ? 0.1 : 0.05,
-          }}
-        ></div>
-        <div 
-          className="absolute bottom-10 right-1/4 w-96 h-96 rounded-full blur-3xl transition-colors duration-500"
-          style={{
-            backgroundColor: '#F27405',
-            opacity: isDark ? 0.1 : 0.05,
-          }}
-        ></div>
-      </div>
+    <section id="use-cases" className="py-16 relative overflow-hidden transition-colors duration-700" style={{ backgroundColor: isDark ? '#1e293b' : '#fff7ed' }}>
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-20">
           <div className="inline-block mb-4">
             <span 
               className="text-white px-6 py-2 rounded-full text-sm font-semibold transition-colors duration-300"
-              style={{ backgroundColor: '#0476D9' }}
+              style={{ backgroundColor: isDark ? '#F27405' : '#0476D9' }}
             >
               CASOS DE USO
             </span>
           </div>
           <h2 
-            className="text-5xl md:text-6xl font-bold mb-6 transition-colors duration-300"
-            style={{ color: '#0476D9' }}
+            className="text-4xl md:text-5xl font-bold mb-6 transition-colors duration-300"
+            style={{ color: isDark ? '#F27405' : '#0476D9' }}
           >
-            Para cada tipo de producción
+            Casos de uso
           </h2>
-          <p className="text-xl md:text-2xl max-w-3xl mx-auto text-gray-600">
-            SetLux se adapta a cualquier tipo de producción audiovisual
+          <p className={`text-lg md:text-xl max-w-3xl mx-auto transition-colors duration-700 ${isDark ? 'text-white' : 'text-black'}`}>
+            SetLux se adapta a cualquier tipo de producción
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {useCases.map((useCase, index) => {
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
+          {allUseCases.map((useCase, index) => {
             const Icon = useCase.icon
-            const isBlue = useCase.color === 'blue'
-            const bgColor = isBlue ? '#0476D9' : '#F27405'
+            const bgColor = isDark ? '#F27405' : '#0476D9' // Naranja en oscuro, azul en claro
             
             return (
               <div
@@ -100,27 +83,25 @@ const UseCases = () => {
                     </h3>
                   </div>
                   
-                  <p className="mb-6 leading-relaxed text-lg text-gray-600">
-                    {useCase.description}
+                  <p className={`leading-relaxed text-sm transition-colors duration-700 ${isDark ? 'text-gray-600' : 'text-black'}`}>
+                    {useCase.description.split('.')[0]}.
                   </p>
-                  
-                  <ul className="space-y-3">
-                    {useCase.features.map((feature, featureIndex) => (
-                      <li key={featureIndex} className="flex items-start group/item">
-                        <div 
-                          className="w-6 h-6 rounded-full flex items-center justify-center mr-3 mt-0.5 flex-shrink-0 group-hover/item:scale-125 transition-transform"
-                          style={{ backgroundColor: bgColor }}
-                        >
-                          <div className="w-2.5 h-2.5 rounded-full bg-white"></div>
-                        </div>
-                        <span className="text-base text-gray-700">{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
                 </div>
               </div>
             )
           })}
+        </div>
+
+        {/* Botón ver más */}
+        <div className="text-center">
+          <Link
+            to="/casos-de-uso"
+            className="inline-flex items-center gap-2 text-white px-8 py-4 rounded-xl font-semibold text-lg shadow-xl transform hover:-translate-y-1 hover:scale-105 transition-all duration-300"
+            style={{ backgroundColor: isDark ? '#F27405' : '#0476D9' }}
+          >
+            Ver casos de uso detallados
+            <ArrowRight className="w-5 h-5" />
+          </Link>
         </div>
       </div>
     </section>
@@ -128,3 +109,4 @@ const UseCases = () => {
 }
 
 export default UseCases
+export { allUseCases }
