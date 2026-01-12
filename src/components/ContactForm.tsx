@@ -71,24 +71,24 @@ const ContactForm = () => {
   }
 
   return (
-    <div className="max-w-2xl mx-auto">
-      <div className="text-center mb-8">
-        <div className="inline-flex items-center justify-center w-16 h-16 rounded-full mb-4" style={{ backgroundColor: isDark ? '#F27405' : '#0476D9' }}>
-          <Mail className="w-8 h-8 text-white" />
+    <div className="max-w-2xl mx-auto px-4">
+      <div className="text-center mb-6 md:mb-8">
+        <div className="inline-flex items-center justify-center w-12 h-12 md:w-16 md:h-16 rounded-full mb-3 md:mb-4" style={{ backgroundColor: isDark ? '#F27405' : '#0476D9' }}>
+          <Mail className="w-6 h-6 md:w-8 md:h-8 text-white" />
         </div>
         <h2 
-          className="text-4xl md:text-5xl font-bold mb-4"
+          className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 md:mb-4"
           style={{ color: isDark ? '#F27405' : '#0476D9' }}
         >
           Contacta con nosotros
         </h2>
-        <p className={`text-lg transition-colors duration-700 ${isDark ? 'text-gray-300' : 'text-black'}`}>
+        <p className={`text-base md:text-lg transition-colors duration-700 ${isDark ? 'text-gray-300' : 'text-black'}`}>
           ¿Tienes alguna pregunta? Estamos aquí para ayudarte.
         </p>
       </div>
 
-      <form onSubmit={handleSubmit} className="space-y-6">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <form onSubmit={handleSubmit} className="space-y-4 md:space-y-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
           {/* Nombre */}
           <div>
             <label htmlFor="nombre" className={`block text-sm font-semibold mb-2 transition-colors duration-700 ${isDark ? 'text-white' : 'text-black'}`}>
@@ -101,7 +101,7 @@ const ContactForm = () => {
               required
               value={formData.nombre}
               onChange={handleChange}
-              className="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-orange-500 focus:outline-none focus:ring-2 focus:ring-orange-500/20 transition-all duration-300"
+              className="w-full px-3 md:px-4 py-2.5 md:py-3 rounded-xl border-2 border-gray-200 focus:border-orange-500 focus:outline-none focus:ring-2 focus:ring-orange-500/20 transition-all duration-300 text-base"
               placeholder="Tu nombre"
             />
           </div>
@@ -118,7 +118,7 @@ const ContactForm = () => {
               required
               value={formData.apellido}
               onChange={handleChange}
-              className="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-orange-500 focus:outline-none focus:ring-2 focus:ring-orange-500/20 transition-all duration-300"
+              className="w-full px-3 md:px-4 py-2.5 md:py-3 rounded-xl border-2 border-gray-200 focus:border-orange-500 focus:outline-none focus:ring-2 focus:ring-orange-500/20 transition-all duration-300 text-base"
               placeholder="Tu apellido"
             />
           </div>
@@ -135,17 +135,26 @@ const ContactForm = () => {
             required
             value={formData.rol}
             onChange={handleChange}
-            className="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-orange-500 focus:outline-none focus:ring-2 focus:ring-orange-500/20 transition-all duration-300 bg-white"
+            className={`w-full px-3 md:px-4 py-3 md:py-3.5 rounded-xl border-2 border-gray-200 focus:border-orange-500 focus:outline-none focus:ring-2 focus:ring-orange-500/20 transition-all duration-300 text-base min-h-[44px] appearance-none bg-no-repeat bg-right pr-10 ${
+              isDark 
+                ? 'bg-gray-800 text-white border-gray-600' 
+                : 'bg-white text-gray-900'
+            }`}
+            style={{
+              backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='${isDark ? 'white' : 'black'}' d='M6 9L1 4h10z'/%3E%3C/svg%3E")`,
+              backgroundPosition: 'right 0.75rem center',
+              backgroundSize: '1em 1em',
+            }}
           >
-            <option value="">Selecciona tu rol</option>
-            <option value="gaffer">Gaffer</option>
-            <option value="best-boy">Best Boy</option>
-            <option value="electrico">Eléctrico</option>
-            <option value="tecnico-mesa">Técnico de Mesa</option>
-            <option value="finger-boy">Finger Boy</option>
-            <option value="auxiliar">Auxiliar</option>
-            <option value="maquinista">Maquinista</option>
-            <option value="otro">Otro</option>
+            <option value="" className={isDark ? 'bg-gray-800 text-white' : 'bg-white text-gray-900'}>Selecciona tu rol</option>
+            <option value="gaffer" className={isDark ? 'bg-gray-800 text-white' : 'bg-white text-gray-900'}>Gaffer</option>
+            <option value="best-boy" className={isDark ? 'bg-gray-800 text-white' : 'bg-white text-gray-900'}>Best Boy</option>
+            <option value="electrico" className={isDark ? 'bg-gray-800 text-white' : 'bg-white text-gray-900'}>Eléctrico</option>
+            <option value="tecnico-mesa" className={isDark ? 'bg-gray-800 text-white' : 'bg-white text-gray-900'}>Técnico de Mesa</option>
+            <option value="finger-boy" className={isDark ? 'bg-gray-800 text-white' : 'bg-white text-gray-900'}>Finger Boy</option>
+            <option value="auxiliar" className={isDark ? 'bg-gray-800 text-white' : 'bg-white text-gray-900'}>Auxiliar</option>
+            <option value="maquinista" className={isDark ? 'bg-gray-800 text-white' : 'bg-white text-gray-900'}>Maquinista</option>
+            <option value="otro" className={isDark ? 'bg-gray-800 text-white' : 'bg-white text-gray-900'}>Otro</option>
           </select>
         </div>
 
@@ -160,7 +169,7 @@ const ContactForm = () => {
             rows={5}
             value={formData.mensaje}
             onChange={handleChange}
-            className="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-orange-500 focus:outline-none focus:ring-2 focus:ring-orange-500/20 transition-all duration-300 resize-none"
+            className="w-full px-3 md:px-4 py-2.5 md:py-3 rounded-xl border-2 border-gray-200 focus:border-orange-500 focus:outline-none focus:ring-2 focus:ring-orange-500/20 transition-all duration-300 resize-none text-base"
             placeholder="Escribe tu mensaje aquí..."
           />
         </div>
@@ -170,18 +179,18 @@ const ContactForm = () => {
           <button
             type="submit"
             disabled={isSubmitting}
-            className="w-full text-white px-8 py-4 rounded-xl font-bold text-lg shadow-xl transform hover:-translate-y-1 hover:scale-[1.02] transition-all duration-300 flex items-center justify-center gap-3 disabled:opacity-50 disabled:cursor-not-allowed"
+            className="w-full text-white px-6 md:px-8 py-3 md:py-4 rounded-xl font-bold text-base md:text-lg shadow-xl transform hover:-translate-y-1 hover:scale-[1.02] transition-all duration-300 flex items-center justify-center gap-2 md:gap-3 disabled:opacity-50 disabled:cursor-not-allowed min-h-[44px]"
             style={{ backgroundColor: isDark ? '#F27405' : '#0476D9' }}
           >
             {isSubmitting ? (
               <>
-                <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
+                <div className="w-4 h-4 md:w-5 md:h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
                 Enviando...
               </>
             ) : (
               <>
                 Enviar mensaje
-                <Send className="w-5 h-5" />
+                <Send className="w-4 h-4 md:w-5 md:h-5" />
               </>
             )}
           </button>

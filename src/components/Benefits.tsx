@@ -51,30 +51,30 @@ const Benefits = () => {
   const isDark = theme === 'dark'
   
   return (
-    <section id="benefits" className="py-16 relative overflow-hidden transition-colors duration-700" style={{ backgroundColor: isDark ? '#1e293b' : '#fff7ed' }}>
+    <section id="benefits" className="py-12 md:py-16 relative overflow-hidden transition-colors duration-700" style={{ backgroundColor: isDark ? '#1e293b' : '#fff7ed' }}>
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="text-center mb-20">
-          <div className="inline-block mb-4">
+        <div className="text-center mb-12 md:mb-20">
+          <div className="inline-block mb-3 md:mb-4">
             <span 
-              className="text-white px-6 py-2 rounded-full text-sm font-semibold transition-colors duration-300"
+              className="text-white px-4 md:px-6 py-1.5 md:py-2 rounded-full text-xs md:text-sm font-semibold transition-colors duration-300"
               style={{ backgroundColor: isDark ? '#F27405' : '#0476D9' }}
             >
               VENTAJAS
             </span>
           </div>
           <h2 
-            className="text-4xl md:text-5xl font-bold mb-6 transition-colors duration-300"
+            className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 md:mb-6 transition-colors duration-300 px-4"
             style={{ color: isDark ? '#F27405' : '#0476D9' }}
           >
             Ventajas principales
           </h2>
-          <p className={`text-lg md:text-xl max-w-3xl mx-auto transition-colors duration-700 ${isDark ? 'text-white' : 'text-black'}`}>
+          <p className={`text-base md:text-lg lg:text-xl max-w-3xl mx-auto transition-colors duration-700 px-4 ${isDark ? 'text-white' : 'text-black'}`}>
             Beneficios clave de usar SetLux
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 mb-8 md:mb-10">
           {benefits.map((benefit, index) => {
             const Icon = benefit.icon
             const bgColor = isDark ? '#F27405' : '#0476D9' // Naranja en oscuro, azul en claro
@@ -82,23 +82,25 @@ const Benefits = () => {
             return (
               <div
                 key={index}
-                className="group relative rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-3 border-2 bg-white border-gray-100"
+                className={`group relative rounded-2xl p-4 md:p-8 shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-3 border-2 border-gray-100 ${
+                  isDark ? 'bg-gray-800' : 'bg-white'
+                }`}
               >
                 {/* Icon with solid color background */}
                 <div 
-                  className="mb-6 inline-flex p-5 rounded-2xl shadow-lg group-hover:scale-110 group-hover:rotate-3 transition-all duration-300"
+                  className="mb-4 md:mb-6 inline-flex p-3 md:p-5 rounded-2xl shadow-lg group-hover:scale-110 group-hover:rotate-3 transition-all duration-300"
                   style={{ backgroundColor: bgColor }}
                 >
-                  <Icon className="w-10 h-10 text-white" strokeWidth={2} />
+                  <Icon className="w-6 h-6 md:w-10 md:h-10 text-white" strokeWidth={2} />
                 </div>
                 
                 <h3 
-                  className="text-xl font-bold mb-3 transition-colors duration-300"
+                  className="text-lg md:text-xl font-bold mb-2 md:mb-3 transition-colors duration-300"
                   style={{ color: bgColor }}
                 >
                   {benefit.title}
                 </h3>
-                <p className={`leading-relaxed text-sm transition-colors duration-700 ${isDark ? 'text-gray-600' : 'text-black'}`}>
+                <p className={`leading-relaxed text-xs md:text-sm transition-colors duration-700 ${isDark ? 'text-gray-300' : 'text-gray-600'}`}>
                   {benefit.description.split('.')[0]}.
                 </p>
               </div>
@@ -110,11 +112,11 @@ const Benefits = () => {
         <div className="text-center">
           <Link
             to="/ventajas"
-            className="inline-flex items-center gap-2 text-white px-8 py-4 rounded-xl font-semibold text-lg shadow-xl transform hover:-translate-y-1 hover:scale-105 transition-all duration-300"
+            className="inline-flex items-center gap-2 text-white px-6 md:px-8 py-3 md:py-4 rounded-xl font-semibold text-base md:text-lg shadow-xl transform hover:-translate-y-1 hover:scale-105 transition-all duration-300"
             style={{ backgroundColor: isDark ? '#F27405' : '#0476D9' }}
           >
             Ver todas las ventajas
-            <ArrowRight className="w-5 h-5" />
+            <ArrowRight className="w-4 h-4 md:w-5 md:h-5" />
           </Link>
         </div>
       </div>

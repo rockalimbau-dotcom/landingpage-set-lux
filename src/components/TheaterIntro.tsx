@@ -189,7 +189,7 @@ const TheaterIntro = ({ onComplete }: { onComplete: () => void }) => {
       <div className="absolute inset-0 flex flex-col items-center justify-center z-10">
         {/* Logo */}
         <div 
-          className="relative mb-8"
+          className="relative mb-4 md:mb-8"
           style={{
             ...getLogoStyle(),
             transition: stage === 'complete' 
@@ -198,8 +198,17 @@ const TheaterIntro = ({ onComplete }: { onComplete: () => void }) => {
           }}
         >
           <Logo 
+            size="lg" 
+            isDark={false}
+            className="md:hidden"
+            style={{
+              filter: 'none',
+            }}
+          />
+          <Logo 
             size="xl" 
             isDark={false}
+            className="hidden md:block"
             style={{
               filter: 'none',
             }}
@@ -207,7 +216,7 @@ const TheaterIntro = ({ onComplete }: { onComplete: () => void }) => {
         </div>
 
         {/* Texto SetLux - Cada letra con su propia iluminación */}
-        <h1 className="text-7xl md:text-8xl lg:text-9xl font-bold relative">
+        <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl xl:text-9xl font-bold relative px-4">
           <span 
             className="inline-block"
             style={{
@@ -302,7 +311,7 @@ const TheaterIntro = ({ onComplete }: { onComplete: () => void }) => {
 
         {/* Subtítulo */}
         <p 
-          className="mt-6 text-xl md:text-2xl font-light"
+          className="mt-4 md:mt-6 text-base sm:text-lg md:text-xl lg:text-2xl font-light px-4"
           style={{
             color: '#94a3b8',
             opacity: stage === 'complete' ? 0 : (stage === 'right-light-with-content' || stage === 'front-light' ? 1 : 0),
@@ -323,7 +332,7 @@ const TheaterIntro = ({ onComplete }: { onComplete: () => void }) => {
         }}
       >
         <div 
-          className="absolute left-0 top-0 w-[1000px] h-[1200px] blur-3xl"
+          className="absolute left-0 top-0 w-[600px] h-[800px] md:w-[1000px] md:h-[1200px] blur-3xl"
           style={{
             background: 'radial-gradient(ellipse at left top, rgba(173, 216, 230, 0.8) 0%, rgba(135, 206, 250, 0.6) 25%, transparent 70%)',
           }}
@@ -339,7 +348,7 @@ const TheaterIntro = ({ onComplete }: { onComplete: () => void }) => {
         }}
       >
         <div 
-          className="absolute right-0 top-0 w-[1000px] h-[1200px] blur-3xl"
+          className="absolute right-0 top-0 w-[600px] h-[800px] md:w-[1000px] md:h-[1200px] blur-3xl"
           style={{
             background: 'radial-gradient(ellipse at right top, rgba(242, 116, 5, 0.8) 0%, rgba(255, 165, 0, 0.6) 25%, transparent 70%)',
           }}

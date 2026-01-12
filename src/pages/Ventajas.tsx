@@ -25,20 +25,20 @@ const Ventajas = () => {
           <Breadcrumbs currentPage="Ventajas" />
 
           {/* Title and Description */}
-          <div className="mb-12">
+          <div className="mb-8 md:mb-12">
             <h1 
-              className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 transition-colors duration-300"
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-3 md:mb-4 transition-colors duration-300 px-2"
               style={{ color: isDark ? '#F27405' : '#0476D9' }}
             >
               Ventajas completas
             </h1>
-            <p className={`text-lg md:text-xl transition-colors duration-300 ${isDark ? 'text-white' : 'text-black'}`}>
+            <p className={`text-base sm:text-lg md:text-xl transition-colors duration-300 px-2 ${isDark ? 'text-white' : 'text-black'}`}>
               Todos los beneficios de usar SetLux para gestionar tu departamento de iluminación
             </p>
           </div>
 
           {/* Benefits Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8">
             {allBenefits.map((benefit, index) => {
               const Icon = benefit.icon
               const bgColor = isDark ? '#F27405' : '#0476D9'
@@ -46,24 +46,24 @@ const Ventajas = () => {
               return (
                 <div
                   key={index}
-                  className={`group relative rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-3 border-2 border-gray-100 ${
+                  className={`group relative rounded-2xl p-4 md:p-8 shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-3 border-2 border-gray-100 ${
                     isDark ? 'bg-gray-800' : 'bg-white'
                   }`}
                 >
                   <div 
-                    className="mb-6 inline-flex p-5 rounded-2xl shadow-lg group-hover:scale-110 group-hover:rotate-3 transition-all duration-300"
+                    className="mb-4 md:mb-6 inline-flex p-3 md:p-5 rounded-2xl shadow-lg group-hover:scale-110 group-hover:rotate-3 transition-all duration-300"
                     style={{ backgroundColor: bgColor }}
                   >
-                    <Icon className="w-10 h-10 text-white" strokeWidth={2} />
+                    <Icon className="w-6 h-6 md:w-10 md:h-10 text-white" strokeWidth={2} />
                   </div>
                   
                   <h3 
-                    className="text-2xl font-bold mb-4 transition-colors duration-300"
+                    className="text-xl md:text-2xl font-bold mb-3 md:mb-4 transition-colors duration-300"
                     style={{ color: bgColor }}
                   >
                     {benefit.title}
                   </h3>
-                  <p className={`leading-relaxed text-lg transition-colors duration-700 ${isDark ? 'text-white' : 'text-black'}`}>
+                  <p className={`leading-relaxed text-sm md:text-lg transition-colors duration-700 ${isDark ? 'text-white' : 'text-black'}`}>
                     {benefit.description}
                   </p>
                 </div>
@@ -72,10 +72,10 @@ const Ventajas = () => {
           </div>
 
           {/* CTA */}
-          <div className="mt-16 text-center">
+          <div className="mt-12 md:mt-16 text-center">
             <button
               onClick={handleContactClick}
-              className="inline-flex items-center gap-2 text-white px-10 py-5 rounded-xl font-bold text-lg shadow-2xl transform hover:-translate-y-2 hover:scale-105 transition-all duration-300"
+              className="inline-flex items-center gap-2 text-white px-8 md:px-10 py-4 md:py-5 rounded-xl font-bold text-base md:text-lg shadow-2xl transform hover:-translate-y-2 hover:scale-105 transition-all duration-300 w-full sm:w-auto min-h-[44px]"
               style={{ backgroundColor: isDark ? '#F27405' : '#0476D9' }}
             >
               Contactar
