@@ -4,9 +4,10 @@ interface LogoProps {
   size?: 'sm' | 'md' | 'lg' | 'xl'
   className?: string
   isDark?: boolean // Mantenemos esta prop por compatibilidad con Hero.tsx
+  style?: React.CSSProperties
 }
 
-const Logo = ({ size = 'md', className = '', isDark: propIsDark }: LogoProps) => {
+const Logo = ({ size = 'md', className = '', isDark: propIsDark, style }: LogoProps) => {
   const { theme } = useTheme()
   const isDark = propIsDark !== undefined ? propIsDark : theme === 'dark'
   
@@ -25,6 +26,14 @@ const Logo = ({ size = 'md', className = '', isDark: propIsDark }: LogoProps) =>
       src={isDark ? logoDark : logoLight}
       alt="SetLux Logo"
       className={`${sizeClasses[size]} ${className} transition-opacity duration-300 object-contain`}
+      style={{
+        background: 'none',
+        backgroundColor: 'transparent',
+        border: 'none',
+        outline: 'none',
+        boxShadow: 'none',
+        ...style,
+      }}
     />
   )
 }

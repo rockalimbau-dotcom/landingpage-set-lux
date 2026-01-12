@@ -21,15 +21,15 @@ function AppContent() {
     }
 
     // Si estamos en la página principal
-    const introShown = sessionStorage.getItem('intro-shown')
     const previousPath = previousPathRef.current
-
-    // Solo mostrar animación si:
-    // 1. No se ha mostrado antes en esta sesión
-    // 2. Y NO venimos de una navegación interna desde otra página (sino de un refresh o entrada directa)
+    
+    // Mostrar animación si:
+    // - previousPath es null (primera carga o refresh)
+    // - previousPath es '/' (refresh en la misma página)
+    // NO mostrar si previousPath es otra ruta (navegación interna desde otra página)
     const isNavigationFromOtherPage = previousPath !== null && previousPath !== '/'
     
-    if (introShown !== 'true' && !isNavigationFromOtherPage) {
+    if (!isNavigationFromOtherPage) {
       setShowIntro(true)
     } else {
       setShowIntro(false)
@@ -41,7 +41,6 @@ function AppContent() {
 
   const handleIntroComplete = () => {
     setShowIntro(false)
-    sessionStorage.setItem('intro-shown', 'true')
   }
 
   return (

@@ -15,16 +15,16 @@ const TheaterIntro = ({ onComplete }: { onComplete: () => void }) => {
   >('dark')
   const [showContent, setShowContent] = useState(false)
 
-  // Secuencia cinematográfica
+  // Secuencia cinematográfica - 5 segundos total
   useEffect(() => {
     const timeline = [
-      { delay: 1000, action: () => setStage('left-light-only') },           // Primero se enciende la luz izquierda
-      { delay: 1300, action: () => setStage('left-light-with-content') },   // Luego aparecen letras y logo izquierdo (más rápido)
-      { delay: 3800, action: () => setStage('right-light-only') },         // Primero se enciende la luz derecha
-      { delay: 4100, action: () => setStage('right-light-with-content') }, // Luego aparecen letras y logo derecho (más rápido)
-      { delay: 6100, action: () => setStage('front-light') },              // Luz frontal - todo visible
-      { delay: 7600, action: () => setStage('complete') },                 // Luz aumenta hasta blanco
-      { delay: 9600, action: () => {
+      { delay: 500, action: () => setStage('left-light-only') },           // Primero se enciende la luz izquierda
+      { delay: 800, action: () => setStage('left-light-with-content') },     // Luego aparecen letras y logo izquierdo
+      { delay: 1800, action: () => setStage('right-light-only') },          // Primero se enciende la luz derecha
+      { delay: 2000, action: () => setStage('right-light-with-content') },  // Luego aparecen letras y logo derecho
+      { delay: 3000, action: () => setStage('front-light') },              // Luz frontal - todo visible
+      { delay: 3800, action: () => setStage('complete') },                  // Luz aumenta hasta blanco
+      { delay: 4500, action: () => {
         setShowContent(true)
         setTimeout(() => onComplete(), 500)
       }},
@@ -103,10 +103,18 @@ const TheaterIntro = ({ onComplete }: { onComplete: () => void }) => {
       }
     }
     
+    // En el fogonazo final, las letras se desvanecen
+    if (stage === 'complete') {
+      return { 
+        opacity: 0, 
+        filter: 'brightness(1.2)' 
+      }
+    }
+    
     // Luz frontal: todo bien iluminado
     return { 
       opacity: 1, 
-      filter: 'brightness(1.2) drop-shadow(0 0 25px rgba(4, 118, 217, 0.6)) drop-shadow(0 0 50px rgba(242, 116, 5, 0.4))' 
+      filter: 'brightness(1.2)' 
     }
   }
 
@@ -123,7 +131,7 @@ const TheaterIntro = ({ onComplete }: { onComplete: () => void }) => {
       // Logo izquierdo visible con buena iluminación
       return {
         opacity: 0.7,
-        filter: 'brightness(0.9) drop-shadow(0 0 15px rgba(173, 216, 230, 0.6))',
+        filter: 'brightness(0.9)',
         clipPath: 'inset(0 50% 0 0)',
         WebkitClipPath: 'inset(0 50% 0 0)',
       }
@@ -133,7 +141,7 @@ const TheaterIntro = ({ onComplete }: { onComplete: () => void }) => {
       // El logo se MANTIENE visible (mitad izquierda) cuando solo se enciende el foco derecho
       return {
         opacity: 0.7,
-        filter: 'brightness(0.9) drop-shadow(0 0 15px rgba(173, 216, 230, 0.6))',
+        filter: 'brightness(0.9)',
         clipPath: 'inset(0 50% 0 0)',
         WebkitClipPath: 'inset(0 50% 0 0)',
       }
@@ -143,16 +151,26 @@ const TheaterIntro = ({ onComplete }: { onComplete: () => void }) => {
       // Logo completo visible: izquierda se mantiene, derecha aparece con baja intensidad
       return {
         opacity: 0.7,
-        filter: 'brightness(0.7) drop-shadow(0 0 12px rgba(242, 116, 5, 0.5)) drop-shadow(0 0 10px rgba(173, 216, 230, 0.4))',
+        filter: 'brightness(0.7)',
         clipPath: 'none',
         WebkitClipPath: 'none',
       }
     }
     
     // Solo cuando se enciende el foco frontal, el logo aparece completamente iluminado
+    if (stage === 'complete') {
+      // En el fogonazo final, el logo se desvanece
+      return {
+        opacity: 0,
+        filter: 'brightness(1.2)',
+        clipPath: 'none',
+        WebkitClipPath: 'none',
+      }
+    }
+    
     return {
       opacity: 1,
-      filter: 'brightness(1.2) drop-shadow(0 0 25px rgba(4, 118, 217, 0.6)) drop-shadow(0 0 50px rgba(242, 116, 5, 0.4))',
+      filter: 'brightness(1.2)',
       clipPath: 'none',
       WebkitClipPath: 'none',
     }
@@ -160,7 +178,7 @@ const TheaterIntro = ({ onComplete }: { onComplete: () => void }) => {
 
   return (
     <div 
-      className={`fixed inset-0 z-50 transition-opacity duration-2000 ${
+      className={`fixed inset-0 z-[9999] transition-opacity duration-2000 ${
         showContent ? 'opacity-0 pointer-events-none' : 'opacity-100'
       }`}
     >
@@ -168,19 +186,23 @@ const TheaterIntro = ({ onComplete }: { onComplete: () => void }) => {
       <div className="absolute inset-0 bg-black" />
 
       {/* Contenido central - Logo y Título */}
-      <div className="absolute inset-0 flex flex-col items-center justify-center">
+      <div className="absolute inset-0 flex flex-col items-center justify-center z-10">
         {/* Logo */}
         <div 
           className="relative mb-8"
           style={{
             ...getLogoStyle(),
-            transition: 'opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), filter 1s cubic-bezier(0.4, 0, 0.2, 1), clip-path 1s cubic-bezier(0.4, 0, 0.2, 1)',
+            transition: stage === 'complete' 
+              ? 'opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1), filter 1s cubic-bezier(0.4, 0, 0.2, 1), clip-path 1s cubic-bezier(0.4, 0, 0.2, 1)'
+              : 'opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), filter 1s cubic-bezier(0.4, 0, 0.2, 1), clip-path 1s cubic-bezier(0.4, 0, 0.2, 1)',
           }}
         >
           <Logo 
             size="xl" 
             isDark={false}
-            className="drop-shadow-2xl"
+            style={{
+              filter: 'none',
+            }}
           />
         </div>
 
@@ -194,7 +216,9 @@ const TheaterIntro = ({ onComplete }: { onComplete: () => void }) => {
               WebkitTextFillColor: 'transparent',
               backgroundClip: 'text',
               ...getLetterStyle('S'),
-              transition: 'opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), filter 0.8s cubic-bezier(0.4, 0, 0.2, 1)',
+              transition: stage === 'complete' 
+                ? 'opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1), filter 0.5s cubic-bezier(0.4, 0, 0.2, 1)'
+                : 'opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), filter 0.8s cubic-bezier(0.4, 0, 0.2, 1)',
             }}
           >
             S
@@ -207,7 +231,9 @@ const TheaterIntro = ({ onComplete }: { onComplete: () => void }) => {
               WebkitTextFillColor: 'transparent',
               backgroundClip: 'text',
               ...getLetterStyle('e'),
-              transition: 'opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), filter 0.8s cubic-bezier(0.4, 0, 0.2, 1)',
+              transition: stage === 'complete' 
+                ? 'opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1), filter 0.5s cubic-bezier(0.4, 0, 0.2, 1)'
+                : 'opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), filter 0.8s cubic-bezier(0.4, 0, 0.2, 1)',
             }}
           >
             e
@@ -220,7 +246,9 @@ const TheaterIntro = ({ onComplete }: { onComplete: () => void }) => {
               WebkitTextFillColor: 'transparent',
               backgroundClip: 'text',
               ...getLetterStyle('t'),
-              transition: 'opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), filter 0.8s cubic-bezier(0.4, 0, 0.2, 1)',
+              transition: stage === 'complete' 
+                ? 'opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1), filter 0.5s cubic-bezier(0.4, 0, 0.2, 1)'
+                : 'opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), filter 0.8s cubic-bezier(0.4, 0, 0.2, 1)',
             }}
           >
             t
@@ -233,7 +261,9 @@ const TheaterIntro = ({ onComplete }: { onComplete: () => void }) => {
               WebkitTextFillColor: 'transparent',
               backgroundClip: 'text',
               ...getLetterStyle('L'),
-              transition: 'opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), filter 0.8s cubic-bezier(0.4, 0, 0.2, 1)',
+              transition: stage === 'complete' 
+                ? 'opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1), filter 0.5s cubic-bezier(0.4, 0, 0.2, 1)'
+                : 'opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), filter 0.8s cubic-bezier(0.4, 0, 0.2, 1)',
             }}
           >
             L
@@ -246,7 +276,9 @@ const TheaterIntro = ({ onComplete }: { onComplete: () => void }) => {
               WebkitTextFillColor: 'transparent',
               backgroundClip: 'text',
               ...getLetterStyle('u'),
-              transition: 'opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), filter 0.8s cubic-bezier(0.4, 0, 0.2, 1)',
+              transition: stage === 'complete' 
+                ? 'opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1), filter 0.5s cubic-bezier(0.4, 0, 0.2, 1)'
+                : 'opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), filter 0.8s cubic-bezier(0.4, 0, 0.2, 1)',
             }}
           >
             u
@@ -259,7 +291,9 @@ const TheaterIntro = ({ onComplete }: { onComplete: () => void }) => {
               WebkitTextFillColor: 'transparent',
               backgroundClip: 'text',
               ...getLetterStyle('x'),
-              transition: 'opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), filter 0.8s cubic-bezier(0.4, 0, 0.2, 1)',
+              transition: stage === 'complete' 
+                ? 'opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1), filter 0.5s cubic-bezier(0.4, 0, 0.2, 1)'
+                : 'opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), filter 0.8s cubic-bezier(0.4, 0, 0.2, 1)',
             }}
           >
             x
@@ -271,8 +305,8 @@ const TheaterIntro = ({ onComplete }: { onComplete: () => void }) => {
           className="mt-6 text-xl md:text-2xl font-light"
           style={{
             color: '#94a3b8',
-            opacity: stage === 'right-light-with-content' || stage === 'front-light' || stage === 'complete' ? 1 : 0,
-            transition: 'opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1)',
+            opacity: stage === 'complete' ? 0 : (stage === 'right-light-with-content' || stage === 'front-light' ? 1 : 0),
+            transition: 'opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1)',
             transitionDelay: stage === 'right-light-with-content' ? '0.3s' : '0s',
           }}
         >
@@ -280,43 +314,41 @@ const TheaterIntro = ({ onComplete }: { onComplete: () => void }) => {
         </p>
       </div>
 
-      {/* Luz lateral izquierda - Blanco azulado */}
+      {/* Luz lateral izquierda - Blanco azulado desde esquina superior */}
       <div 
-        className="absolute inset-0 overflow-hidden pointer-events-none"
+        className="absolute inset-0 overflow-hidden pointer-events-none z-5"
         style={{
           opacity: stage === 'left-light-only' || stage === 'left-light-with-content' || stage === 'right-light-only' || stage === 'right-light-with-content' || stage === 'front-light' || stage === 'complete' ? 0.6 : 0,
           transition: 'opacity 1s cubic-bezier(0.4, 0, 0.2, 1)',
         }}
       >
         <div 
-          className="absolute left-0 top-1/2 -translate-y-1/2 w-[800px] h-[600px] blur-3xl"
+          className="absolute left-0 top-0 w-[1000px] h-[1200px] blur-3xl"
           style={{
-            background: 'radial-gradient(ellipse at left center, rgba(173, 216, 230, 0.8) 0%, rgba(135, 206, 250, 0.6) 30%, transparent 60%)',
-            transform: 'translateY(-50%)',
+            background: 'radial-gradient(ellipse at left top, rgba(173, 216, 230, 0.8) 0%, rgba(135, 206, 250, 0.6) 25%, transparent 70%)',
           }}
         />
       </div>
 
-      {/* Luz lateral derecha - Cálida/Naranja */}
+      {/* Luz lateral derecha - Cálida/Naranja desde esquina superior */}
       <div 
-        className="absolute inset-0 overflow-hidden pointer-events-none"
+        className="absolute inset-0 overflow-hidden pointer-events-none z-5"
         style={{
           opacity: stage === 'right-light-only' || stage === 'right-light-with-content' || stage === 'front-light' || stage === 'complete' ? 0.6 : 0,
           transition: 'opacity 1s cubic-bezier(0.4, 0, 0.2, 1)',
         }}
       >
         <div 
-          className="absolute right-0 top-1/2 -translate-y-1/2 w-[800px] h-[600px] blur-3xl"
+          className="absolute right-0 top-0 w-[1000px] h-[1200px] blur-3xl"
           style={{
-            background: 'radial-gradient(ellipse at right center, rgba(242, 116, 5, 0.8) 0%, rgba(255, 165, 0, 0.6) 30%, transparent 60%)',
-            transform: 'translateY(-50%)',
+            background: 'radial-gradient(ellipse at right top, rgba(242, 116, 5, 0.8) 0%, rgba(255, 165, 0, 0.6) 25%, transparent 70%)',
           }}
         />
       </div>
 
       {/* Luz frontal - Ilumina todo al final y aumenta hasta blanco */}
       <div 
-        className="absolute inset-0 overflow-hidden pointer-events-none"
+        className="absolute inset-0 overflow-hidden pointer-events-none z-5"
         style={{
           opacity: stage === 'front-light' || stage === 'complete' ? 1 : 0,
           transition: 'opacity 1.2s cubic-bezier(0.4, 0, 0.2, 1)',
