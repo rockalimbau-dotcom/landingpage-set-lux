@@ -1,8 +1,10 @@
 import { useTheme } from '../contexts/ThemeContext'
+import { useTranslation } from 'react-i18next'
 
 const ThemeButton = () => {
   const { theme, toggleTheme } = useTheme()
   const isDark = theme === 'dark'
+  const { t } = useTranslation()
 
   return (
     <button
@@ -14,7 +16,7 @@ const ThemeButton = () => {
       }`}
       aria-label="Toggle theme"
     >
-      {isDark ? 'Tungsteno' : 'Daylight'}
+      {isDark ? t('theme.tungsten') : t('theme.daylight')}
     </button>
   )
 }

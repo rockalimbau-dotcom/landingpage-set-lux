@@ -1,0 +1,232 @@
+{
+  "theme": {
+    "daylight": "Daylight",
+    "tungsten": "Tungstè"
+  },
+  "hero": {
+    "tagline": "ALL IN ONE",
+    "description": "La solució completa per gestionar el departament d'il·luminació en produccions audiovisuals",
+    "primaryCta": "Sol·licitar accés",
+    "stats": {
+      "automated": "Automatitzat",
+      "errors": "Errors",
+      "projects": "Projectes"
+    }
+  },
+  "whatIs": {
+    "title": "Què és SetLux?",
+    "lead1": "Plataforma completa per gestionar el departament d'il·luminació en produccions audiovisuals.",
+    "lead2": "Planificació, gestió d'equip, condicions laborals, informes i nòmines en un sol lloc.",
+    "cta": "Veure característiques completes"
+  },
+  "benefits": {
+    "label": "AVANTATGES",
+    "title": "Avantatges principals",
+    "subtitle": "Beneficis clau d'utilitzar SetLux",
+    "cta": "Veure tots els avantatges",
+    "items": {
+      "saveTime": {
+        "title": "Estalvia temps",
+        "description": "Redueix hores de feina manual en càlculs i documentació. L'automatització accelera tots els processos administratius."
+      },
+      "reduceErrors": {
+        "title": "Redueix errors",
+        "description": "Elimina errors humans amb càlculs automàtics precisos i validació intel·ligent en cada pas del procés."
+      },
+      "documentation": {
+        "title": "Documentació professional",
+        "description": "Genera documents PDF d'alta qualitat llestos per compartir amb producció i comptabilitat."
+      },
+      "transparency": {
+        "title": "Augmenta la transparència",
+        "description": "Tots els càlculs són visibles i verificables, facilitant la comunicació i el compliment legal."
+      },
+      "allInOne": {
+        "title": "Tot en un",
+        "description": "Única plataforma que integra planificació, equip, condicions, informes i nòmines en un sol lloc."
+      },
+      "legal": {
+        "title": "Compliment legal",
+        "description": "Referències al conveni col·lectiu i polítiques clares que faciliten el compliment de normatives laborals."
+      }
+    }
+  },
+  "useCases": {
+    "label": "CASOS D'ÚS",
+    "title": "Casos d'ús",
+    "subtitle": "SetLux s'adapta a qualsevol tipus de producció",
+    "cta": "Veure casos d'ús detallats",
+    "items": {
+      "fiction": {
+        "title": "Producció de ficció",
+        "description": "Planificació completa de setmanes de rodatge, gestió d'equip gran amb múltiples rols, càlcul de nòmines mensuals complexes i informes detallats.",
+        "features": [
+          "Planificació de múltiples setmanes",
+          "Equips grans amb múltiples rols",
+          "Nòmines mensuals complexes",
+          "Informes setmanals detallats"
+        ]
+      },
+      "ads": {
+        "title": "Producció de publicitat",
+        "description": "Condicions específiques de publicitat, gestió de localitzacions tècniques, càlcul de càrrega/descàrrega i nòmines amb estructura especialitzada.",
+        "features": [
+          "Condicions específiques de publicitat",
+          "Localitzacions tècniques",
+          "Càlcul de càrrega/descàrrega",
+          "Nòmines especialitzades"
+        ]
+      }
+    }
+  },
+  "features": {
+    "label": "CARACTERÍSTIQUES",
+    "title": "Característiques principals",
+    "subtitle": "Les eines essencials per gestionar el teu departament",
+    "cta": "Veure totes les característiques",
+    "items": {
+      "labor": {
+        "title": "Condicions laborals",
+        "description": "Gestiona preus, polítiques i condicions segons el tipus de producció (setmanal, mensual, publicitat) amb càlculs automàtics precisos."
+      },
+      "team": {
+        "title": "Gestió d'equip",
+        "description": "Organitza el teu equip d'il·luminació amb rols diferenciats (Gaffer, Best Boy, Elèctric, etc.) i equips (Base, Prelight, Recollida)."
+      },
+      "planning": {
+        "title": "Planificació",
+        "description": "Sistema complet de planificació de rodatge amb calendari interactiu, gestió de setmanes, assignació d'equip i exportació professional."
+      },
+      "reports": {
+        "title": "Informes",
+        "description": "Sistema avançat d'informes setmanals amb registre d'hores extra, turn arounds, nocturnitat, dietes i tots els conceptes econòmics."
+      },
+      "payroll": {
+        "title": "Nòmina",
+        "description": "Càlcul automàtic de nòmines mensuals amb desglossament detallat de dies treballats, conceptes addicionals i exportació per a comptabilitat."
+      },
+      "needs": {
+        "title": "Necessitats",
+        "description": "Gestiona totes les necessitats del departament durant la producció amb llistes personalitzables i exportació professional."
+      }
+    }
+  },
+  "cta": {
+    "title": "Fes el següent pas amb SetLux",
+    "text": "Simplifica la gestió d'il·luminació i obtén un avantatge real en les teves produccions.",
+    "button": "Sol·licitar accés"
+  },
+  "footer": {
+    "linksTitle": "Enllaços",
+    "accessEarly": "Accés anticipat",
+    "features": "Característiques",
+    "benefits": "Avantatges",
+    "useCases": "Casos d'ús",
+    "contactTitle": "Contacte",
+    "brandSubtitle": "ALL IN ONE",
+    "description": "La solució completa per a la gestió del departament d'il·luminació en produccions audiovisuals.",
+    "bottom1": "© {{year}} SetLux. Tots els drets reservats.",
+    "bottom2": "Dissenyat específicament per a professionals del departament d'il·luminació."
+  },
+  "contactForm": {
+    "labels": {
+      "nombre": "Nom *",
+      "apellido": "Cognom *",
+      "email": "Email *",
+      "rol": "Rol *",
+      "interes": "Per a què t'interessaria SetLux? *",
+      "mensaje": "Missatge"
+    },
+    "placeholders": {
+      "nombre": "El teu nom",
+      "apellido": "El teu cognom",
+      "email": "El teu email",
+      "rol": "Selecciona el teu rol",
+      "interes": "Selecciona una o diverses opcions",
+      "mensaje": "Tipus de produccions en què treballes o quin problema t'agradaria resoldre."
+    },
+    "roles": [
+      { "value": "gaffer", "label": "Gaffer" },
+      { "value": "best-boy", "label": "Best Boy" },
+      { "value": "electrico", "label": "Elèctric" },
+      { "value": "tecnico-mesa", "label": "Tècnic de Taula" },
+      { "value": "finger-boy", "label": "Finger Boy" },
+      { "value": "auxiliar", "label": "Auxiliar" },
+      { "value": "otro", "label": "Altres" }
+    ],
+    "interests": [
+      { "value": "demo", "label": "Veure una demo" },
+      { "value": "produccion", "label": "Gestionar produccions" },
+      { "value": "equipo", "label": "Coordinar equips d'il·luminació" },
+      { "value": "presupuesto", "label": "Pressupostos i planificació" },
+      { "value": "otro", "label": "Altres" }
+    ],
+    "privacy": {
+      "labelPrefix": "He llegit i accepto la",
+      "link": "política de privacitat",
+      "labelSuffix": "."
+    },
+    "submit": "Vull provar SetLux",
+    "submitting": "Enviant...",
+    "success": "Missatge enviat correctament! Et contactarem aviat.",
+    "errorDefault": "Hi ha hagut un error en enviar el missatge. Si us plau, torna-ho a provar.",
+    "subject": "Contacte des de SetLux - {{role}}",
+    "validation": {
+      "nameRequired": "El nom és obligatori.",
+      "lastNameRequired": "El cognom és obligatori.",
+      "emailInvalid": "Introdueix un email vàlid.",
+      "roleRequired": "Selecciona el teu rol.",
+      "interestRequired": "Selecciona almenys un interès.",
+      "privacyRequired": "Has d'acceptar la política de privacitat.",
+      "honeypot": "Error de validació. Torna-ho a intentar."
+    },
+    "privacyModal": {
+      "title": "Política de privacitat",
+      "close": "Tancar",
+      "responsible": "Responsable: SetLux. Email de contacte: setluxapp@gmail.com",
+      "purpose": "Finalitat: gestionar sol·licituds d'accés, respondre consultes i mantenir comunicació relacionada amb l'accés i evolució del producte.",
+      "data": "Dades tractades: nom, email, rol, interès i missatge.",
+      "legal": "Base legal: consentiment de l'usuari.",
+      "retention": "Conservació: durant la gestió de la sol·licitud i un màxim de 12 mesos.",
+      "recipients": "Destinataris: Formspree com a encarregat de tractament.",
+      "rights": "Drets: accés, rectificació i supressió escrivint a setluxapp@gmail.com.",
+      "security": "Seguretat: s'apliquen mesures raonables per protegir la informació."
+    }
+  },
+  "accessPage": {
+    "breadcrumb": "Accés",
+    "title": "Sol·licitud d'accés a SetLux",
+    "subtitleLine1": "SetLux està en fase de desenvolupament actiu.",
+    "subtitleLine2": "Busquem professionals del departament d'il·luminació per provar l'eina i aportar feedback real.",
+    "bullets": [
+      "Accés anticipat a noves funcions",
+      "Possibilitat d'influir en el desenvolupament",
+      "Eina pensada des de l'experiència al set"
+    ],
+    "preForm": "Omple el formulari i ens posarem en contacte amb tu.",
+    "microcopyLine1": "No spam.",
+    "microcopyLine2": "Només comunicació relacionada amb l'accés i evolució de SetLux."
+  },
+  "pages": {
+    "features": {
+      "breadcrumb": "Característiques",
+      "title": "Característiques completes",
+      "description": "Totes les eines que SetLux ofereix per gestionar el teu departament d'il·luminació",
+      "cta": "Sol·licitar accés"
+    },
+    "benefits": {
+      "breadcrumb": "Avantatges",
+      "title": "Avantatges complets",
+      "description": "Tots els beneficis d'utilitzar SetLux per gestionar el teu departament d'il·luminació",
+      "cta": "Sol·licitar accés"
+    },
+    "useCases": {
+      "breadcrumb": "Casos d'ús",
+      "title": "Casos d'ús detallats",
+      "description": "SetLux s'adapta a qualsevol tipus de producció audiovisual",
+      "blockTitle": "Et veus reflectit en algun d'aquests casos?",
+      "blockText": "SetLux s'està construint amb professionals del sector per adaptar-se al treball real.",
+      "blockCta": "Sol·licitar accés"
+    }
+  }
+}

@@ -3,52 +3,30 @@
 import { Clock, Shield, FileCheck, TrendingUp, Users, CheckCircle, ArrowRight } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import { useTheme } from '../contexts/ThemeContext'
+import { useTranslation } from 'react-i18next'
 
-const allBenefits = [
-  {
-    icon: Clock,
-    title: 'Ahorra Tiempo',
-    description: 'Reduce horas de trabajo manual en cálculos y documentación. La automatización acelera todos los procesos administrativos.',
-    color: 'blue',
-  },
-  {
-    icon: Shield,
-    title: 'Reduce Errores',
-    description: 'Elimina errores humanos con cálculos automáticos precisos y validación inteligente en cada paso del proceso.',
-    color: 'orange',
-  },
-  {
-    icon: FileCheck,
-    title: 'Documentación Profesional',
-    description: 'Genera documentos PDF de alta calidad listos para compartir con producción y contabilidad.',
-    color: 'blue',
-  },
-  {
-    icon: TrendingUp,
-    title: 'Aumenta la Transparencia',
-    description: 'Todos los cálculos son visibles y verificables, facilitando la comunicación y el cumplimiento legal.',
-    color: 'orange',
-  },
-  {
-    icon: Users,
-    title: 'Todo en Uno',
-    description: 'Única plataforma que integra planificación, equipo, condiciones, reportes y nóminas en un solo lugar.',
-    color: 'blue',
-  },
-  {
-    icon: CheckCircle,
-    title: 'Cumplimiento Legal',
-    description: 'Referencias al convenio colectivo y políticas claras que facilitan el cumplimiento de normativas laborales.',
-    color: 'orange',
-  },
+const benefitConfigs = [
+  { key: 'saveTime', icon: Clock, color: 'blue' },
+  { key: 'reduceErrors', icon: Shield, color: 'orange' },
+  { key: 'documentation', icon: FileCheck, color: 'blue' },
+  { key: 'transparency', icon: TrendingUp, color: 'orange' },
+  { key: 'allInOne', icon: Users, color: 'blue' },
+  { key: 'legal', icon: CheckCircle, color: 'orange' },
 ]
 
-// Mostrar solo las 3 principales en la landing
-const benefits = allBenefits.slice(0, 3)
+const getBenefits = (t: (key: string, options?: { returnObjects?: boolean }) => any) =>
+  benefitConfigs.map((benefit) => ({
+    ...benefit,
+    title: t(`benefits.items.${benefit.key}.title`),
+    description: t(`benefits.items.${benefit.key}.description`),
+  }))
 
 const Benefits = () => {
   const { theme } = useTheme()
   const isDark = theme === 'dark'
+  const { t } = useTranslation()
+  const allBenefits = getBenefits(t)
+  const benefits = allBenefits.slice(0, 3)
   
   return (
     <section id="benefits" className="py-12 md:py-16 relative overflow-hidden transition-colors duration-700" style={{ backgroundColor: isDark ? '#1e293b' : '#fff7ed' }}>
@@ -60,17 +38,17 @@ const Benefits = () => {
               className="text-white px-4 md:px-6 py-1.5 md:py-2 rounded-full text-xs md:text-sm font-semibold transition-colors duration-300"
               style={{ backgroundColor: isDark ? '#F27405' : '#0476D9' }}
             >
-              VENTAJAS
+              {t('benefits.label')}
             </span>
           </div>
           <h2 
             className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 md:mb-6 transition-colors duration-300 px-4"
             style={{ color: isDark ? '#F27405' : '#0476D9' }}
           >
-            Ventajas principales
+            {t('benefits.title')}
           </h2>
           <p className={`text-base md:text-lg lg:text-xl max-w-3xl mx-auto transition-colors duration-700 px-4 ${isDark ? 'text-white' : 'text-black'}`}>
-            Beneficios clave de usar SetLux
+            {t('benefits.subtitle')}
           </p>
         </div>
 
@@ -115,7 +93,7 @@ const Benefits = () => {
             className="inline-flex items-center gap-2 text-white px-6 md:px-8 py-3 md:py-4 rounded-xl font-semibold text-base md:text-lg shadow-xl transform hover:-translate-y-1 hover:scale-105 transition-all duration-300"
             style={{ backgroundColor: isDark ? '#F27405' : '#0476D9' }}
           >
-            Ver todas las ventajas
+              {t('benefits.cta')}
             <ArrowRight className="w-4 h-4 md:w-5 md:h-5" />
           </Link>
         </div>
@@ -125,4 +103,4 @@ const Benefits = () => {
 }
 
 export default Benefits
-export { allBenefits }
+export { getBenefits }

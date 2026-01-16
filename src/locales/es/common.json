@@ -1,0 +1,232 @@
+{
+  "theme": {
+    "daylight": "Daylight",
+    "tungsten": "Tungsteno"
+  },
+  "hero": {
+    "tagline": "ALL IN ONE",
+    "description": "La solución completa para gestionar el departamento de iluminación en producciones audiovisuales",
+    "primaryCta": "Solicitar acceso",
+    "stats": {
+      "automated": "Automatizado",
+      "errors": "Errores",
+      "projects": "Proyectos"
+    }
+  },
+  "whatIs": {
+    "title": "¿Qué es SetLux?",
+    "lead1": "Plataforma completa para gestionar el departamento de iluminación en producciones audiovisuales.",
+    "lead2": "Planificación, gestión de equipo, condiciones laborales, reportes y nóminas en un solo lugar.",
+    "cta": "Ver características completas"
+  },
+  "benefits": {
+    "label": "VENTAJAS",
+    "title": "Ventajas principales",
+    "subtitle": "Beneficios clave de usar SetLux",
+    "cta": "Ver todas las ventajas",
+    "items": {
+      "saveTime": {
+        "title": "Ahorra Tiempo",
+        "description": "Reduce horas de trabajo manual en cálculos y documentación. La automatización acelera todos los procesos administrativos."
+      },
+      "reduceErrors": {
+        "title": "Reduce Errores",
+        "description": "Elimina errores humanos con cálculos automáticos precisos y validación inteligente en cada paso del proceso."
+      },
+      "documentation": {
+        "title": "Documentación Profesional",
+        "description": "Genera documentos PDF de alta calidad listos para compartir con producción y contabilidad."
+      },
+      "transparency": {
+        "title": "Aumenta la Transparencia",
+        "description": "Todos los cálculos son visibles y verificables, facilitando la comunicación y el cumplimiento legal."
+      },
+      "allInOne": {
+        "title": "Todo en Uno",
+        "description": "Única plataforma que integra planificación, equipo, condiciones, reportes y nóminas en un solo lugar."
+      },
+      "legal": {
+        "title": "Cumplimiento Legal",
+        "description": "Referencias al convenio colectivo y políticas claras que facilitan el cumplimiento de normativas laborales."
+      }
+    }
+  },
+  "useCases": {
+    "label": "CASOS DE USO",
+    "title": "Casos de uso",
+    "subtitle": "SetLux se adapta a cualquier tipo de producción",
+    "cta": "Ver casos de uso detallados",
+    "items": {
+      "fiction": {
+        "title": "Producción de Ficción",
+        "description": "Planificación completa de semanas de rodaje, gestión de equipo grande con múltiples roles, cálculo de nóminas mensuales complejas y reportes detallados.",
+        "features": [
+          "Planificación de múltiples semanas",
+          "Equipos grandes con múltiples roles",
+          "Nóminas mensuales complejas",
+          "Reportes semanales detallados"
+        ]
+      },
+      "ads": {
+        "title": "Producción de Publicidad",
+        "description": "Condiciones específicas de publicidad, gestión de localizaciones técnicas, cálculo de carga/descarga y nóminas con estructura especializada.",
+        "features": [
+          "Condiciones específicas de publicidad",
+          "Localizaciones técnicas",
+          "Cálculo de carga/descarga",
+          "Nóminas especializadas"
+        ]
+      }
+    }
+  },
+  "features": {
+    "label": "CARACTERÍSTICAS",
+    "title": "Características principales",
+    "subtitle": "Las herramientas esenciales para gestionar tu departamento",
+    "cta": "Ver todas las características",
+    "items": {
+      "labor": {
+        "title": "Condiciones Laborales",
+        "description": "Gestiona precios, políticas y condiciones según el tipo de producción (semanal, mensual, publicidad) con cálculos automáticos precisos."
+      },
+      "team": {
+        "title": "Gestión de Equipo",
+        "description": "Organiza tu equipo de iluminación con roles diferenciados (Gaffer, Best Boy, Eléctrico, etc.) y equipos (Base, Prelight, Recogida)."
+      },
+      "planning": {
+        "title": "Planificación",
+        "description": "Sistema completo de planificación de rodaje con calendario interactivo, gestión de semanas, asignación de equipo y exportación profesional."
+      },
+      "reports": {
+        "title": "Reportes",
+        "description": "Sistema avanzado de reportes semanales con registro de horas extra, turn arounds, nocturnidad, dietas y todos los conceptos económicos."
+      },
+      "payroll": {
+        "title": "Nómina",
+        "description": "Cálculo automático de nóminas mensuales con desglose detallado de días trabajados, conceptos adicionales y exportación para contabilidad."
+      },
+      "needs": {
+        "title": "Necesidades",
+        "description": "Gestiona todas las necesidades del departamento durante la producción con listas personalizables y exportación profesional."
+      }
+    }
+  },
+  "cta": {
+    "title": "Da el siguiente paso con SetLux",
+    "text": "Simplifica la gestión de iluminación y obtén una ventaja real en tus producciones.",
+    "button": "Solicitar acceso"
+  },
+  "footer": {
+    "linksTitle": "Enlaces",
+    "accessEarly": "Acceso anticipado",
+    "features": "Características",
+    "benefits": "Ventajas",
+    "useCases": "Casos de Uso",
+    "contactTitle": "Contacto",
+    "brandSubtitle": "ALL IN ONE",
+    "description": "La solución completa para la gestión del departamento de iluminación en producciones audiovisuales.",
+    "bottom1": "© {{year}} SetLux. Todos los derechos reservados.",
+    "bottom2": "Diseñado específicamente para profesionales del departamento de iluminación."
+  },
+  "contactForm": {
+    "labels": {
+      "nombre": "Nombre *",
+      "apellido": "Apellido *",
+      "email": "Email *",
+      "rol": "Rol *",
+      "interes": "¿Para qué te interesaría SetLux? *",
+      "mensaje": "Mensaje"
+    },
+    "placeholders": {
+      "nombre": "Tu nombre",
+      "apellido": "Tu apellido",
+      "email": "Tu email",
+      "rol": "Selecciona tu rol",
+      "interes": "Selecciona una o varias opciones",
+      "mensaje": "Tipo de producciones en las que trabajas o qué problema te gustaría resolver."
+    },
+    "roles": [
+      { "value": "gaffer", "label": "Gaffer" },
+      { "value": "best-boy", "label": "Best Boy" },
+      { "value": "electrico", "label": "Eléctrico" },
+      { "value": "tecnico-mesa", "label": "Técnico de Mesa" },
+      { "value": "finger-boy", "label": "Finger Boy" },
+      { "value": "auxiliar", "label": "Auxiliar" },
+      { "value": "otro", "label": "Otro" }
+    ],
+    "interests": [
+      { "value": "demo", "label": "Ver una demo" },
+      { "value": "produccion", "label": "Gestionar producciones" },
+      { "value": "equipo", "label": "Coordinar equipos de iluminación" },
+      { "value": "presupuesto", "label": "Presupuestos y planificación" },
+      { "value": "otro", "label": "Otro" }
+    ],
+    "privacy": {
+      "labelPrefix": "He leído y acepto la",
+      "link": "política de privacidad",
+      "labelSuffix": "."
+    },
+    "submit": "Quiero probar SetLux",
+    "submitting": "Enviando...",
+    "success": "¡Mensaje enviado correctamente! Te contactaremos pronto.",
+    "errorDefault": "Hubo un error al enviar el mensaje. Por favor, inténtalo de nuevo.",
+    "subject": "Contacto desde SetLux - {{role}}",
+    "validation": {
+      "nameRequired": "El nombre es obligatorio.",
+      "lastNameRequired": "El apellido es obligatorio.",
+      "emailInvalid": "Introduce un email válido.",
+      "roleRequired": "Selecciona tu rol.",
+      "interestRequired": "Selecciona al menos un interés.",
+      "privacyRequired": "Debes aceptar la política de privacidad.",
+      "honeypot": "Error de validación. Inténtalo de nuevo."
+    },
+    "privacyModal": {
+      "title": "Política de privacidad",
+      "close": "Cerrar",
+      "responsible": "Responsable: SetLux. Email de contacto: setluxapp@gmail.com",
+      "purpose": "Finalidad: gestionar solicitudes de acceso, responder consultas y mantener comunicación relacionada con el acceso y evolución del producto.",
+      "data": "Datos tratados: nombre, email, rol, interés y mensaje.",
+      "legal": "Base legal: consentimiento del usuario.",
+      "retention": "Conservación: durante la gestión de la solicitud y un máximo de 12 meses.",
+      "recipients": "Destinatarios: Formspree como encargado de tratamiento.",
+      "rights": "Derechos: acceso, rectificación y supresión escribiendo a setluxapp@gmail.com.",
+      "security": "Seguridad: se aplican medidas razonables para proteger la información."
+    }
+  },
+  "accessPage": {
+    "breadcrumb": "Acceso",
+    "title": "Solicitud de acceso a SetLux",
+    "subtitleLine1": "SetLux está en fase de desarrollo activo.",
+    "subtitleLine2": "Buscamos profesionales del departamento de iluminación para probar la herramienta y aportar feedback real.",
+    "bullets": [
+      "Acceso anticipado a nuevas funciones",
+      "Posibilidad de influir en el desarrollo",
+      "Herramienta pensada desde la experiencia en set"
+    ],
+    "preForm": "Rellena el formulario y nos pondremos en contacto contigo.",
+    "microcopyLine1": "No spam.",
+    "microcopyLine2": "Solo comunicación relacionada con el acceso y evolución de SetLux."
+  },
+  "pages": {
+    "features": {
+      "breadcrumb": "Características",
+      "title": "Características completas",
+      "description": "Todas las herramientas que SetLux ofrece para gestionar tu departamento de iluminación",
+      "cta": "Solicitar acceso"
+    },
+    "benefits": {
+      "breadcrumb": "Ventajas",
+      "title": "Ventajas completas",
+      "description": "Todos los beneficios de usar SetLux para gestionar tu departamento de iluminación",
+      "cta": "Solicitar acceso"
+    },
+    "useCases": {
+      "breadcrumb": "Casos de Uso",
+      "title": "Casos de uso detallados",
+      "description": "SetLux se adapta a cualquier tipo de producción audiovisual",
+      "blockTitle": "¿Te ves reflejado en alguno de estos casos?",
+      "blockText": "SetLux se está construyendo con profesionales del sector para adaptarse al trabajo real.",
+      "blockCta": "Solicitar acceso"
+    }
+  }
+}

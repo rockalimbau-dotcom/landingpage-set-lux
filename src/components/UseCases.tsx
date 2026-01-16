@@ -1,37 +1,26 @@
 import { Film, Video, ArrowRight } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import { useTheme } from '../contexts/ThemeContext'
+import { useTranslation } from 'react-i18next'
 
-const allUseCases = [
-  {
-    icon: Film,
-    title: 'Producción de Ficción',
-    description: 'Planificación completa de semanas de rodaje, gestión de equipo grande con múltiples roles, cálculo de nóminas mensuales complejas y reportes detallados.',
-    features: [
-      'Planificación de múltiples semanas',
-      'Equipos grandes con múltiples roles',
-      'Nóminas mensuales complejas',
-      'Reportes semanales detallados',
-    ],
-    color: 'blue',
-  },
-  {
-    icon: Video,
-    title: 'Producción de Publicidad',
-    description: 'Condiciones específicas de publicidad, gestión de localizaciones técnicas, cálculo de carga/descarga y nóminas con estructura especializada.',
-    features: [
-      'Condiciones específicas de publicidad',
-      'Localizaciones técnicas',
-      'Cálculo de carga/descarga',
-      'Nóminas especializadas',
-    ],
-    color: 'orange',
-  },
+const useCaseConfigs = [
+  { key: 'fiction', icon: Film, color: 'blue' },
+  { key: 'ads', icon: Video, color: 'orange' },
 ]
+
+const getUseCases = (t: (key: string, options?: { returnObjects?: boolean }) => any) =>
+  useCaseConfigs.map((useCase) => ({
+    ...useCase,
+    title: t(`useCases.items.${useCase.key}.title`),
+    description: t(`useCases.items.${useCase.key}.description`),
+    features: t(`useCases.items.${useCase.key}.features`, { returnObjects: true }) as string[],
+  }))
 
 const UseCases = () => {
   const { theme } = useTheme()
   const isDark = theme === 'dark'
+  const { t } = useTranslation()
+  const allUseCases = getUseCases(t)
   
   return (
     <section id="use-cases" className="py-12 md:py-16 relative overflow-hidden transition-colors duration-700" style={{ backgroundColor: isDark ? '#1e293b' : '#fff7ed' }}>
@@ -43,17 +32,17 @@ const UseCases = () => {
               className="text-white px-4 md:px-6 py-1.5 md:py-2 rounded-full text-xs md:text-sm font-semibold transition-colors duration-300"
               style={{ backgroundColor: isDark ? '#F27405' : '#0476D9' }}
             >
-              CASOS DE USO
+              {t('useCases.label')}
             </span>
           </div>
           <h2 
             className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 md:mb-6 transition-colors duration-300 px-4"
             style={{ color: isDark ? '#F27405' : '#0476D9' }}
           >
-            Casos de uso
+            {t('useCases.title')}
           </h2>
           <p className={`text-base md:text-lg lg:text-xl max-w-3xl mx-auto transition-colors duration-700 px-4 ${isDark ? 'text-white' : 'text-black'}`}>
-            SetLux se adapta a cualquier tipo de producción
+            {t('useCases.subtitle')}
           </p>
         </div>
 
@@ -101,7 +90,7 @@ const UseCases = () => {
             className="inline-flex items-center gap-2 text-white px-6 md:px-8 py-3 md:py-4 rounded-xl font-semibold text-base md:text-lg shadow-xl transform hover:-translate-y-1 hover:scale-105 transition-all duration-300"
             style={{ backgroundColor: isDark ? '#F27405' : '#0476D9' }}
           >
-            Ver casos de uso detallados
+            {t('useCases.cta')}
             <ArrowRight className="w-4 h-4 md:w-5 md:h-5" />
           </Link>
         </div>
@@ -111,4 +100,4 @@ const UseCases = () => {
 }
 
 export default UseCases
-export { allUseCases }
+export { getUseCases }

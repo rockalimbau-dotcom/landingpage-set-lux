@@ -3,10 +3,12 @@
 import { useState, useRef, useEffect } from 'react'
 import { Send, AlertCircle } from 'lucide-react'
 import { useTheme } from '../contexts/ThemeContext'
+import { useTranslation } from 'react-i18next'
 
 const ContactForm = () => {
   const { theme } = useTheme()
   const isDark = theme === 'dark'
+  const { t } = useTranslation()
   const [formData, setFormData] = useState({
     nombre: '',
     email: '',
@@ -27,22 +29,8 @@ const ContactForm = () => {
   const [isInterestOpen, setIsInterestOpen] = useState(false)
   const roleDropdownRef = useRef<HTMLDivElement>(null)
   const interestDropdownRef = useRef<HTMLDivElement>(null)
-  const roles = [
-    { value: 'gaffer', label: 'Gaffer' },
-    { value: 'best-boy', label: 'Best Boy' },
-    { value: 'electrico', label: 'Eléctrico' },
-    { value: 'tecnico-mesa', label: 'Técnico de Mesa' },
-    { value: 'finger-boy', label: 'Finger Boy' },
-    { value: 'auxiliar', label: 'Auxiliar' },
-    { value: 'otro', label: 'Otro' },
-  ]
-  const interestOptions = [
-    { value: 'demo', label: 'Ver una demo' },
-    { value: 'produccion', label: 'Gestionar producciones' },
-    { value: 'equipo', label: 'Coordinar equipos de iluminación' },
-    { value: 'presupuesto', label: 'Presupuestos y planificación' },
-    { value: 'otro', label: 'Otro' },
-  ]
+  const roles = t('contactForm.roles', { returnObjects: true }) as { value: string; label: string }[]
+  const interestOptions = t('contactForm.interests', { returnObjects: true }) as { value: string; label: string }[]
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -80,30 +68,35 @@ const ContactForm = () => {
     const errors: Record<string, string> = {}
     const nombre = formData.nombre.trim()
     const email = formData.email.trim()
+    const apellido = formData.apellido.trim()
     const rol = formData.rol.trim()
 
     if (formData.company.trim()) {
-      return { errors, formError: 'Error de validación. Inténtalo de nuevo.' }
+      return { errors, formError: t('contactForm.validation.honeypot') }
     }
 
     if (!nombre) {
-      errors.nombre = 'El nombre es obligatorio.'
+      errors.nombre = t('contactForm.validation.nameRequired')
+    }
+
+    if (!apellido) {
+      errors.apellido = t('contactForm.validation.lastNameRequired')
     }
 
     if (!email || !/^\S+@\S+\.\S+$/.test(email)) {
-      errors.email = 'Introduce un email válido.'
+      errors.email = t('contactForm.validation.emailInvalid')
     }
 
     if (!rol) {
-      errors.rol = 'Selecciona tu rol.'
+      errors.rol = t('contactForm.validation.roleRequired')
     }
 
     if (formData.interes.length === 0) {
-      errors.interes = 'Selecciona al menos un interés.'
+      errors.interes = t('contactForm.validation.interestRequired')
     }
 
     if (!consentAccepted) {
-      errors.privacy = 'Debes aceptar la política de privacidad.'
+      errors.privacy = t('contactForm.validation.privacyRequired')
     }
 
     return { errors, formError: null }
@@ -129,7 +122,7 @@ const ContactForm = () => {
       const controller = new AbortController()
       const timeoutId = window.setTimeout(() => controller.abort(), 15000)
       const data = new FormData()
-      data.append('_subject', `Contacto desde SetLux - ${formData.rol}`)
+      data.append('_subject', t('contactForm.subject', { role: formData.rol }))
       data.append('nombre', formData.nombre.trim())
       data.append('email', formData.email.trim())
       data.append('apellido', formData.apellido.trim())
@@ -177,9 +170,13 @@ const ContactForm = () => {
       setIsSubmitting(false)
       setSubmitStatus('error')
       if (error instanceof Error) {
-        setFormError(error.message)
+        if (error.name === 'AbortError' || error.message === 'Failed to fetch') {
+          setFormError(t('contactForm.errorDefault'))
+        } else {
+          setFormError(error.message)
+        }
       } else {
-        setFormError('No se pudo enviar. Revisa tu conexión e inténtalo de nuevo.')
+        setFormError(t('contactForm.errorDefault'))
       }
     }
   }
@@ -200,8 +197,8 @@ const ContactForm = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
           {/* Nombre */}
           <div>
-            <label htmlFor="nombre" className={`block text-sm font-semibold mb-2 transition-colors duration-700 ${isDark ? 'text-white' : 'text-black'}`}>
-              Nombre *
+              <label htmlFor="nombre" className={`block text-sm font-semibold mb-2 transition-colors duration-700 ${isDark ? 'text-white' : 'text-black'}`}>
+                {t('contactForm.labels.nombre')}
             </label>
             <input
               type="text"
@@ -212,7 +209,7 @@ const ContactForm = () => {
               onChange={handleChange}
               aria-invalid={Boolean(fieldErrors.nombre)}
               className="w-full px-3 md:px-4 py-2.5 md:py-3 rounded-xl border-2 border-gray-200 focus:border-orange-500 focus:outline-none focus:ring-2 focus:ring-orange-500/20 transition-all duration-300 text-base"
-              placeholder="Tu nombre"
+              placeholder={t('contactForm.placeholders.nombre')}
             />
             {fieldErrors.nombre && (
               <div className="mt-2 flex items-center gap-2 text-xs md:text-sm" style={{ color: isDark ? '#F27405' : '#0476D9' }}>
@@ -225,7 +222,7 @@ const ContactForm = () => {
           {/* Apellido */}
           <div>
             <label htmlFor="apellido" className={`block text-sm font-semibold mb-2 transition-colors duration-700 ${isDark ? 'text-white' : 'text-black'}`}>
-              Apellido *
+              {t('contactForm.labels.apellido')}
             </label>
             <input
               type="text"
@@ -234,16 +231,23 @@ const ContactForm = () => {
               required
               value={formData.apellido}
               onChange={handleChange}
+              aria-invalid={Boolean(fieldErrors.apellido)}
               className="w-full px-3 md:px-4 py-2.5 md:py-3 rounded-xl border-2 border-gray-200 focus:border-orange-500 focus:outline-none focus:ring-2 focus:ring-orange-500/20 transition-all duration-300 text-base"
-              placeholder="Tu apellido"
+              placeholder={t('contactForm.placeholders.apellido')}
             />
+            {fieldErrors.apellido && (
+              <div className="mt-2 flex items-center gap-2 text-xs md:text-sm" style={{ color: isDark ? '#F27405' : '#0476D9' }}>
+                <AlertCircle className="w-4 h-4" />
+                {fieldErrors.apellido}
+              </div>
+            )}
           </div>
         </div>
 
         {/* Email */}
         <div>
           <label htmlFor="email" className={`block text-sm font-semibold mb-2 transition-colors duration-700 ${isDark ? 'text-white' : 'text-black'}`}>
-            Email *
+            {t('contactForm.labels.email')}
           </label>
           <input
             type="email"
@@ -254,7 +258,7 @@ const ContactForm = () => {
             onChange={handleChange}
             aria-invalid={Boolean(fieldErrors.email)}
             className="w-full px-3 md:px-4 py-2.5 md:py-3 rounded-xl border-2 border-gray-200 focus:border-orange-500 focus:outline-none focus:ring-2 focus:ring-orange-500/20 transition-all duration-300 text-base"
-            placeholder="Tu email"
+            placeholder={t('contactForm.placeholders.email')}
           />
           {fieldErrors.email && (
             <div className="mt-2 flex items-center gap-2 text-xs md:text-sm" style={{ color: isDark ? '#F27405' : '#0476D9' }}>
@@ -267,7 +271,7 @@ const ContactForm = () => {
         {/* Rol */}
         <div>
           <label htmlFor="rol" className={`block text-sm font-semibold mb-2 transition-colors duration-700 ${isDark ? 'text-white' : 'text-black'}`}>
-            Rol *
+            {t('contactForm.labels.rol')}
           </label>
           <div className="relative" ref={roleDropdownRef}>
             <button
@@ -286,7 +290,7 @@ const ContactForm = () => {
               <span className={formData.rol ? '' : 'text-slate-400'}>
                 {formData.rol
                   ? roles.find(role => role.value === formData.rol)?.label
-                  : 'Selecciona tu rol'}
+                  : t('contactForm.placeholders.rol')}
               </span>
               <span className={`transition-transform ${isRoleOpen ? 'rotate-180' : ''}`}>
                 ▾
@@ -338,7 +342,7 @@ const ContactForm = () => {
         {/* Interés */}
         <div>
           <label htmlFor="interes" className={`block text-sm font-semibold mb-2 transition-colors duration-700 ${isDark ? 'text-white' : 'text-black'}`}>
-            ¿Para qué te interesaría SetLux? *
+            {t('contactForm.labels.interes')}
           </label>
           <div className="relative" ref={interestDropdownRef}>
             <button
@@ -360,7 +364,7 @@ const ContactForm = () => {
                       .filter(option => formData.interes.includes(option.value))
                       .map(option => option.label)
                       .join(', ')
-                  : 'Selecciona una o varias opciones'}
+                  : t('contactForm.placeholders.interes')}
               </span>
               <span className={`transition-transform ${isInterestOpen ? 'rotate-180' : ''}`}>
                 ▾
@@ -422,7 +426,7 @@ const ContactForm = () => {
         {/* Mensaje */}
         <div>
           <label htmlFor="mensaje" className={`block text-sm font-semibold mb-2 transition-colors duration-700 ${isDark ? 'text-white' : 'text-black'}`}>
-            Mensaje
+            {t('contactForm.labels.mensaje')}
           </label>
           <textarea
             id="mensaje"
@@ -431,7 +435,7 @@ const ContactForm = () => {
             value={formData.mensaje}
             onChange={handleChange}
             className="w-full px-3 md:px-4 py-2.5 md:py-3 rounded-xl border-2 border-gray-200 focus:border-orange-500 focus:outline-none focus:ring-2 focus:ring-orange-500/20 transition-all duration-300 resize-none text-base"
-            placeholder="Tipo de producciones en las que trabajas o qué problema te gustaría resolver."
+            placeholder={t('contactForm.placeholders.mensaje')}
           />
         </div>
 
@@ -446,15 +450,15 @@ const ContactForm = () => {
               className="mt-1 h-4 w-4"
             />
             <label htmlFor="privacy" className={`text-xs md:text-sm ${isDark ? 'text-white' : 'text-black'}`}>
-              He leído y acepto la{' '}
+              {t('contactForm.privacy.labelPrefix')}{' '}
               <button
                 type="button"
                 onClick={() => setIsPrivacyOpen(true)}
                 className="underline hover:opacity-80"
               >
-                política de privacidad
+                {t('contactForm.privacy.link')}
               </button>
-              .
+              {t('contactForm.privacy.labelSuffix')}
             </label>
           </div>
           {fieldErrors.privacy && (
@@ -472,11 +476,11 @@ const ContactForm = () => {
             {isSubmitting ? (
               <>
                 <div className="w-4 h-4 md:w-5 md:h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
-                Enviando...
+                {t('contactForm.submitting')}
               </>
             ) : (
               <>
-                Quiero probar SetLux
+                {t('contactForm.submit')}
                 <Send className="w-4 h-4 md:w-5 md:h-5" />
               </>
             )}
@@ -487,12 +491,12 @@ const ContactForm = () => {
         <div aria-live="polite" role="status">
           {submitStatus === 'success' && (
             <div className="p-4 rounded-xl bg-green-50 border-2 border-green-200 text-green-700 text-center">
-              ¡Mensaje enviado correctamente! Te contactaremos pronto.
+              {t('contactForm.success')}
             </div>
           )}
           {submitStatus === 'error' && (
             <div className="p-4 rounded-xl bg-red-50 border-2 border-red-200 text-red-700 text-center">
-              {formError ?? 'Hubo un error al enviar el mensaje. Por favor, inténtalo de nuevo.'}
+              {formError ?? t('contactForm.errorDefault')}
             </div>
           )}
         </div>
@@ -502,24 +506,24 @@ const ContactForm = () => {
         <div className="fixed inset-0 z-[9999] flex items-center justify-center p-4 bg-black/50">
           <div className={`w-full max-w-2xl rounded-2xl p-6 md:p-8 ${isDark ? 'bg-gray-900 text-white' : 'bg-white text-black'}`}>
             <div className="flex items-start justify-between gap-4 mb-4">
-              <h3 className="text-lg md:text-xl font-bold">Política de privacidad</h3>
+              <h3 className="text-lg md:text-xl font-bold">{t('contactForm.privacyModal.title')}</h3>
               <button
                 type="button"
                 onClick={() => setIsPrivacyOpen(false)}
                 className="text-sm underline hover:opacity-80"
               >
-                Cerrar
+                {t('contactForm.privacyModal.close')}
               </button>
             </div>
             <div className="space-y-3 text-sm md:text-base">
-              <p><strong>Responsable:</strong> SetLux. Email de contacto: setluxapp@gmail.com</p>
-              <p><strong>Finalidad:</strong> gestionar solicitudes de acceso, responder consultas y mantener comunicación relacionada con el acceso y evolución del producto.</p>
-              <p><strong>Datos tratados:</strong> nombre, email, rol, interés y mensaje.</p>
-              <p><strong>Base legal:</strong> consentimiento del usuario.</p>
-              <p><strong>Conservación:</strong> durante la gestión de la solicitud y un máximo de 12 meses.</p>
-              <p><strong>Destinatarios:</strong> Formspree como encargado de tratamiento.</p>
-              <p><strong>Derechos:</strong> acceso, rectificación y supresión escribiendo a setluxapp@gmail.com.</p>
-              <p><strong>Seguridad:</strong> se aplican medidas razonables para proteger la información.</p>
+              <p>{t('contactForm.privacyModal.responsible')}</p>
+              <p>{t('contactForm.privacyModal.purpose')}</p>
+              <p>{t('contactForm.privacyModal.data')}</p>
+              <p>{t('contactForm.privacyModal.legal')}</p>
+              <p>{t('contactForm.privacyModal.retention')}</p>
+              <p>{t('contactForm.privacyModal.recipients')}</p>
+              <p>{t('contactForm.privacyModal.rights')}</p>
+              <p>{t('contactForm.privacyModal.security')}</p>
             </div>
           </div>
         </div>

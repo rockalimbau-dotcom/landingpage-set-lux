@@ -1,0 +1,120 @@
+{
+  "nav": {
+    "access": "Accés anticipat",
+    "features": "Característiques",
+    "benefits": "Avantatges",
+    "useCases": "Casos d'ús"
+  },
+  "hero": {
+    "title": "SetLux",
+    "subtitle": "All in One",
+    "description": "La solució completa per gestionar el departament d'il·luminació en produccions audiovisuals",
+    "ctaPrimary": "Sol·licitar accés"
+  },
+  "whatIs": {
+    "title": "Què és SetLux?",
+    "description1": "Plataforma completa per gestionar el departament d'il·luminació en produccions audiovisuals.",
+    "description2": "Planificació, gestió d'equip, condicions laborals, reportatges i nòmines en un sol lloc.",
+    "cta": "Veure totes les característiques"
+  },
+  "benefits": {
+    "badge": "AVANTATGES",
+    "title": "Avantatges principals",
+    "subtitle": "Beneficis clau de SetLux",
+    "cta": "Veure tots els avantatges",
+    "items": {
+      "saveTime": {
+        "title": "Estalvia temps",
+        "description": "Redueix hores de treball manual en càlculs i documentació. L'automatització accelera els processos administratius."
+      },
+      "reduceErrors": {
+        "title": "Redueix errors",
+        "description": "Elimina errors humans amb càlculs automàtics precisos i validació intel·ligent."
+      },
+      "proDocs": {
+        "title": "Documentació professional",
+        "description": "Genera documents PDF d'alta qualitat per compartir amb producció i comptabilitat."
+      },
+      "transparency": {
+        "title": "Augmenta la transparència",
+        "description": "Tots els càlculs són visibles i verificables, facilitant la comunicació i el compliment legal."
+      },
+      "allInOne": {
+        "title": "Tot en un",
+        "description": "L'única plataforma que integra planificació, equip, condicions, reportatges i nòmines."
+      },
+      "compliance": {
+        "title": "Compliment legal",
+        "description": "Referències al conveni i polítiques clares que faciliten el compliment de normatives laborals."
+      }
+    }
+  },
+  "useCases": {
+    "badge": "CASOS D'ÚS",
+    "title": "Casos d'ús",
+    "subtitle": "SetLux s'adapta a qualsevol producció",
+    "cta": "Veure casos d'ús detallats"
+  },
+  "ctaFinal": {
+    "title": "Fes el següent pas amb SetLux",
+    "subtitle": "Simplifica la gestió d'il·luminació i guanya avantatge en les produccions.",
+    "primary": "Sol·licitar accés"
+  },
+  "accessPage": {
+    "breadcrumb": "Accés",
+    "title": "Sol·licitud d'accés a SetLux",
+    "subtitle1": "SetLux està en fase de desenvolupament actiu.",
+    "subtitle2": "Busquem professionals del departament d'il·luminació per provar l'eina i aportar feedback real.",
+    "bullets": [
+      "Accés anticipat a noves funcions",
+      "Possibilitat d'influir en el desenvolupament",
+      "Eina pensada des de l'experiència en set"
+    ],
+    "formIntro": "Omple el formulari i ens posarem en contacte amb tu.",
+    "microcopy1": "Sense spam.",
+    "microcopy2": "Només comunicació relacionada amb l'accés i l'evolució de SetLux."
+  },
+  "accessForm": {
+    "name": "Nom",
+    "lastName": "Cognoms",
+    "email": "Email",
+    "role": "Rol",
+    "interest": "Per a què t'interessaria SetLux?",
+    "message": "Missatge",
+    "rolePlaceholder": "Selecciona el teu rol",
+    "interestPlaceholder": "Selecciona una o més opcions",
+    "messagePlaceholder": "Tipus de produccions on treballes o problemes que t'agradaria resoldre.",
+    "submit": "Vull provar SetLux",
+    "sending": "Enviant...",
+    "privacyLabel": "He llegit i accepto la política de privadesa.",
+    "privacyTitle": "Política de privadesa",
+    "success": "Missatge enviat correctament! Et contactarem aviat.",
+    "errorDefault": "S'ha produït un error en enviar el missatge. Torna-ho a provar."
+  },
+  "validation": {
+    "nameRequired": "El nom és obligatori.",
+    "emailInvalid": "Introdueix un email vàlid.",
+    "roleRequired": "Selecciona el teu rol.",
+    "interestRequired": "Selecciona almenys un interès.",
+    "privacyRequired": "Has d'acceptar la política de privadesa.",
+    "validationError": "Error de validació. Torna-ho a provar.",
+    "sendError": "No s'ha pogut enviar. Revisa la connexió i torna-ho a provar."
+  },
+  "privacy": {
+    "responsible": "Responsable: SetLux. Email de contacte: setluxapp@gmail.com",
+    "purpose": "Finalitat: gestionar sol·licituds d'accés, respondre consultes i comunicar l'evolució del producte.",
+    "data": "Dades tractades: nom, email, rol, interès i missatge.",
+    "legal": "Base legal: consentiment de l'usuari.",
+    "retention": "Conservació: durant la gestió de la sol·licitud i un màxim de 12 mesos.",
+    "recipients": "Destinataris: Formspree com a encarregat de tractament.",
+    "rights": "Drets: accés, rectificació i supressió escrivint a setluxapp@gmail.com.",
+    "security": "Seguretat: s'apliquen mesures raonables per protegir la informació."
+  },
+  "footer": {
+    "tagline": "La solució completa per a la gestió del departament d'il·luminació en produccions audiovisuals.",
+    "linksTitle": "Enllaços",
+    "contactTitle": "Contacte",
+    "copyright": "© {{year}} SetLux. Tots els drets reservats.",
+    "legal": "Dissenyat específicament per a professionals del departament d'il·luminació."
+  }
+}

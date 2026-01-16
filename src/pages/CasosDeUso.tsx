@@ -1,13 +1,16 @@
 
-import { allUseCases } from '../components/UseCases'
+import { getUseCases } from '../components/UseCases'
 import { useTheme } from '../contexts/ThemeContext'
 import { Link } from 'react-router-dom'
 import Breadcrumbs from '../components/Breadcrumbs'
 import Footer from '../components/Footer'
+import { useTranslation } from 'react-i18next'
 
 const CasosDeUso = () => {
   const { theme } = useTheme()
   const isDark = theme === 'dark'
+  const { t } = useTranslation()
+  const allUseCases = getUseCases(t)
 
   return (
     <div className="min-h-screen flex flex-col" style={{ backgroundColor: isDark ? '#1e293b' : '#fff7ed' }}>
@@ -15,7 +18,7 @@ const CasosDeUso = () => {
       <section className="flex-1 py-12 transition-colors duration-700" style={{ backgroundColor: isDark ? '#1e293b' : '#fff7ed' }}>
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           {/* Breadcrumbs */}
-          <Breadcrumbs currentPage="Casos de Uso" />
+          <Breadcrumbs currentPage={t('pages.useCases.breadcrumb')} />
 
           {/* Title and Description */}
           <div className="mb-8 md:mb-12">
@@ -23,10 +26,10 @@ const CasosDeUso = () => {
               className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-3 md:mb-4 transition-colors duration-300 px-2"
               style={{ color: isDark ? '#F27405' : '#0476D9' }}
             >
-              Casos de uso detallados
+              {t('pages.useCases.title')}
             </h1>
             <p className={`text-base sm:text-lg md:text-xl transition-colors duration-300 px-2 ${isDark ? 'text-white' : 'text-black'}`}>
-              SetLux se adapta a cualquier tipo de producción audiovisual
+              {t('pages.useCases.description')}
             </p>
           </div>
 
@@ -84,17 +87,17 @@ const CasosDeUso = () => {
 
           <div className="text-center mt-14 md:mt-16">
             <p className="text-base md:text-lg font-semibold mb-2 transition-colors duration-700" style={{ color: isDark ? '#F27405' : '#0476D9' }}>
-              ¿Te ves reflejado en alguno de estos casos?
+              {t('pages.useCases.blockTitle')}
             </p>
             <p className={`text-sm md:text-base mb-6 transition-colors duration-700 ${isDark ? 'text-white' : 'text-black'}`}>
-              SetLux se está construyendo con profesionales del sector para adaptarse al trabajo real.
+              {t('pages.useCases.blockText')}
             </p>
             <Link
               to="/solicitud-acceso"
               className="inline-flex items-center gap-2 text-white px-6 md:px-8 py-3 md:py-4 rounded-xl font-semibold text-base md:text-lg shadow-xl transform hover:-translate-y-1 hover:scale-105 transition-all duration-300"
               style={{ backgroundColor: isDark ? '#F27405' : '#0476D9' }}
             >
-              Solicitar acceso
+              {t('pages.useCases.blockCta')}
             </Link>
           </div>
 

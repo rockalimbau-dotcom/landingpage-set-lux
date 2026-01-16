@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import Logo from './Logo'
+import { useTranslation } from 'react-i18next'
 
 const TheaterIntro = ({ onComplete }: { onComplete: () => void }) => {
   const [stage, setStage] = useState<
@@ -14,6 +15,7 @@ const TheaterIntro = ({ onComplete }: { onComplete: () => void }) => {
     'complete'
   >('dark')
   const [showContent, setShowContent] = useState(false)
+  const { t } = useTranslation()
 
   // Secuencia cinematográfica - 5 segundos total
   useEffect(() => {
@@ -319,7 +321,9 @@ const TheaterIntro = ({ onComplete }: { onComplete: () => void }) => {
             transitionDelay: stage === 'right-light-with-content' ? '0.3s' : '0s',
           }}
         >
-          All in One
+          <span className="tracking-[0.3em] uppercase font-medium">
+            {t('hero.tagline')}
+          </span>
         </p>
       </div>
 

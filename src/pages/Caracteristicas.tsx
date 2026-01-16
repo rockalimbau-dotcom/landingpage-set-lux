@@ -1,12 +1,15 @@
-import { allFeatures } from '../components/Features'
+import { getFeatures } from '../components/Features'
 import { useTheme } from '../contexts/ThemeContext'
 import { Link } from 'react-router-dom'
 import Breadcrumbs from '../components/Breadcrumbs'
 import Footer from '../components/Footer'
+import { useTranslation } from 'react-i18next'
 
 const Caracteristicas = () => {
   const { theme } = useTheme()
   const isDark = theme === 'dark'
+  const { t } = useTranslation()
+  const allFeatures = getFeatures(t)
 
   return (
     <div className="min-h-screen flex flex-col" style={{ backgroundColor: isDark ? '#1e293b' : '#fff7ed' }}>
@@ -14,7 +17,7 @@ const Caracteristicas = () => {
       <section className="flex-1 py-12 transition-colors duration-700" style={{ backgroundColor: isDark ? '#1e293b' : '#fff7ed' }}>
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           {/* Breadcrumbs */}
-          <Breadcrumbs currentPage="Características" />
+          <Breadcrumbs currentPage={t('pages.features.breadcrumb')} />
 
           {/* Title and Description */}
           <div className="mb-8 md:mb-12">
@@ -22,10 +25,10 @@ const Caracteristicas = () => {
               className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-3 md:mb-4 transition-colors duration-300 px-2"
               style={{ color: isDark ? '#F27405' : '#0476D9' }}
             >
-              Características completas
+              {t('pages.features.title')}
             </h1>
             <p className={`text-base sm:text-lg md:text-xl transition-colors duration-300 px-2 ${isDark ? 'text-white' : 'text-black'}`}>
-              Todas las herramientas que SetLux ofrece para gestionar tu departamento de iluminación
+              {t('pages.features.description')}
             </p>
           </div>
 
@@ -72,7 +75,7 @@ const Caracteristicas = () => {
             className="inline-flex items-center gap-2 text-white px-8 md:px-10 py-4 md:py-5 rounded-xl font-bold text-base md:text-lg shadow-2xl transform hover:-translate-y-2 hover:scale-105 transition-all duration-300 w-full sm:w-auto min-h-[44px]"
             style={{ backgroundColor: isDark ? '#F27405' : '#0476D9' }}
           >
-            Solicitar acceso
+            {t('pages.features.cta')}
           </Link>
           </div>
         </div>

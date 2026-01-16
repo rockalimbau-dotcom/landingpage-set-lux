@@ -3,52 +3,30 @@
 import { Calendar, Users, FileText, BarChart3, DollarSign, ClipboardList, ArrowRight } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import { useTheme } from '../contexts/ThemeContext'
+import { useTranslation } from 'react-i18next'
 
-const allFeatures = [
-  {
-    icon: FileText,
-    title: 'Condiciones Laborales',
-    description: 'Gestiona precios, políticas y condiciones según el tipo de producción (semanal, mensual, publicidad) con cálculos automáticos precisos.',
-    color: 'blue',
-  },
-  {
-    icon: Users,
-    title: 'Gestión de Equipo',
-    description: 'Organiza tu equipo de iluminación con roles diferenciados (Gaffer, Best Boy, Eléctrico, etc.) y equipos (Base, Prelight, Recogida).',
-    color: 'orange',
-  },
-  {
-    icon: Calendar,
-    title: 'Planificación',
-    description: 'Sistema completo de planificación de rodaje con calendario interactivo, gestión de semanas, asignación de equipo y exportación profesional.',
-    color: 'blue',
-  },
-  {
-    icon: BarChart3,
-    title: 'Reportes',
-    description: 'Sistema avanzado de reportes semanales con registro de horas extra, turn arounds, nocturnidad, dietas y todos los conceptos económicos.',
-    color: 'orange',
-  },
-  {
-    icon: DollarSign,
-    title: 'Nómina',
-    description: 'Cálculo automático de nóminas mensuales con desglose detallado de días trabajados, conceptos adicionales y exportación para contabilidad.',
-    color: 'blue',
-  },
-  {
-    icon: ClipboardList,
-    title: 'Necesidades',
-    description: 'Gestiona todas las necesidades del departamento durante la producción con listas personalizables y exportación profesional.',
-    color: 'orange',
-  },
+const featureConfigs = [
+  { key: 'labor', icon: FileText, color: 'blue' },
+  { key: 'team', icon: Users, color: 'orange' },
+  { key: 'planning', icon: Calendar, color: 'blue' },
+  { key: 'reports', icon: BarChart3, color: 'orange' },
+  { key: 'payroll', icon: DollarSign, color: 'blue' },
+  { key: 'needs', icon: ClipboardList, color: 'orange' },
 ]
 
-// Mostrar solo las 4 principales en la landing
-const features = allFeatures.slice(0, 4)
+const getFeatures = (t: (key: string) => string) =>
+  featureConfigs.map((feature) => ({
+    ...feature,
+    title: t(`features.items.${feature.key}.title`),
+    description: t(`features.items.${feature.key}.description`),
+  }))
 
 const Features = () => {
   const { theme } = useTheme()
   const isDark = theme === 'dark'
+  const { t } = useTranslation()
+  const allFeatures = getFeatures(t)
+  const features = allFeatures.slice(0, 4)
   
   return (
     <section id="features" className="py-16 relative overflow-hidden transition-colors duration-700" style={{ backgroundColor: isDark ? '#1e293b' : '#fff7ed' }}>
@@ -60,17 +38,17 @@ const Features = () => {
               className="text-white px-6 py-2 rounded-full text-sm font-semibold transition-colors duration-300"
               style={{ backgroundColor: '#0476D9' }}
             >
-              CARACTERÍSTICAS
+              {t('features.label')}
             </span>
           </div>
           <h2 
             className="text-4xl md:text-5xl font-bold mb-6 transition-colors duration-300"
             style={{ color: '#0476D9' }}
           >
-            Características principales
+            {t('features.title')}
           </h2>
           <p className="text-lg md:text-xl max-w-3xl mx-auto text-gray-600">
-            Las herramientas esenciales para gestionar tu departamento
+            {t('features.subtitle')}
           </p>
         </div>
 
@@ -114,7 +92,7 @@ const Features = () => {
             className="inline-flex items-center gap-2 text-white px-8 py-4 rounded-xl font-semibold text-lg shadow-xl transform hover:-translate-y-1 hover:scale-105 transition-all duration-300"
             style={{ backgroundColor: '#0476D9' }}
           >
-            Ver todas las características
+            {t('features.cta')}
             <ArrowRight className="w-5 h-5" />
           </Link>
         </div>
@@ -124,4 +102,4 @@ const Features = () => {
 }
 
 export default Features
-export { allFeatures }
+export { getFeatures }

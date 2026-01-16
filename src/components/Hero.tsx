@@ -5,11 +5,14 @@ import { Link } from 'react-router-dom'
 import Logo from './Logo'
 import { useTheme } from '../contexts/ThemeContext'
 import ThemeButton from './ThemeButton'
+import LanguageSwitcher from './LanguageSwitcher'
 import { useCounterAnimation } from '../hooks/useCounterAnimation'
+import { useTranslation } from 'react-i18next'
 
 const Hero = ({ introCompleted }: { introCompleted: boolean }) => {
   const { theme } = useTheme()
   const isDark = theme === 'dark'
+  const { t } = useTranslation()
   
   // Animaciones de contadores
   const { count: autoCount, elementRef: autoRef } = useCounterAnimation({
@@ -39,7 +42,8 @@ const Hero = ({ introCompleted }: { introCompleted: boolean }) => {
       className="relative min-h-screen flex items-center justify-center overflow-hidden"
     >
       {/* Theme Button - Esquina superior derecha */}
-      <div className="absolute top-6 right-6 z-50">
+      <div className="absolute top-6 right-6 z-50 flex items-center gap-3">
+        <LanguageSwitcher />
         <ThemeButton />
       </div>
       {/* Background - Modo claro: naranja claro, Modo oscuro: azul oscuro */}
@@ -77,16 +81,16 @@ const Hero = ({ introCompleted }: { introCompleted: boolean }) => {
               SetLux
             </span>
             <span 
-              className="block text-xl sm:text-2xl md:text-4xl lg:text-5xl font-normal mt-2 md:mt-4 transition-colors duration-700"
+              className="block text-base sm:text-lg md:text-2xl lg:text-3xl font-medium mt-2 md:mt-4 transition-colors duration-700 tracking-[0.3em] uppercase"
               style={{ color: isDark ? '#F27405' : '#0476D9' }}
             >
-              All in One
+              {t('hero.tagline')}
             </span>
           </h1>
 
           {/* Subtitle - Simplificado */}
-          <p className={`text-base sm:text-lg md:text-2xl lg:text-3xl mb-8 md:mb-12 max-w-3xl mx-auto leading-relaxed font-medium animate-fade-in-up transition-colors duration-700 px-2 ${isDark ? 'text-gray-200' : 'text-black'}`} style={{ animationDelay: '0.2s' }}>
-            La solución completa para gestionar el departamento de iluminación en producciones audiovisuales
+          <p className={`text-sm sm:text-base md:text-xl lg:text-2xl mb-8 md:mb-12 max-w-3xl mx-auto leading-relaxed font-medium animate-fade-in-up transition-colors duration-700 px-2 ${isDark ? 'text-gray-200' : 'text-black'}`} style={{ animationDelay: '0.2s' }}>
+            {t('hero.description')}
           </p>
 
           {/* CTA Buttons */}
@@ -97,7 +101,7 @@ const Hero = ({ introCompleted }: { introCompleted: boolean }) => {
               style={{ backgroundColor: isDark ? '#F27405' : '#0476D9' }}
             >
               <span className="relative z-10 flex items-center gap-3">
-                Solicitar acceso
+                {t('hero.primaryCta')}
                 <ArrowRight className="w-4 h-4 md:w-5 md:h-5 group-hover:translate-x-1 transition-transform" />
               </span>
             </Link>
@@ -112,7 +116,7 @@ const Hero = ({ introCompleted }: { introCompleted: boolean }) => {
               >
                 {autoCount}%
               </div>
-              <div className={`text-xs sm:text-sm transition-colors duration-700 ${isDark ? 'text-white' : 'text-black'}`}>Automatizado</div>
+              <div className={`text-xs sm:text-sm transition-colors duration-700 ${isDark ? 'text-white' : 'text-black'}`}>{t('hero.stats.automated')}</div>
             </div>
             <div className="text-center" ref={errorRef}>
               <div 
@@ -121,7 +125,7 @@ const Hero = ({ introCompleted }: { introCompleted: boolean }) => {
               >
                 {errorCount}
               </div>
-              <div className={`text-xs sm:text-sm transition-colors duration-700 ${isDark ? 'text-white' : 'text-black'}`}>Errores</div>
+              <div className={`text-xs sm:text-sm transition-colors duration-700 ${isDark ? 'text-white' : 'text-black'}`}>{t('hero.stats.errors')}</div>
             </div>
             <div className="text-center" ref={projectRef}>
               <div 
@@ -130,7 +134,7 @@ const Hero = ({ introCompleted }: { introCompleted: boolean }) => {
               >
                 {projectCount === Infinity ? '∞' : projectCount}
               </div>
-              <div className={`text-xs sm:text-sm transition-colors duration-700 ${isDark ? 'text-white' : 'text-black'}`}>Proyectos</div>
+              <div className={`text-xs sm:text-sm transition-colors duration-700 ${isDark ? 'text-white' : 'text-black'}`}>{t('hero.stats.projects')}</div>
             </div>
           </div>
 

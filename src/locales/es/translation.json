@@ -1,0 +1,120 @@
+{
+  "nav": {
+    "access": "Acceso anticipado",
+    "features": "Características",
+    "benefits": "Ventajas",
+    "useCases": "Casos de Uso"
+  },
+  "hero": {
+    "title": "SetLux",
+    "subtitle": "All in One",
+    "description": "La solución completa para gestionar el departamento de iluminación en producciones audiovisuales",
+    "ctaPrimary": "Solicitar acceso"
+  },
+  "whatIs": {
+    "title": "¿Qué es SetLux?",
+    "description1": "Plataforma completa para gestionar el departamento de iluminación en producciones audiovisuales.",
+    "description2": "Planificación, gestión de equipo, condiciones laborales, reportes y nóminas en un solo lugar.",
+    "cta": "Ver características completas"
+  },
+  "benefits": {
+    "badge": "VENTAJAS",
+    "title": "Ventajas principales",
+    "subtitle": "Beneficios clave de usar SetLux",
+    "cta": "Ver todas las ventajas",
+    "items": {
+      "saveTime": {
+        "title": "Ahorra Tiempo",
+        "description": "Reduce horas de trabajo manual en cálculos y documentación. La automatización acelera todos los procesos administrativos."
+      },
+      "reduceErrors": {
+        "title": "Reduce Errores",
+        "description": "Elimina errores humanos con cálculos automáticos precisos y validación inteligente en cada paso del proceso."
+      },
+      "proDocs": {
+        "title": "Documentación Profesional",
+        "description": "Genera documentos PDF de alta calidad listos para compartir con producción y contabilidad."
+      },
+      "transparency": {
+        "title": "Aumenta la Transparencia",
+        "description": "Todos los cálculos son visibles y verificables, facilitando la comunicación y el cumplimiento legal."
+      },
+      "allInOne": {
+        "title": "Todo en Uno",
+        "description": "Única plataforma que integra planificación, equipo, condiciones, reportes y nóminas en un solo lugar."
+      },
+      "compliance": {
+        "title": "Cumplimiento Legal",
+        "description": "Referencias al convenio colectivo y políticas claras que facilitan el cumplimiento de normativas laborales."
+      }
+    }
+  },
+  "useCases": {
+    "badge": "CASOS DE USO",
+    "title": "Casos de uso",
+    "subtitle": "SetLux se adapta a cualquier tipo de producción",
+    "cta": "Ver casos de uso detallados"
+  },
+  "ctaFinal": {
+    "title": "Da el siguiente paso con SetLux",
+    "subtitle": "Simplifica la gestión de iluminación y obtén una ventaja real en tus producciones.",
+    "primary": "Solicitar acceso"
+  },
+  "accessPage": {
+    "breadcrumb": "Acceso",
+    "title": "Solicitud de acceso a SetLux",
+    "subtitle1": "SetLux está en fase de desarrollo activo.",
+    "subtitle2": "Buscamos profesionales del departamento de iluminación para probar la herramienta y aportar feedback real.",
+    "bullets": [
+      "Acceso anticipado a nuevas funciones",
+      "Posibilidad de influir en el desarrollo",
+      "Herramienta pensada desde la experiencia en set"
+    ],
+    "formIntro": "Rellena el formulario y nos pondremos en contacto contigo.",
+    "microcopy1": "No spam.",
+    "microcopy2": "Solo comunicación relacionada con el acceso y evolución de SetLux."
+  },
+  "accessForm": {
+    "name": "Nombre",
+    "lastName": "Apellido",
+    "email": "Email",
+    "role": "Rol",
+    "interest": "¿Para qué te interesaría SetLux?",
+    "message": "Mensaje",
+    "rolePlaceholder": "Selecciona tu rol",
+    "interestPlaceholder": "Selecciona una o varias opciones",
+    "messagePlaceholder": "Tipo de producciones en las que trabajas o qué problema te gustaría resolver.",
+    "submit": "Quiero probar SetLux",
+    "sending": "Enviando...",
+    "privacyLabel": "He leído y acepto la política de privacidad.",
+    "privacyTitle": "Política de privacidad",
+    "success": "¡Mensaje enviado correctamente! Te contactaremos pronto.",
+    "errorDefault": "Hubo un error al enviar el mensaje. Por favor, inténtalo de nuevo."
+  },
+  "validation": {
+    "nameRequired": "El nombre es obligatorio.",
+    "emailInvalid": "Introduce un email válido.",
+    "roleRequired": "Selecciona tu rol.",
+    "interestRequired": "Selecciona al menos un interés.",
+    "privacyRequired": "Debes aceptar la política de privacidad.",
+    "validationError": "Error de validación. Inténtalo de nuevo.",
+    "sendError": "No se pudo enviar. Revisa tu conexión e inténtalo de nuevo."
+  },
+  "privacy": {
+    "responsible": "Responsable: SetLux. Email de contacto: setluxapp@gmail.com",
+    "purpose": "Finalidad: gestionar solicitudes de acceso, responder consultas y mantener comunicación relacionada con el acceso y evolución del producto.",
+    "data": "Datos tratados: nombre, email, rol, interés y mensaje.",
+    "legal": "Base legal: consentimiento del usuario.",
+    "retention": "Conservación: durante la gestión de la solicitud y un máximo de 12 meses.",
+    "recipients": "Destinatarios: Formspree como encargado de tratamiento.",
+    "rights": "Derechos: acceso, rectificación y supresión escribiendo a setluxapp@gmail.com.",
+    "security": "Seguridad: se aplican medidas razonables para proteger la información."
+  },
+  "footer": {
+    "tagline": "La solución completa para la gestión del departamento de iluminación en producciones audiovisuales.",
+    "linksTitle": "Enlaces",
+    "contactTitle": "Contacto",
+    "copyright": "© {{year}} SetLux. Todos los derechos reservados.",
+    "legal": "Diseñado específicamente para profesionales del departamento de iluminación."
+  }
+}

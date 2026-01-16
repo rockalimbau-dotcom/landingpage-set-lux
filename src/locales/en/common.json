@@ -1,0 +1,232 @@
+{
+  "theme": {
+    "daylight": "Daylight",
+    "tungsten": "Tungsten"
+  },
+  "hero": {
+    "tagline": "ALL IN ONE",
+    "description": "The complete solution to manage the lighting department in audiovisual productions",
+    "primaryCta": "Request access",
+    "stats": {
+      "automated": "Automated",
+      "errors": "Errors",
+      "projects": "Projects"
+    }
+  },
+  "whatIs": {
+    "title": "What is SetLux?",
+    "lead1": "A complete platform to manage the lighting department in audiovisual productions.",
+    "lead2": "Planning, team management, labor conditions, reports, and payroll in one place.",
+    "cta": "View full features"
+  },
+  "benefits": {
+    "label": "BENEFITS",
+    "title": "Key benefits",
+    "subtitle": "Core advantages of using SetLux",
+    "cta": "View all benefits",
+    "items": {
+      "saveTime": {
+        "title": "Save Time",
+        "description": "Reduce manual hours in calculations and documentation. Automation speeds up all administrative processes."
+      },
+      "reduceErrors": {
+        "title": "Reduce Errors",
+        "description": "Eliminate human errors with precise automatic calculations and smart validation at every step."
+      },
+      "documentation": {
+        "title": "Professional Documentation",
+        "description": "Generate high‑quality PDF documents ready to share with production and accounting."
+      },
+      "transparency": {
+        "title": "Increase Transparency",
+        "description": "All calculations are visible and verifiable, improving communication and legal compliance."
+      },
+      "allInOne": {
+        "title": "All in One",
+        "description": "The only platform that integrates planning, team, conditions, reports and payroll in one place."
+      },
+      "legal": {
+        "title": "Legal Compliance",
+        "description": "References to labor agreements and clear policies that make compliance easier."
+      }
+    }
+  },
+  "useCases": {
+    "label": "USE CASES",
+    "title": "Use cases",
+    "subtitle": "SetLux adapts to any type of production",
+    "cta": "View detailed use cases",
+    "items": {
+      "fiction": {
+        "title": "Fiction Production",
+        "description": "Full planning of shooting weeks, large team management with multiple roles, complex monthly payroll calculations and detailed reports.",
+        "features": [
+          "Multi‑week planning",
+          "Large teams with multiple roles",
+          "Complex monthly payroll",
+          "Detailed weekly reports"
+        ]
+      },
+      "ads": {
+        "title": "Advertising Production",
+        "description": "Ad‑specific conditions, technical locations management, load/unload calculations, and specialized payroll structures.",
+        "features": [
+          "Ad‑specific conditions",
+          "Technical locations",
+          "Load/unload calculations",
+          "Specialized payroll"
+        ]
+      }
+    }
+  },
+  "features": {
+    "label": "FEATURES",
+    "title": "Main features",
+    "subtitle": "Essential tools to manage your department",
+    "cta": "View all features",
+    "items": {
+      "labor": {
+        "title": "Labor Conditions",
+        "description": "Manage rates, policies and conditions by production type (weekly, monthly, advertising) with precise automatic calculations."
+      },
+      "team": {
+        "title": "Team Management",
+        "description": "Organize your lighting team with differentiated roles (Gaffer, Best Boy, Electrician, etc.) and teams (Base, Prelight, Wrap)."
+      },
+      "planning": {
+        "title": "Planning",
+        "description": "Complete shooting planning system with interactive calendar, week management, team assignment and professional export."
+      },
+      "reports": {
+        "title": "Reports",
+        "description": "Advanced weekly reporting with overtime, turnarounds, night work, per diems, and all economic concepts."
+      },
+      "payroll": {
+        "title": "Payroll",
+        "description": "Automatic monthly payroll calculation with detailed breakdown of days worked, extra concepts and accounting export."
+      },
+      "needs": {
+        "title": "Needs",
+        "description": "Manage all department needs during production with customizable lists and professional export."
+      }
+    }
+  },
+  "cta": {
+    "title": "Take the next step with SetLux",
+    "text": "Simplify lighting management and gain a real advantage in your productions.",
+    "button": "Request access"
+  },
+  "footer": {
+    "linksTitle": "Links",
+    "accessEarly": "Early access",
+    "features": "Features",
+    "benefits": "Benefits",
+    "useCases": "Use Cases",
+    "contactTitle": "Contact",
+    "brandSubtitle": "ALL IN ONE",
+    "description": "The complete solution for managing the lighting department in audiovisual productions.",
+    "bottom1": "© {{year}} SetLux. All rights reserved.",
+    "bottom2": "Designed specifically for lighting department professionals."
+  },
+  "contactForm": {
+    "labels": {
+      "nombre": "First name *",
+      "apellido": "Last name *",
+      "email": "Email *",
+      "rol": "Role *",
+      "interes": "What would you use SetLux for? *",
+      "mensaje": "Message"
+    },
+    "placeholders": {
+      "nombre": "Your first name",
+      "apellido": "Your last name",
+      "email": "Your email",
+      "rol": "Select your role",
+      "interes": "Select one or more options",
+      "mensaje": "Type of productions you work on or what problem you want to solve."
+    },
+    "roles": [
+      { "value": "gaffer", "label": "Gaffer" },
+      { "value": "best-boy", "label": "Best Boy" },
+      { "value": "electrico", "label": "Electrician" },
+      { "value": "tecnico-mesa", "label": "Console Tech" },
+      { "value": "finger-boy", "label": "Finger Boy" },
+      { "value": "auxiliar", "label": "Assistant" },
+      { "value": "otro", "label": "Other" }
+    ],
+    "interests": [
+      { "value": "demo", "label": "See a demo" },
+      { "value": "produccion", "label": "Manage productions" },
+      { "value": "equipo", "label": "Coordinate lighting teams" },
+      { "value": "presupuesto", "label": "Budgets and planning" },
+      { "value": "otro", "label": "Other" }
+    ],
+    "privacy": {
+      "labelPrefix": "I have read and accept the",
+      "link": "privacy policy",
+      "labelSuffix": "."
+    },
+    "submit": "I want to try SetLux",
+    "submitting": "Sending...",
+    "success": "Message sent successfully! We will contact you soon.",
+    "errorDefault": "There was an error sending the message. Please try again.",
+    "subject": "Contact from SetLux - {{role}}",
+    "validation": {
+      "nameRequired": "Name is required.",
+      "lastNameRequired": "Last name is required.",
+      "emailInvalid": "Enter a valid email.",
+      "roleRequired": "Select your role.",
+      "interestRequired": "Select at least one interest.",
+      "privacyRequired": "You must accept the privacy policy.",
+      "honeypot": "Validation error. Please try again."
+    },
+    "privacyModal": {
+      "title": "Privacy policy",
+      "close": "Close",
+      "responsible": "Controller: SetLux. Contact email: setluxapp@gmail.com",
+      "purpose": "Purpose: manage access requests, answer inquiries and communicate about access and product evolution.",
+      "data": "Data processed: name, email, role, interest and message.",
+      "legal": "Legal basis: user consent.",
+      "retention": "Retention: during request handling and for up to 12 months.",
+      "recipients": "Recipients: Formspree as data processor.",
+      "rights": "Rights: access, rectification and deletion by emailing setluxapp@gmail.com.",
+      "security": "Security: reasonable measures are applied to protect information."
+    }
+  },
+  "accessPage": {
+    "breadcrumb": "Access",
+    "title": "Request access to SetLux",
+    "subtitleLine1": "SetLux is in active development.",
+    "subtitleLine2": "We are looking for lighting department professionals to test the tool and provide real feedback.",
+    "bullets": [
+      "Early access to new features",
+      "Ability to influence development",
+      "Tool designed from on‑set experience"
+    ],
+    "preForm": "Fill in the form and we will contact you.",
+    "microcopyLine1": "No spam.",
+    "microcopyLine2": "Only communication related to access and the evolution of SetLux."
+  },
+  "pages": {
+    "features": {
+      "breadcrumb": "Features",
+      "title": "Full features",
+      "description": "All the tools SetLux offers to manage your lighting department",
+      "cta": "Request access"
+    },
+    "benefits": {
+      "breadcrumb": "Benefits",
+      "title": "All benefits",
+      "description": "All the advantages of using SetLux to manage your lighting department",
+      "cta": "Request access"
+    },
+    "useCases": {
+      "breadcrumb": "Use Cases",
+      "title": "Detailed use cases",
+      "description": "SetLux adapts to any type of audiovisual production",
+      "blockTitle": "Do you see yourself in any of these cases?",
+      "blockText": "SetLux is being built with industry professionals to fit real work.",
+      "blockCta": "Request access"
+    }
+  }
+}
