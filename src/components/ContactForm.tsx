@@ -141,6 +141,9 @@ const ContactForm = () => {
 
       const response = await fetch(`https://formspree.io/f/${formId}`, {
         method: 'POST',
+        headers: {
+          Accept: 'application/json',
+        },
         body: data,
         signal: controller.signal,
       })
@@ -158,13 +161,26 @@ const ContactForm = () => {
           setSubmitStatus('idle')
         }, 3000)
       } else {
-        throw new Error('Error al enviar el formulario')
+        let message = 'No se pudo enviar. Revisa tu conexión e inténtalo de nuevo.'
+        try {
+          const payload = await response.json()
+          if (payload?.errors?.[0]?.message) {
+            message = payload.errors[0].message
+          }
+        } catch {
+          // Ignorar errores de parseo
+        }
+        throw new Error(message)
       }
     } catch (error) {
       console.error('Error al enviar el email:', error)
       setIsSubmitting(false)
       setSubmitStatus('error')
-      setFormError('No se pudo enviar. Revisa tu conexión e inténtalo de nuevo.')
+      if (error instanceof Error) {
+        setFormError(error.message)
+      } else {
+        setFormError('No se pudo enviar. Revisa tu conexión e inténtalo de nuevo.')
+      }
     }
   }
 
