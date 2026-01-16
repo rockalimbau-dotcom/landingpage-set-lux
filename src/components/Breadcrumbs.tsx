@@ -12,15 +12,15 @@ const Breadcrumbs = ({ currentPage }: BreadcrumbsProps) => {
   const isDark = theme === 'dark'
 
   return (
-    <nav className="flex items-center gap-2 md:gap-3 mb-6 md:mb-8" aria-label="Breadcrumb">
+    <nav className="flex items-center gap-2 md:gap-3 mb-6 md:mb-8 h-10 md:h-12" aria-label="Breadcrumb">
       {/* Logo and SetLux - both clickable */}
       <Link
         to="/"
         className="flex items-center gap-2 md:gap-3 hover:opacity-80 transition-opacity group"
       >
-        <Logo size="sm" isDark={isDark} className="transition-transform duration-300 group-hover:scale-110" />
+        <Logo size="sm" isDark={isDark} className="transition-transform duration-300 group-hover:scale-110 md:w-10 md:h-10" />
         <span
-          className="font-bold text-base md:text-lg transition-colors duration-300"
+          className="font-bold text-base md:text-lg transition-colors duration-300 leading-none"
           style={{ color: isDark ? '#F27405' : '#000000' }}
         >
           SetLux
@@ -35,7 +35,7 @@ const Breadcrumbs = ({ currentPage }: BreadcrumbsProps) => {
 
       {/* Current page title */}
       <span
-        className="font-semibold text-base md:text-lg transition-colors duration-300 truncate"
+        className="font-semibold text-base md:text-lg transition-colors duration-300 truncate leading-none"
         style={{ color: isDark ? '#ffffff' : '#000000' }}
       >
         {currentPage}

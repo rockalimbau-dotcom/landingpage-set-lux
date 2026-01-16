@@ -1,20 +1,12 @@
 import { allBenefits } from '../components/Benefits'
 import { useTheme } from '../contexts/ThemeContext'
-import { useNavigate } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import Breadcrumbs from '../components/Breadcrumbs'
 import Footer from '../components/Footer'
 
 const Ventajas = () => {
   const { theme } = useTheme()
   const isDark = theme === 'dark'
-  const navigate = useNavigate()
-
-  const handleContactClick = () => {
-    navigate('/')
-    setTimeout(() => {
-      document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })
-    }, 100)
-  }
 
   return (
     <div className="min-h-screen flex flex-col" style={{ backgroundColor: isDark ? '#1e293b' : '#fff7ed' }}>
@@ -73,13 +65,13 @@ const Ventajas = () => {
 
           {/* CTA */}
           <div className="mt-12 md:mt-16 text-center">
-            <button
-              onClick={handleContactClick}
-              className="inline-flex items-center gap-2 text-white px-8 md:px-10 py-4 md:py-5 rounded-xl font-bold text-base md:text-lg shadow-2xl transform hover:-translate-y-2 hover:scale-105 transition-all duration-300 w-full sm:w-auto min-h-[44px]"
-              style={{ backgroundColor: isDark ? '#F27405' : '#0476D9' }}
-            >
-              Contactar
-            </button>
+          <Link
+            to="/solicitud-acceso"
+            className="inline-flex items-center gap-2 text-white px-8 md:px-10 py-4 md:py-5 rounded-xl font-bold text-base md:text-lg shadow-2xl transform hover:-translate-y-2 hover:scale-105 transition-all duration-300 w-full sm:w-auto min-h-[44px]"
+            style={{ backgroundColor: isDark ? '#F27405' : '#0476D9' }}
+          >
+            Solicitar acceso
+          </Link>
           </div>
         </div>
       </section>

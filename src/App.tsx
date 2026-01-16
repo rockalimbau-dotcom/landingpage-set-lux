@@ -44,6 +44,11 @@ function AppContent() {
     previousPathRef.current = location.pathname
   }, [isHomePage, location.pathname])
 
+  useEffect(() => {
+    // Forzar scroll arriba al cambiar de ruta
+    window.scrollTo({ top: 0, left: 0, behavior: 'auto' })
+  }, [location.pathname])
+
   const handleIntroComplete = () => {
     setShowIntro(false)
     setIntroCompleted(true)
