@@ -328,7 +328,7 @@ const ContactForm = () => {
             value={formData.mensaje}
             onChange={handleChange}
             className="w-full px-3 md:px-4 py-2.5 md:py-3 rounded-xl border-2 border-gray-200 focus:border-orange-500 focus:outline-none focus:ring-2 focus:ring-orange-500/20 transition-all duration-300 resize-none text-base"
-            placeholder="Cuéntanos brevemente en qué tipo de producciones trabajas"
+            placeholder="Tipo de producciones en las que trabajas o qué problema te gustaría resolver."
           />
         </div>
 

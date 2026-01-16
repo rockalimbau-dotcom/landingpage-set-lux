@@ -82,16 +82,22 @@ const CasosDeUso = () => {
             })}
           </div>
 
-          {/* CTA */}
-          <div className="mt-12 md:mt-16 text-center">
-          <Link
-            to="/solicitud-acceso"
-            className="inline-flex items-center gap-2 text-white px-8 md:px-10 py-4 md:py-5 rounded-xl font-bold text-base md:text-lg shadow-2xl transform hover:-translate-y-2 hover:scale-105 transition-all duration-300 w-full sm:w-auto min-h-[44px]"
-            style={{ backgroundColor: isDark ? '#F27405' : '#0476D9' }}
-          >
-            Solicitar acceso
-          </Link>
+          <div className="text-center mt-14 md:mt-16">
+            <p className="text-base md:text-lg font-semibold mb-2 transition-colors duration-700" style={{ color: isDark ? '#F27405' : '#0476D9' }}>
+              ¿Te ves reflejado en alguno de estos casos?
+            </p>
+            <p className={`text-sm md:text-base mb-6 transition-colors duration-700 ${isDark ? 'text-white' : 'text-black'}`}>
+              SetLux se está construyendo con profesionales del sector para adaptarse al trabajo real.
+            </p>
+            <Link
+              to="/solicitud-acceso"
+              className="inline-flex items-center gap-2 text-white px-6 md:px-8 py-3 md:py-4 rounded-xl font-semibold text-base md:text-lg shadow-xl transform hover:-translate-y-1 hover:scale-105 transition-all duration-300"
+              style={{ backgroundColor: isDark ? '#F27405' : '#0476D9' }}
+            >
+              Solicitar acceso
+            </Link>
           </div>
+
         </div>
       </section>
 
