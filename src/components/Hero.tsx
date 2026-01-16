@@ -73,7 +73,7 @@ const Hero = ({ introCompleted }: { introCompleted: boolean }) => {
           </div>
 
           {/* Main Heading - Sin degradado */}
-          <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold mb-1 md:mb-2 leading-tight animate-fade-in-up">
+          <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold mb-8 md:mb-10 leading-tight animate-fade-in-up">
             <span 
               className="transition-colors duration-700"
               style={{ color: isDark ? '#ffffff' : '#000000' }}
@@ -89,11 +89,11 @@ const Hero = ({ introCompleted }: { introCompleted: boolean }) => {
           </h1>
 
           {/* Subtitle - Visual H2 */}
-          <h2 className={`text-base sm:text-lg md:text-2xl lg:text-3xl mb-4 md:mb-6 max-w-3xl mx-auto leading-relaxed font-medium animate-fade-in-up transition-colors duration-700 px-2 ${isDark ? 'text-gray-200' : 'text-black'}`} style={{ animationDelay: '0.2s' }}>
+          <h2 className={`text-base sm:text-lg md:text-2xl lg:text-3xl mb-6 md:mb-8 max-w-3xl mx-auto leading-relaxed font-medium animate-fade-in-up transition-colors duration-700 px-2 ${isDark ? 'text-gray-200' : 'text-black'}`} style={{ animationDelay: '0.2s' }}>
             {t('hero.subtitle')}
           </h2>
 
-          <p className={`text-sm sm:text-base md:text-xl lg:text-2xl mb-6 md:mb-8 max-w-3xl mx-auto leading-relaxed font-medium animate-fade-in-up transition-colors duration-700 px-2 ${isDark ? 'text-gray-200' : 'text-black'}`} style={{ animationDelay: '0.3s' }}>
+          <p className={`text-sm sm:text-base md:text-xl lg:text-2xl mb-12 md:mb-16 max-w-3xl mx-auto leading-relaxed font-medium animate-fade-in-up transition-colors duration-700 px-2 ${isDark ? 'text-gray-200' : 'text-black'}`} style={{ animationDelay: '0.3s' }}>
             {t('hero.lead')}
           </p>
 
@@ -130,7 +130,7 @@ const Hero = ({ introCompleted }: { introCompleted: boolean }) => {
           </p>
 
           {/* Stats or Highlights */}
-          <div className="mt-12 md:mt-16 grid grid-cols-3 gap-4 md:gap-8 max-w-2xl mx-auto animate-fade-in-up px-4" style={{ animationDelay: '0.8s' }}>
+          <div className="mt-20 md:mt-28 grid grid-cols-3 gap-4 md:gap-8 max-w-2xl mx-auto animate-fade-in-up px-4" style={{ animationDelay: '0.8s' }}>
             <div className="text-center" ref={autoRef}>
               <div 
                 className="text-xl sm:text-2xl md:text-3xl font-bold mb-1 transition-colors duration-700"
