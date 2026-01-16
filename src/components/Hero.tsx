@@ -1,12 +1,13 @@
 
 
 import { ArrowRight } from 'lucide-react'
+import { Link } from 'react-router-dom'
 import Logo from './Logo'
 import { useTheme } from '../contexts/ThemeContext'
 import ThemeButton from './ThemeButton'
 import { useCounterAnimation } from '../hooks/useCounterAnimation'
 
-const Hero = () => {
+const Hero = ({ introCompleted }: { introCompleted: boolean }) => {
   const { theme } = useTheme()
   const isDark = theme === 'dark'
   
@@ -14,20 +15,23 @@ const Hero = () => {
   const { count: autoCount, elementRef: autoRef } = useCounterAnimation({
     start: 0,
     end: 100,
-    duration: 2000
+    duration: 4500,
+    enabled: introCompleted
   })
   
   const { count: errorCount, elementRef: errorRef } = useCounterAnimation({
     start: 1000,
     end: 0,
-    duration: 2000
+    duration: 4500,
+    enabled: introCompleted
   })
   
   const { count: projectCount, elementRef: projectRef } = useCounterAnimation({
     start: 0,
     end: Infinity,
-    duration: 2000,
-    infinite: true
+    duration: 4500,
+    infinite: true,
+    enabled: introCompleted
   })
 
   return (
@@ -86,35 +90,17 @@ const Hero = () => {
           </p>
 
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center items-center animate-fade-in-up px-4" style={{ animationDelay: '0.4s' }}>
-            <a
-              href="#contact"
-              onClick={(e) => {
-                e.preventDefault()
-                document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })
-              }}
+          <div className="flex justify-center animate-fade-in-up px-4" style={{ animationDelay: '0.4s' }}>
+            <Link
+              to="/solicitud-acceso"
               className="group text-white w-full sm:w-auto px-8 md:px-10 py-4 md:py-5 rounded-xl font-bold text-base md:text-lg shadow-2xl transform hover:-translate-y-2 hover:scale-105 transition-all duration-300 flex items-center justify-center gap-3 relative overflow-hidden"
               style={{ backgroundColor: isDark ? '#F27405' : '#0476D9' }}
             >
               <span className="relative z-10 flex items-center gap-3">
-                Contactar
+                Solicitar acceso
                 <ArrowRight className="w-4 h-4 md:w-5 md:h-5 group-hover:translate-x-1 transition-transform" />
               </span>
-            </a>
-            <a
-              href="#what-is"
-              onClick={(e) => {
-                e.preventDefault()
-                document.getElementById('what-is')?.scrollIntoView({ behavior: 'smooth' })
-              }}
-              className={`w-full sm:w-auto px-8 md:px-10 py-4 md:py-5 rounded-xl font-bold text-base md:text-lg border-3 transform hover:-translate-y-2 hover:scale-105 transition-all duration-300 shadow-xl backdrop-blur-sm ${isDark ? 'bg-white/10 border-white/30 text-white hover:bg-white/20' : 'bg-white/80 border-orange-500 hover:bg-orange-50'}`}
-              style={{ 
-                borderColor: isDark ? 'rgba(255,255,255,0.3)' : '#F27405',
-                color: isDark ? '#ffffff' : '#000000'
-              }}
-            >
-              Saber más
-            </a>
+            </Link>
           </div>
 
           {/* Stats or Highlights */}

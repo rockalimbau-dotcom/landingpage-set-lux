@@ -5,10 +5,10 @@ import UseCases from '../components/UseCases'
 import CTA from '../components/CTA'
 import Footer from '../components/Footer'
 
-const Home = () => {
+const Home = ({ introCompleted }: { introCompleted: boolean }) => {
   return (
     <>
-      <Hero />
+      <Hero introCompleted={introCompleted} />
       <WhatIs />
       <Benefits />
       <UseCases />

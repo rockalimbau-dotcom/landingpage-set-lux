@@ -6,6 +6,7 @@ interface UseCounterAnimationOptions {
   duration?: number
   reverse?: boolean
   infinite?: boolean
+  enabled?: boolean
 }
 
 export const useCounterAnimation = ({ 
@@ -13,7 +14,8 @@ export const useCounterAnimation = ({
   end, 
   duration = 2000,
   reverse = false,
-  infinite = false
+  infinite = false,
+  enabled = true
 }: UseCounterAnimationOptions) => {
   const [count, setCount] = useState(start)
   const [isVisible, setIsVisible] = useState(false)
@@ -44,7 +46,7 @@ export const useCounterAnimation = ({
   }, [])
 
   useEffect(() => {
-    if (!isVisible) return
+    if (!isVisible || !enabled) return
 
     if (infinite) {
       // Para infinito, animar hasta un número grande y luego mostrar ∞
@@ -103,7 +105,7 @@ export const useCounterAnimation = ({
     }
 
     animate()
-  }, [isVisible, start, end, duration, reverse, infinite])
+  }, [isVisible, start, end, duration, reverse, infinite, enabled])
 
   return { count, elementRef }
 }

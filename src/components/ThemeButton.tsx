@@ -14,7 +14,7 @@ const ThemeButton = () => {
       }`}
       aria-label="Toggle theme"
     >
-      {isDark ? 'Darklight' : 'Daylight'}
+      {isDark ? 'Tungsteno' : 'Daylight'}
     </button>
   )
 }

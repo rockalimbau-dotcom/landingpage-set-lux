@@ -1,6 +1,6 @@
 
 
-import { useState } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import { Send, Mail } from 'lucide-react'
 import { useTheme } from '../contexts/ThemeContext'
 
@@ -9,13 +9,60 @@ const ContactForm = () => {
   const isDark = theme === 'dark'
   const [formData, setFormData] = useState({
     nombre: '',
+    email: '',
     apellido: '',
     rol: '',
+    interes: [] as string[],
     mensaje: '',
   })
 
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle')
+  const [isRoleOpen, setIsRoleOpen] = useState(false)
+  const [isInterestOpen, setIsInterestOpen] = useState(false)
+  const roleDropdownRef = useRef<HTMLDivElement>(null)
+  const interestDropdownRef = useRef<HTMLDivElement>(null)
+  const roles = [
+    { value: 'gaffer', label: 'Gaffer' },
+    { value: 'best-boy', label: 'Best Boy' },
+    { value: 'electrico', label: 'Eléctrico' },
+    { value: 'tecnico-mesa', label: 'Técnico de Mesa' },
+    { value: 'finger-boy', label: 'Finger Boy' },
+    { value: 'auxiliar', label: 'Auxiliar' },
+    { value: 'otro', label: 'Otro' },
+  ]
+  const interestOptions = [
+    { value: 'demo', label: 'Ver una demo' },
+    { value: 'produccion', label: 'Gestionar producciones' },
+    { value: 'equipo', label: 'Coordinar equipos de iluminación' },
+    { value: 'presupuesto', label: 'Presupuestos y planificación' },
+    { value: 'otro', label: 'Otro' },
+  ]
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (roleDropdownRef.current && !roleDropdownRef.current.contains(event.target as Node)) {
+        setIsRoleOpen(false)
+      }
+      if (interestDropdownRef.current && !interestDropdownRef.current.contains(event.target as Node)) {
+        setIsInterestOpen(false)
+      }
+    }
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        setIsRoleOpen(false)
+        setIsInterestOpen(false)
+      }
+    }
+
+    document.addEventListener('mousedown', handleClickOutside)
+    document.addEventListener('keydown', handleKeyDown)
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside)
+      document.removeEventListener('keydown', handleKeyDown)
+    }
+  }, [])
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormData({
@@ -41,8 +88,10 @@ const ContactForm = () => {
         body: JSON.stringify({
           _subject: `Contacto desde SetLux - ${formData.rol}`,
           nombre: formData.nombre,
+          email: formData.email,
           apellido: formData.apellido,
           rol: formData.rol,
+          interes: formData.interes.join(', '),
           mensaje: formData.mensaje,
           _replyto: `contacto+${formData.nombre.toLowerCase()}.${formData.apellido.toLowerCase()}@setlux.com`, // Email ficticio para respuestas
         }),
@@ -51,7 +100,7 @@ const ContactForm = () => {
       if (response.ok) {
         setIsSubmitting(false)
         setSubmitStatus('success')
-        setFormData({ nombre: '', apellido: '', rol: '', mensaje: '' })
+        setFormData({ nombre: '', email: '', apellido: '', rol: '', interes: [], mensaje: '' })
         
         // Resetear el estado después de 3 segundos
         setTimeout(() => {
@@ -72,21 +121,6 @@ const ContactForm = () => {
 
   return (
     <div className="max-w-2xl mx-auto px-4">
-      <div className="text-center mb-6 md:mb-8">
-        <div className="inline-flex items-center justify-center w-12 h-12 md:w-16 md:h-16 rounded-full mb-3 md:mb-4" style={{ backgroundColor: isDark ? '#F27405' : '#0476D9' }}>
-          <Mail className="w-6 h-6 md:w-8 md:h-8 text-white" />
-        </div>
-        <h2 
-          className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 md:mb-4"
-          style={{ color: isDark ? '#F27405' : '#0476D9' }}
-        >
-          Contacta con nosotros
-        </h2>
-        <p className={`text-base md:text-lg transition-colors duration-700 ${isDark ? 'text-gray-300' : 'text-black'}`}>
-          ¿Tienes alguna pregunta? Estamos aquí para ayudarte.
-        </p>
-      </div>
-
       <form onSubmit={handleSubmit} className="space-y-4 md:space-y-6">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
           {/* Nombre */}
@@ -124,38 +158,162 @@ const ContactForm = () => {
           </div>
         </div>
 
+        {/* Email */}
+        <div>
+          <label htmlFor="email" className={`block text-sm font-semibold mb-2 transition-colors duration-700 ${isDark ? 'text-white' : 'text-black'}`}>
+            Email *
+          </label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            required
+            value={formData.email}
+            onChange={handleChange}
+            className="w-full px-3 md:px-4 py-2.5 md:py-3 rounded-xl border-2 border-gray-200 focus:border-orange-500 focus:outline-none focus:ring-2 focus:ring-orange-500/20 transition-all duration-300 text-base"
+            placeholder="Tu email"
+          />
+        </div>
+
         {/* Rol */}
         <div>
           <label htmlFor="rol" className={`block text-sm font-semibold mb-2 transition-colors duration-700 ${isDark ? 'text-white' : 'text-black'}`}>
             Rol *
           </label>
-          <select
-            id="rol"
-            name="rol"
-            required
-            value={formData.rol}
-            onChange={handleChange}
-            className={`w-full px-3 md:px-4 py-3 md:py-3.5 rounded-xl border-2 border-gray-200 focus:border-orange-500 focus:outline-none focus:ring-2 focus:ring-orange-500/20 transition-all duration-300 text-base min-h-[44px] appearance-none bg-no-repeat bg-right pr-10 ${
-              isDark 
-                ? 'bg-gray-800 text-white border-gray-600' 
-                : 'bg-white text-gray-900'
-            }`}
-            style={{
-              backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='${isDark ? 'white' : 'black'}' d='M6 9L1 4h10z'/%3E%3C/svg%3E")`,
-              backgroundPosition: 'right 0.75rem center',
-              backgroundSize: '1em 1em',
-            }}
-          >
-            <option value="" className={isDark ? 'bg-gray-800 text-white' : 'bg-white text-gray-900'}>Selecciona tu rol</option>
-            <option value="gaffer" className={isDark ? 'bg-gray-800 text-white' : 'bg-white text-gray-900'}>Gaffer</option>
-            <option value="best-boy" className={isDark ? 'bg-gray-800 text-white' : 'bg-white text-gray-900'}>Best Boy</option>
-            <option value="electrico" className={isDark ? 'bg-gray-800 text-white' : 'bg-white text-gray-900'}>Eléctrico</option>
-            <option value="tecnico-mesa" className={isDark ? 'bg-gray-800 text-white' : 'bg-white text-gray-900'}>Técnico de Mesa</option>
-            <option value="finger-boy" className={isDark ? 'bg-gray-800 text-white' : 'bg-white text-gray-900'}>Finger Boy</option>
-            <option value="auxiliar" className={isDark ? 'bg-gray-800 text-white' : 'bg-white text-gray-900'}>Auxiliar</option>
-            <option value="maquinista" className={isDark ? 'bg-gray-800 text-white' : 'bg-white text-gray-900'}>Maquinista</option>
-            <option value="otro" className={isDark ? 'bg-gray-800 text-white' : 'bg-white text-gray-900'}>Otro</option>
-          </select>
+          <div className="relative" ref={roleDropdownRef}>
+            <button
+              type="button"
+              id="rol"
+              aria-haspopup="listbox"
+              aria-expanded={isRoleOpen}
+              onClick={() => setIsRoleOpen(prev => !prev)}
+              className={`w-full px-3 md:px-4 py-3 md:py-3.5 rounded-xl border-2 focus:outline-none focus:ring-2 transition-all duration-300 text-base min-h-[44px] text-left flex items-center justify-between gap-3 ${
+                isDark
+                  ? 'bg-gray-800 text-white border-gray-600 focus:border-orange-500 focus:ring-orange-500/20'
+                  : 'bg-white text-slate-900 border-slate-200 shadow-sm focus:border-blue-400 focus:ring-blue-100'
+              }`}
+            >
+              <span className={formData.rol ? '' : 'text-slate-400'}>
+                {formData.rol
+                  ? roles.find(role => role.value === formData.rol)?.label
+                  : 'Selecciona tu rol'}
+              </span>
+              <span className={`transition-transform ${isRoleOpen ? 'rotate-180' : ''}`}>
+                ▾
+              </span>
+            </button>
+
+            {isRoleOpen && (
+              <div
+                role="listbox"
+                aria-labelledby="rol"
+                className={`absolute left-0 right-0 mt-2 rounded-xl border shadow-xl overflow-hidden z-20 ${
+                  isDark ? 'bg-gray-800 border-gray-700' : 'bg-white border-slate-200'
+                }`}
+              >
+                {roles.map(role => (
+                  <button
+                    key={role.value}
+                    type="button"
+                    role="option"
+                    aria-selected={formData.rol === role.value}
+                    onClick={() => {
+                      setFormData({ ...formData, rol: role.value })
+                      setIsRoleOpen(false)
+                    }}
+                    className={`w-full px-4 py-2.5 text-left text-sm transition-colors ${
+                      isDark
+                        ? formData.rol === role.value
+                          ? 'bg-gray-700 text-white'
+                          : 'text-white hover:bg-[#F27405]'
+                        : formData.rol === role.value
+                          ? 'bg-blue-50 text-slate-900'
+                          : 'text-slate-700 hover:bg-blue-100'
+                    }`}
+                  >
+                    {role.label}
+                  </button>
+                ))}
+              </div>
+            )}
+          </div>
+        </div>
+
+        {/* Interés */}
+        <div>
+          <label htmlFor="interes" className={`block text-sm font-semibold mb-2 transition-colors duration-700 ${isDark ? 'text-white' : 'text-black'}`}>
+            ¿Para qué te interesaría SetLux? *
+          </label>
+          <div className="relative" ref={interestDropdownRef}>
+            <button
+              type="button"
+              id="interes"
+              aria-haspopup="listbox"
+              aria-expanded={isInterestOpen}
+              onClick={() => setIsInterestOpen(prev => !prev)}
+              className={`w-full px-3 md:px-4 py-3 md:py-3.5 rounded-xl border-2 focus:outline-none focus:ring-2 transition-all duration-300 text-base min-h-[44px] text-left flex items-center justify-between gap-3 ${
+                isDark
+                  ? 'bg-gray-800 text-white border-gray-600 focus:border-orange-500 focus:ring-orange-500/20'
+                  : 'bg-white text-slate-900 border-slate-200 shadow-sm focus:border-blue-400 focus:ring-blue-100'
+              }`}
+            >
+              <span className={formData.interes.length ? '' : 'text-slate-400'}>
+                {formData.interes.length
+                  ? interestOptions
+                      .filter(option => formData.interes.includes(option.value))
+                      .map(option => option.label)
+                      .join(', ')
+                  : 'Selecciona una o varias opciones'}
+              </span>
+              <span className={`transition-transform ${isInterestOpen ? 'rotate-180' : ''}`}>
+                ▾
+              </span>
+            </button>
+
+            {isInterestOpen && (
+              <div
+                role="listbox"
+                aria-labelledby="interes"
+                className={`absolute left-0 right-0 mt-2 rounded-xl border shadow-xl overflow-hidden z-20 ${
+                  isDark ? 'bg-gray-800 border-gray-700' : 'bg-white border-slate-200'
+                }`}
+              >
+                {interestOptions.map(option => {
+                  const isSelected = formData.interes.includes(option.value)
+                  return (
+                    <button
+                      key={option.value}
+                      type="button"
+                      role="option"
+                      aria-selected={isSelected}
+                      onClick={() => {
+                        setFormData(prev => ({
+                          ...prev,
+                          interes: isSelected
+                            ? prev.interes.filter(value => value !== option.value)
+                            : [...prev.interes, option.value],
+                        }))
+                      }}
+                      className={`w-full px-4 py-2.5 text-left text-sm transition-colors flex items-center justify-between gap-3 ${
+                        isDark
+                          ? isSelected
+                            ? 'bg-[#F27405] text-white'
+                            : 'text-white hover:bg-[#F27405]'
+                          : isSelected
+                            ? 'bg-blue-50 text-slate-900'
+                            : 'text-slate-700 hover:bg-blue-100'
+                      }`}
+                    >
+                      <span>{option.label}</span>
+                      <span className={isSelected ? 'opacity-100' : 'opacity-0'}>
+                        ✓
+                      </span>
+                    </button>
+                  )
+                })}
+              </div>
+            )}
+          </div>
         </div>
 
         {/* Mensaje */}
@@ -170,7 +328,7 @@ const ContactForm = () => {
             value={formData.mensaje}
             onChange={handleChange}
             className="w-full px-3 md:px-4 py-2.5 md:py-3 rounded-xl border-2 border-gray-200 focus:border-orange-500 focus:outline-none focus:ring-2 focus:ring-orange-500/20 transition-all duration-300 resize-none text-base"
-            placeholder="Escribe tu mensaje aquí..."
+            placeholder="Cuéntanos brevemente en qué tipo de producciones trabajas"
           />
         </div>
 
@@ -189,7 +347,7 @@ const ContactForm = () => {
               </>
             ) : (
               <>
-                Enviar mensaje
+                Quiero probar SetLux
                 <Send className="w-4 h-4 md:w-5 md:h-5" />
               </>
             )}

@@ -48,6 +48,16 @@ const Footer = () => {
               <ul className="space-y-2 md:space-y-3 flex-1">
                 <li>
                   <Link 
+                    to="/solicitud-acceso" 
+                    className="hover:opacity-80 transition-opacity block relative pl-0 group text-sm md:text-base"
+                    style={{ color: isDark ? '#F27405' : '#0476D9' }}
+                  >
+                    <span className="w-2 h-2 rounded-full absolute left-0 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity" style={{ backgroundColor: isDark ? '#ffffff' : '#000000' }}></span>
+                    <span className="pl-0 group-hover:pl-5 transition-all duration-200">Acceso anticipado</span>
+                  </Link>
+                </li>
+                <li>
+                  <Link 
                     to="/#features" 
                     className="hover:opacity-80 transition-opacity block relative pl-0 group text-sm md:text-base"
                     style={{ color: isDark ? '#F27405' : '#0476D9' }}
