@@ -73,28 +73,32 @@ const Hero = ({ introCompleted }: { introCompleted: boolean }) => {
           </div>
 
           {/* Main Heading - Sin degradado */}
-          <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold mb-4 md:mb-6 leading-tight animate-fade-in-up">
+          <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold mb-1 md:mb-2 leading-tight animate-fade-in-up">
             <span 
               className="transition-colors duration-700"
               style={{ color: isDark ? '#ffffff' : '#000000' }}
             >
-              SetLux
+              {t('hero.title')}
             </span>
             <span 
-              className="block text-base sm:text-lg md:text-2xl lg:text-3xl font-medium mt-2 md:mt-4 transition-colors duration-700 tracking-[0.3em] uppercase"
+              className="block text-base sm:text-lg md:text-2xl lg:text-3xl font-medium mt-2 transition-colors duration-700 tracking-[0.3em] uppercase"
               style={{ color: isDark ? '#F27405' : '#0476D9' }}
             >
               {t('hero.tagline')}
             </span>
           </h1>
 
-          {/* Subtitle - Simplificado */}
-          <p className={`text-sm sm:text-base md:text-xl lg:text-2xl mb-8 md:mb-12 max-w-3xl mx-auto leading-relaxed font-medium animate-fade-in-up transition-colors duration-700 px-2 ${isDark ? 'text-gray-200' : 'text-black'}`} style={{ animationDelay: '0.2s' }}>
-            {t('hero.description')}
+          {/* Subtitle - Visual H2 */}
+          <h2 className={`text-base sm:text-lg md:text-2xl lg:text-3xl mb-4 md:mb-6 max-w-3xl mx-auto leading-relaxed font-medium animate-fade-in-up transition-colors duration-700 px-2 ${isDark ? 'text-gray-200' : 'text-black'}`} style={{ animationDelay: '0.2s' }}>
+            {t('hero.subtitle')}
+          </h2>
+
+          <p className={`text-sm sm:text-base md:text-xl lg:text-2xl mb-6 md:mb-8 max-w-3xl mx-auto leading-relaxed font-medium animate-fade-in-up transition-colors duration-700 px-2 ${isDark ? 'text-gray-200' : 'text-black'}`} style={{ animationDelay: '0.3s' }}>
+            {t('hero.lead')}
           </p>
 
           {/* CTA Buttons */}
-          <div className="flex justify-center animate-fade-in-up px-4" style={{ animationDelay: '0.4s' }}>
+          <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center items-center animate-fade-in-up px-4" style={{ animationDelay: '0.4s' }}>
             <Link
               to="/solicitud-acceso"
               className="group text-white w-full sm:w-auto px-8 md:px-10 py-4 md:py-5 rounded-xl font-bold text-base md:text-lg shadow-2xl transform hover:-translate-y-2 hover:scale-105 transition-all duration-300 flex items-center justify-center gap-3 relative overflow-hidden"
@@ -105,7 +109,25 @@ const Hero = ({ introCompleted }: { introCompleted: boolean }) => {
                 <ArrowRight className="w-4 h-4 md:w-5 md:h-5 group-hover:translate-x-1 transition-transform" />
               </span>
             </Link>
+            <a
+              href="#use-cases"
+              onClick={(e) => {
+                e.preventDefault()
+                document.getElementById('use-cases')?.scrollIntoView({ behavior: 'smooth' })
+              }}
+              className={`w-full sm:w-auto px-8 md:px-10 py-4 md:py-5 rounded-xl font-bold text-base md:text-lg border-3 transform hover:-translate-y-2 hover:scale-105 transition-all duration-300 shadow-xl backdrop-blur-sm ${isDark ? 'bg-white/10 border-white/30 text-white hover:bg-white/20' : 'bg-white/80 border-orange-500 hover:bg-orange-50'}`}
+              style={{ 
+                borderColor: isDark ? 'rgba(255,255,255,0.3)' : '#F27405',
+                color: isDark ? '#ffffff' : '#000000'
+              }}
+            >
+              {t('hero.secondaryCta')}
+            </a>
           </div>
+
+          <p className={`mt-3 text-xs sm:text-sm transition-colors duration-700 ${isDark ? 'text-gray-300' : 'text-gray-600'}`}>
+            {t('hero.primaryCtaSub')}
+          </p>
 
           {/* Stats or Highlights */}
           <div className="mt-12 md:mt-16 grid grid-cols-3 gap-4 md:gap-8 max-w-2xl mx-auto animate-fade-in-up px-4" style={{ animationDelay: '0.8s' }}>

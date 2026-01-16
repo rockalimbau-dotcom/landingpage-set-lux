@@ -68,8 +68,12 @@ const Caracteristicas = () => {
             })}
           </div>
 
-          {/* CTA */}
-          <div className="mt-12 md:mt-16 text-center">
+        <p className={`mt-10 md:mt-12 text-base md:text-lg transition-colors duration-700 px-2 ${isDark ? 'text-white' : 'text-black'}`}>
+          {t('pages.features.closing')}
+        </p>
+
+        {/* CTA */}
+        <div className="mt-6 md:mt-8 text-center">
           <Link
             to="/solicitud-acceso"
             className="inline-flex items-center gap-2 text-white px-8 md:px-10 py-4 md:py-5 rounded-xl font-bold text-base md:text-lg shadow-2xl transform hover:-translate-y-2 hover:scale-105 transition-all duration-300 w-full sm:w-auto min-h-[44px]"

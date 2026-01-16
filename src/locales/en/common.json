@@ -4,9 +4,13 @@
     "tungsten": "Tungsten"
   },
   "hero": {
+    "title": "SetLux",
+    "subtitle": "Lighting department management.",
     "tagline": "ALL IN ONE",
-    "description": "The complete solution to manage the lighting department in audiovisual productions",
+    "lead": "All your technical workflow, organized in one place.",
     "primaryCta": "Request access",
+    "primaryCtaSub": "Early access · Beta phase",
+    "secondaryCta": "View use cases",
     "stats": {
       "automated": "Automated",
       "errors": "Errors",
@@ -15,19 +19,23 @@
   },
   "whatIs": {
     "title": "What is SetLux?",
-    "lead1": "A complete platform to manage the lighting department in audiovisual productions.",
-    "lead2": "Planning, team management, labor conditions, reports, and payroll in one place.",
+    "lead1": "SetLux is a tool designed to organize lighting department work in a clear, practical way, adapted to real shoots.",
+    "lead2": "",
     "cta": "View full features"
   },
   "benefits": {
     "label": "BENEFITS",
-    "title": "Key benefits",
-    "subtitle": "Core advantages of using SetLux",
+    "title": "Why SetLux?",
+    "subtitle": "",
     "cta": "View all benefits",
+    "homeItem": {
+      "title": "Less on‑set improvisation",
+      "description": "All information centralized to reduce errors and time loss."
+    },
     "items": {
       "saveTime": {
-        "title": "Save Time",
-        "description": "Reduce manual hours in calculations and documentation. Automation speeds up all administrative processes."
+        "title": "Time savings",
+        "description": "Fewer duplicates, fewer scattered messages, and fewer errors."
       },
       "reduceErrors": {
         "title": "Reduce Errors",
@@ -54,17 +62,17 @@
   "useCases": {
     "label": "USE CASES",
     "title": "Use cases",
-    "subtitle": "SetLux adapts to any type of production",
+    "subtitle": "SetLux adapts to different roles and production types.",
     "cta": "View detailed use cases",
     "items": {
       "fiction": {
-        "title": "Fiction Production",
-        "description": "Full planning of shooting weeks, large team management with multiple roles, complex monthly payroll calculations and detailed reports.",
+        "title": "Mid‑size and large shoots",
+        "description": "When team coordination and equipment control are key.",
         "features": [
-          "Multi‑week planning",
-          "Large teams with multiple roles",
-          "Complex monthly payroll",
-          "Detailed weekly reports"
+          "Team coordination",
+          "Equipment control",
+          "Technical planning",
+          "On‑set communication"
         ]
       },
       "ads": {
@@ -86,8 +94,8 @@
     "cta": "View all features",
     "items": {
       "labor": {
-        "title": "Labor Conditions",
-        "description": "Manage rates, policies and conditions by production type (weekly, monthly, advertising) with precise automatic calculations."
+        "title": "Project management",
+        "description": "Centralize technical information for each production in one place."
       },
       "team": {
         "title": "Team Management",
@@ -112,8 +120,8 @@
     }
   },
   "cta": {
-    "title": "Take the next step with SetLux",
-    "text": "Simplify lighting management and gain a real advantage in your productions.",
+    "title": "Organize your work with more clarity.",
+    "text": "SetLux is in active development and we’re looking for professionals to test it.",
     "button": "Request access"
   },
   "footer": {
@@ -199,33 +207,34 @@
     "subtitleLine1": "SetLux is in active development.",
     "subtitleLine2": "We are looking for lighting department professionals to test the tool and provide real feedback.",
     "bullets": [
-      "Early access to new features",
-      "Ability to influence development",
-      "Tool designed from on‑set experience"
+      "Early access",
+      "Direct influence on development",
+      "Built from on‑set experience"
     ],
     "preForm": "Fill in the form and we will contact you.",
     "microcopyLine1": "No spam.",
-    "microcopyLine2": "Only communication related to access and the evolution of SetLux."
+    "microcopyLine2": "Only communication related to SetLux."
   },
   "pages": {
     "features": {
       "breadcrumb": "Features",
-      "title": "Full features",
-      "description": "All the tools SetLux offers to manage your lighting department",
+      "title": "Features",
+      "description": "Functions designed for real lighting department work.",
+      "closing": "Discover how these features fit into your day‑to‑day work.",
       "cta": "Request access"
     },
     "benefits": {
       "breadcrumb": "Benefits",
-      "title": "All benefits",
-      "description": "All the advantages of using SetLux to manage your lighting department",
+      "title": "Benefits",
+      "description": "A clearer and more organized way to work in production.",
       "cta": "Request access"
     },
     "useCases": {
       "breadcrumb": "Use Cases",
-      "title": "Detailed use cases",
-      "description": "SetLux adapts to any type of audiovisual production",
-      "blockTitle": "Do you see yourself in any of these cases?",
-      "blockText": "SetLux is being built with industry professionals to fit real work.",
+      "title": "Use cases",
+      "description": "Real lighting department scenarios.",
+      "blockTitle": "Do you see yourself in any of these scenarios?",
+      "blockText": "SetLux is built together with industry professionals.",
       "blockCta": "Request access"
     }
   }

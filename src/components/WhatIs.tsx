@@ -7,6 +7,7 @@ const WhatIs = () => {
   const { theme } = useTheme()
   const isDark = theme === 'dark'
   const { t } = useTranslation()
+  const lead2 = t('whatIs.lead2')
 
   return (
     <section id="what-is" className="py-12 md:py-20 relative overflow-hidden transition-colors duration-700" style={{ backgroundColor: isDark ? '#1e293b' : '#fff7ed' }}>
@@ -21,9 +22,11 @@ const WhatIs = () => {
           <p className={`text-base sm:text-lg md:text-xl lg:text-2xl mb-6 md:mb-8 leading-relaxed transition-colors duration-300 px-4 ${isDark ? 'text-white' : 'text-black'}`}>
             {t('whatIs.lead1')}
           </p>
-          <p className={`text-sm sm:text-base md:text-lg lg:text-xl mb-8 md:mb-10 leading-relaxed transition-colors duration-300 px-4 ${isDark ? 'text-white' : 'text-black'}`}>
-            {t('whatIs.lead2')}
-          </p>
+          {lead2 ? (
+            <p className={`text-sm sm:text-base md:text-lg lg:text-xl mb-8 md:mb-10 leading-relaxed transition-colors duration-300 px-4 ${isDark ? 'text-white' : 'text-black'}`}>
+              {lead2}
+            </p>
+          ) : null}
           
           <Link
             to="/caracteristicas"

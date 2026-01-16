@@ -4,9 +4,13 @@
     "tungsten": "Tungsteno"
   },
   "hero": {
+    "title": "SetLux",
+    "subtitle": "Gestión del departamento de iluminación.",
     "tagline": "ALL IN ONE",
-    "description": "La solución completa para gestionar el departamento de iluminación en producciones audiovisuales",
+    "lead": "Todo tu flujo de trabajo técnico, organizado en un solo lugar.",
     "primaryCta": "Solicitar acceso",
+    "primaryCtaSub": "Acceso anticipado · Fase beta",
+    "secondaryCta": "Ver casos de uso",
     "stats": {
       "automated": "Automatizado",
       "errors": "Errores",
@@ -15,19 +19,23 @@
   },
   "whatIs": {
     "title": "¿Qué es SetLux?",
-    "lead1": "Plataforma completa para gestionar el departamento de iluminación en producciones audiovisuales.",
-    "lead2": "Planificación, gestión de equipo, condiciones laborales, reportes y nóminas en un solo lugar.",
+    "lead1": "SetLux es una herramienta diseñada para organizar el trabajo del departamento de iluminación de forma clara, práctica y adaptada a rodajes reales.",
+    "lead2": "",
     "cta": "Ver características completas"
   },
   "benefits": {
     "label": "VENTAJAS",
-    "title": "Ventajas principales",
-    "subtitle": "Beneficios clave de usar SetLux",
+    "title": "¿Por qué SetLux?",
+    "subtitle": "",
     "cta": "Ver todas las ventajas",
+    "homeItem": {
+      "title": "Menos improvisación en set",
+      "description": "Toda la información centralizada para reducir errores y pérdidas de tiempo."
+    },
     "items": {
       "saveTime": {
-        "title": "Ahorra Tiempo",
-        "description": "Reduce horas de trabajo manual en cálculos y documentación. La automatización acelera todos los procesos administrativos."
+        "title": "Ahorro de tiempo",
+        "description": "Menos duplicaciones, menos mensajes dispersos y menos errores."
       },
       "reduceErrors": {
         "title": "Reduce Errores",
@@ -54,17 +62,17 @@
   "useCases": {
     "label": "CASOS DE USO",
     "title": "Casos de uso",
-    "subtitle": "SetLux se adapta a cualquier tipo de producción",
+    "subtitle": "SetLux se adapta a distintos roles y tipos de producción.",
     "cta": "Ver casos de uso detallados",
     "items": {
       "fiction": {
-        "title": "Producción de Ficción",
-        "description": "Planificación completa de semanas de rodaje, gestión de equipo grande con múltiples roles, cálculo de nóminas mensuales complejas y reportes detallados.",
+        "title": "Rodajes medianos y grandes",
+        "description": "Cuando la coordinación del equipo y el control del material es clave.",
         "features": [
-          "Planificación de múltiples semanas",
-          "Equipos grandes con múltiples roles",
-          "Nóminas mensuales complejas",
-          "Reportes semanales detallados"
+          "Coordinación de equipo",
+          "Control de material",
+          "Planificación técnica",
+          "Comunicación en set"
         ]
       },
       "ads": {
@@ -86,8 +94,8 @@
     "cta": "Ver todas las características",
     "items": {
       "labor": {
-        "title": "Condiciones Laborales",
-        "description": "Gestiona precios, políticas y condiciones según el tipo de producción (semanal, mensual, publicidad) con cálculos automáticos precisos."
+        "title": "Gestión de proyectos",
+        "description": "Centraliza la información técnica de cada producción en un solo espacio."
       },
       "team": {
         "title": "Gestión de Equipo",
@@ -112,8 +120,8 @@
     }
   },
   "cta": {
-    "title": "Da el siguiente paso con SetLux",
-    "text": "Simplifica la gestión de iluminación y obtén una ventaja real en tus producciones.",
+    "title": "Organiza tu trabajo con más claridad.",
+    "text": "SetLux está en desarrollo activo y buscamos profesionales del sector para probarlo.",
     "button": "Solicitar acceso"
   },
   "footer": {
@@ -199,33 +207,34 @@
     "subtitleLine1": "SetLux está en fase de desarrollo activo.",
     "subtitleLine2": "Buscamos profesionales del departamento de iluminación para probar la herramienta y aportar feedback real.",
     "bullets": [
-      "Acceso anticipado a nuevas funciones",
-      "Posibilidad de influir en el desarrollo",
-      "Herramienta pensada desde la experiencia en set"
+      "Acceso anticipado",
+      "Influencia directa en el desarrollo",
+      "Pensado desde la experiencia en set"
     ],
     "preForm": "Rellena el formulario y nos pondremos en contacto contigo.",
     "microcopyLine1": "No spam.",
-    "microcopyLine2": "Solo comunicación relacionada con el acceso y evolución de SetLux."
+    "microcopyLine2": "Solo comunicación relacionada con SetLux."
   },
   "pages": {
     "features": {
       "breadcrumb": "Características",
-      "title": "Características completas",
-      "description": "Todas las herramientas que SetLux ofrece para gestionar tu departamento de iluminación",
+      "title": "Características",
+      "description": "Funciones pensadas para el trabajo real del departamento de iluminación.",
+      "closing": "Descubre cómo estas funciones encajan en tu día a día.",
       "cta": "Solicitar acceso"
     },
     "benefits": {
       "breadcrumb": "Ventajas",
-      "title": "Ventajas completas",
-      "description": "Todos los beneficios de usar SetLux para gestionar tu departamento de iluminación",
+      "title": "Ventajas",
+      "description": "Una forma más clara y ordenada de trabajar en producción.",
       "cta": "Solicitar acceso"
     },
     "useCases": {
       "breadcrumb": "Casos de Uso",
-      "title": "Casos de uso detallados",
-      "description": "SetLux se adapta a cualquier tipo de producción audiovisual",
-      "blockTitle": "¿Te ves reflejado en alguno de estos casos?",
-      "blockText": "SetLux se está construyendo con profesionales del sector para adaptarse al trabajo real.",
+      "title": "Casos de uso",
+      "description": "Escenarios reales del departamento de iluminación.",
+      "blockTitle": "¿Te ves reflejado en alguno de estos escenarios?",
+      "blockText": "SetLux se construye junto a profesionales del sector.",
       "blockCta": "Solicitar acceso"
     }
   }

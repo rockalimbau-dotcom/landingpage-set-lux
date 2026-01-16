@@ -27,6 +27,7 @@ const Benefits = () => {
   const { t } = useTranslation()
   const allBenefits = getBenefits(t)
   const benefits = allBenefits.slice(0, 3)
+  const subtitle = t('benefits.subtitle')
   
   return (
     <section id="benefits" className="py-12 md:py-16 relative overflow-hidden transition-colors duration-700" style={{ backgroundColor: isDark ? '#1e293b' : '#fff7ed' }}>
@@ -47,13 +48,16 @@ const Benefits = () => {
           >
             {t('benefits.title')}
           </h2>
-          <p className={`text-base md:text-lg lg:text-xl max-w-3xl mx-auto transition-colors duration-700 px-4 ${isDark ? 'text-white' : 'text-black'}`}>
-            {t('benefits.subtitle')}
-          </p>
+          {subtitle ? (
+            <p className={`text-base md:text-lg lg:text-xl max-w-3xl mx-auto transition-colors duration-700 px-4 ${isDark ? 'text-white' : 'text-black'}`}>
+              {subtitle}
+            </p>
+          ) : null}
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 mb-8 md:mb-10">
           {benefits.map((benefit, index) => {
+            const homeItem = t('benefits.homeItem', { returnObjects: true }) as { title: string; description: string }
             const Icon = benefit.icon
             const bgColor = isDark ? '#F27405' : '#0476D9' // Naranja en oscuro, azul en claro
             
@@ -76,10 +80,10 @@ const Benefits = () => {
                   className="text-lg md:text-xl font-bold mb-2 md:mb-3 transition-colors duration-300"
                   style={{ color: bgColor }}
                 >
-                  {benefit.title}
+                  {index === 0 ? homeItem.title : benefit.title}
                 </h3>
                 <p className={`leading-relaxed text-xs md:text-sm transition-colors duration-700 ${isDark ? 'text-gray-300' : 'text-gray-600'}`}>
-                  {benefit.description.split('.')[0]}.
+                  {(index === 0 ? homeItem.description : benefit.description).split('.')[0]}.
                 </p>
               </div>
             )

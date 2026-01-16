@@ -4,9 +4,13 @@
     "tungsten": "Tungstè"
   },
   "hero": {
+    "title": "SetLux",
+    "subtitle": "Gestió del departament d'il·luminació.",
     "tagline": "ALL IN ONE",
-    "description": "La solució completa per gestionar el departament d'il·luminació en produccions audiovisuals",
+    "lead": "Tot el teu flux de treball tècnic, organitzat en un sol lloc.",
     "primaryCta": "Sol·licitar accés",
+    "primaryCtaSub": "Accés anticipat · Fase beta",
+    "secondaryCta": "Veure casos d'ús",
     "stats": {
       "automated": "Automatitzat",
       "errors": "Errors",
@@ -15,19 +19,23 @@
   },
   "whatIs": {
     "title": "Què és SetLux?",
-    "lead1": "Plataforma completa per gestionar el departament d'il·luminació en produccions audiovisuals.",
-    "lead2": "Planificació, gestió d'equip, condicions laborals, informes i nòmines en un sol lloc.",
+    "lead1": "SetLux és una eina dissenyada per organitzar el treball del departament d'il·luminació de manera clara, pràctica i adaptada a rodatges reals.",
+    "lead2": "",
     "cta": "Veure característiques completes"
   },
   "benefits": {
     "label": "AVANTATGES",
-    "title": "Avantatges principals",
-    "subtitle": "Beneficis clau d'utilitzar SetLux",
+    "title": "Per què SetLux?",
+    "subtitle": "",
     "cta": "Veure tots els avantatges",
+    "homeItem": {
+      "title": "Menys improvisació al set",
+      "description": "Tota la informació centralitzada per reduir errors i pèrdues de temps."
+    },
     "items": {
       "saveTime": {
-        "title": "Estalvia temps",
-        "description": "Redueix hores de feina manual en càlculs i documentació. L'automatització accelera tots els processos administratius."
+        "title": "Estalvi de temps",
+        "description": "Menys duplicacions, menys missatges dispersos i menys errors."
       },
       "reduceErrors": {
         "title": "Redueix errors",
@@ -54,17 +62,17 @@
   "useCases": {
     "label": "CASOS D'ÚS",
     "title": "Casos d'ús",
-    "subtitle": "SetLux s'adapta a qualsevol tipus de producció",
+    "subtitle": "SetLux s'adapta a diferents rols i tipus de producció.",
     "cta": "Veure casos d'ús detallats",
     "items": {
       "fiction": {
-        "title": "Producció de ficció",
-        "description": "Planificació completa de setmanes de rodatge, gestió d'equip gran amb múltiples rols, càlcul de nòmines mensuals complexes i informes detallats.",
+        "title": "Rodatges mitjans i grans",
+        "description": "Quan la coordinació de l'equip i el control del material és clau.",
         "features": [
-          "Planificació de múltiples setmanes",
-          "Equips grans amb múltiples rols",
-          "Nòmines mensuals complexes",
-          "Informes setmanals detallats"
+          "Coordinació d'equip",
+          "Control de material",
+          "Planificació tècnica",
+          "Comunicació al set"
         ]
       },
       "ads": {
@@ -86,8 +94,8 @@
     "cta": "Veure totes les característiques",
     "items": {
       "labor": {
-        "title": "Condicions laborals",
-        "description": "Gestiona preus, polítiques i condicions segons el tipus de producció (setmanal, mensual, publicitat) amb càlculs automàtics precisos."
+        "title": "Gestió de projectes",
+        "description": "Centralitza la informació tècnica de cada producció en un sol espai."
       },
       "team": {
         "title": "Gestió d'equip",
@@ -112,8 +120,8 @@
     }
   },
   "cta": {
-    "title": "Fes el següent pas amb SetLux",
-    "text": "Simplifica la gestió d'il·luminació i obtén un avantatge real en les teves produccions.",
+    "title": "Organitza la teva feina amb més claredat.",
+    "text": "SetLux està en desenvolupament actiu i busquem professionals del sector per provar-lo.",
     "button": "Sol·licitar accés"
   },
   "footer": {
@@ -199,33 +207,34 @@
     "subtitleLine1": "SetLux està en fase de desenvolupament actiu.",
     "subtitleLine2": "Busquem professionals del departament d'il·luminació per provar l'eina i aportar feedback real.",
     "bullets": [
-      "Accés anticipat a noves funcions",
-      "Possibilitat d'influir en el desenvolupament",
-      "Eina pensada des de l'experiència al set"
+      "Accés anticipat",
+      "Influència directa en el desenvolupament",
+      "Pensat des de l'experiència al set"
     ],
     "preForm": "Omple el formulari i ens posarem en contacte amb tu.",
     "microcopyLine1": "No spam.",
-    "microcopyLine2": "Només comunicació relacionada amb l'accés i evolució de SetLux."
+    "microcopyLine2": "Només comunicació relacionada amb SetLux."
   },
   "pages": {
     "features": {
       "breadcrumb": "Característiques",
-      "title": "Característiques completes",
-      "description": "Totes les eines que SetLux ofereix per gestionar el teu departament d'il·luminació",
+      "title": "Característiques",
+      "description": "Funcions pensades per a la feina real del departament d'il·luminació.",
+      "closing": "Descobreix com aquestes funcions encaixen en el teu dia a dia.",
       "cta": "Sol·licitar accés"
     },
     "benefits": {
       "breadcrumb": "Avantatges",
-      "title": "Avantatges complets",
-      "description": "Tots els beneficis d'utilitzar SetLux per gestionar el teu departament d'il·luminació",
+      "title": "Avantatges",
+      "description": "Una manera més clara i ordenada de treballar en producció.",
       "cta": "Sol·licitar accés"
     },
     "useCases": {
       "breadcrumb": "Casos d'ús",
-      "title": "Casos d'ús detallats",
-      "description": "SetLux s'adapta a qualsevol tipus de producció audiovisual",
-      "blockTitle": "Et veus reflectit en algun d'aquests casos?",
-      "blockText": "SetLux s'està construint amb professionals del sector per adaptar-se al treball real.",
+      "title": "Casos d'ús",
+      "description": "Escenaris reals del departament d'il·luminació.",
+      "blockTitle": "Et veus reflectit en algun d'aquests escenaris?",
+      "blockText": "SetLux es construeix amb professionals del sector.",
       "blockCta": "Sol·licitar accés"
     }
   }
