@@ -1,7 +1,7 @@
 
 
 import { useState, useRef, useEffect } from 'react'
-import { Send } from 'lucide-react'
+import { Send, AlertCircle } from 'lucide-react'
 import { useTheme } from '../contexts/ThemeContext'
 
 const ContactForm = () => {
@@ -14,10 +14,15 @@ const ContactForm = () => {
     rol: '',
     interes: [] as string[],
     mensaje: '',
+    company: '',
   })
 
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle')
+  const [formError, setFormError] = useState<string | null>(null)
+  const [fieldErrors, setFieldErrors] = useState<Record<string, string>>({})
+  const [consentAccepted, setConsentAccepted] = useState(false)
+  const [isPrivacyOpen, setIsPrivacyOpen] = useState(false)
   const [isRoleOpen, setIsRoleOpen] = useState(false)
   const [isInterestOpen, setIsInterestOpen] = useState(false)
   const roleDropdownRef = useRef<HTMLDivElement>(null)
@@ -71,36 +76,82 @@ const ContactForm = () => {
     })
   }
 
+  const validateForm = () => {
+    const errors: Record<string, string> = {}
+    const nombre = formData.nombre.trim()
+    const email = formData.email.trim()
+    const rol = formData.rol.trim()
+
+    if (formData.company.trim()) {
+      return { errors, formError: 'Error de validación. Inténtalo de nuevo.' }
+    }
+
+    if (!nombre) {
+      errors.nombre = 'El nombre es obligatorio.'
+    }
+
+    if (!email || !/^\S+@\S+\.\S+$/.test(email)) {
+      errors.email = 'Introduce un email válido.'
+    }
+
+    if (!rol) {
+      errors.rol = 'Selecciona tu rol.'
+    }
+
+    if (formData.interes.length === 0) {
+      errors.interes = 'Selecciona al menos un interés.'
+    }
+
+    if (!consentAccepted) {
+      errors.privacy = 'Debes aceptar la política de privacidad.'
+    }
+
+    return { errors, formError: null }
+  }
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
+    setFormError(null)
+    const { errors, formError: validationFormError } = validateForm()
+    setFieldErrors(errors)
+    if (validationFormError || Object.keys(errors).length > 0) {
+      setSubmitStatus('error')
+      setFormError(validationFormError)
+      return
+    }
+
     setIsSubmitting(true)
     setSubmitStatus('idle')
 
     try {
       // Usar Formspree para enviar el email directamente
       const formId = 'mojvgnrp'
-      
+      const controller = new AbortController()
+      const timeoutId = window.setTimeout(() => controller.abort(), 15000)
+      const data = new FormData()
+      data.append('_subject', `Contacto desde SetLux - ${formData.rol}`)
+      data.append('nombre', formData.nombre.trim())
+      data.append('email', formData.email.trim())
+      data.append('apellido', formData.apellido.trim())
+      data.append('rol', formData.rol)
+      data.append('interes', formData.interes.join(', '))
+      data.append('mensaje', formData.mensaje.trim())
+      data.append('_replyto', formData.email.trim())
+      data.append('company', formData.company)
+
       const response = await fetch(`https://formspree.io/f/${formId}`, {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          _subject: `Contacto desde SetLux - ${formData.rol}`,
-          nombre: formData.nombre,
-          email: formData.email,
-          apellido: formData.apellido,
-          rol: formData.rol,
-          interes: formData.interes.join(', '),
-          mensaje: formData.mensaje,
-          _replyto: `contacto+${formData.nombre.toLowerCase()}.${formData.apellido.toLowerCase()}@setlux.com`, // Email ficticio para respuestas
-        }),
+        body: data,
+        signal: controller.signal,
       })
+      window.clearTimeout(timeoutId)
 
       if (response.ok) {
         setIsSubmitting(false)
         setSubmitStatus('success')
-        setFormData({ nombre: '', email: '', apellido: '', rol: '', interes: [], mensaje: '' })
+        setFormData({ nombre: '', email: '', apellido: '', rol: '', interes: [], mensaje: '', company: '' })
+        setConsentAccepted(false)
+        setFieldErrors({})
         
         // Resetear el estado después de 3 segundos
         setTimeout(() => {
@@ -113,15 +164,23 @@ const ContactForm = () => {
       console.error('Error al enviar el email:', error)
       setIsSubmitting(false)
       setSubmitStatus('error')
-      setTimeout(() => {
-        setSubmitStatus('idle')
-      }, 3000)
+      setFormError('No se pudo enviar. Revisa tu conexión e inténtalo de nuevo.')
     }
   }
 
   return (
     <div className="max-w-2xl mx-auto px-4">
-      <form onSubmit={handleSubmit} className="space-y-4 md:space-y-6">
+      <form onSubmit={handleSubmit} className="space-y-4 md:space-y-6" noValidate>
+        <input
+          type="text"
+          name="company"
+          value={formData.company}
+          onChange={handleChange}
+          tabIndex={-1}
+          autoComplete="off"
+          aria-hidden="true"
+          style={{ display: 'none' }}
+        />
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
           {/* Nombre */}
           <div>
@@ -135,9 +194,16 @@ const ContactForm = () => {
               required
               value={formData.nombre}
               onChange={handleChange}
+              aria-invalid={Boolean(fieldErrors.nombre)}
               className="w-full px-3 md:px-4 py-2.5 md:py-3 rounded-xl border-2 border-gray-200 focus:border-orange-500 focus:outline-none focus:ring-2 focus:ring-orange-500/20 transition-all duration-300 text-base"
               placeholder="Tu nombre"
             />
+            {fieldErrors.nombre && (
+              <div className="mt-2 flex items-center gap-2 text-xs md:text-sm" style={{ color: isDark ? '#F27405' : '#0476D9' }}>
+                <AlertCircle className="w-4 h-4" />
+                {fieldErrors.nombre}
+              </div>
+            )}
           </div>
 
           {/* Apellido */}
@@ -170,9 +236,16 @@ const ContactForm = () => {
             required
             value={formData.email}
             onChange={handleChange}
+            aria-invalid={Boolean(fieldErrors.email)}
             className="w-full px-3 md:px-4 py-2.5 md:py-3 rounded-xl border-2 border-gray-200 focus:border-orange-500 focus:outline-none focus:ring-2 focus:ring-orange-500/20 transition-all duration-300 text-base"
             placeholder="Tu email"
           />
+          {fieldErrors.email && (
+            <div className="mt-2 flex items-center gap-2 text-xs md:text-sm" style={{ color: isDark ? '#F27405' : '#0476D9' }}>
+              <AlertCircle className="w-4 h-4" />
+              {fieldErrors.email}
+            </div>
+          )}
         </div>
 
         {/* Rol */}
@@ -187,6 +260,7 @@ const ContactForm = () => {
               aria-haspopup="listbox"
               aria-expanded={isRoleOpen}
               onClick={() => setIsRoleOpen(prev => !prev)}
+              aria-invalid={Boolean(fieldErrors.rol)}
               className={`w-full px-3 md:px-4 py-3 md:py-3.5 rounded-xl border-2 focus:outline-none focus:ring-2 transition-all duration-300 text-base min-h-[44px] text-left flex items-center justify-between gap-3 ${
                 isDark
                   ? 'bg-white text-black border-gray-300 focus:border-orange-500 focus:ring-orange-500/20'
@@ -237,6 +311,12 @@ const ContactForm = () => {
               </div>
             )}
           </div>
+          {fieldErrors.rol && (
+            <div className="mt-2 flex items-center gap-2 text-xs md:text-sm" style={{ color: isDark ? '#F27405' : '#0476D9' }}>
+              <AlertCircle className="w-4 h-4" />
+              {fieldErrors.rol}
+            </div>
+          )}
         </div>
 
         {/* Interés */}
@@ -251,6 +331,7 @@ const ContactForm = () => {
               aria-haspopup="listbox"
               aria-expanded={isInterestOpen}
               onClick={() => setIsInterestOpen(prev => !prev)}
+              aria-invalid={Boolean(fieldErrors.interes)}
               className={`w-full px-3 md:px-4 py-3 md:py-3.5 rounded-xl border-2 focus:outline-none focus:ring-2 transition-all duration-300 text-base min-h-[44px] text-left flex items-center justify-between gap-3 ${
                 isDark
                   ? 'bg-white text-black border-gray-300 focus:border-orange-500 focus:ring-orange-500/20'
@@ -314,6 +395,12 @@ const ContactForm = () => {
               </div>
             )}
           </div>
+          {fieldErrors.interes && (
+            <div className="mt-2 flex items-center gap-2 text-xs md:text-sm" style={{ color: isDark ? '#F27405' : '#0476D9' }}>
+              <AlertCircle className="w-4 h-4" />
+              {fieldErrors.interes}
+            </div>
+          )}
         </div>
 
         {/* Mensaje */}
@@ -334,6 +421,32 @@ const ContactForm = () => {
 
         {/* Submit Button */}
         <div className="pt-4">
+          <div className="flex items-start gap-3 mb-2">
+            <input
+              id="privacy"
+              type="checkbox"
+              checked={consentAccepted}
+              onChange={(e) => setConsentAccepted(e.target.checked)}
+              className="mt-1 h-4 w-4"
+            />
+            <label htmlFor="privacy" className={`text-xs md:text-sm ${isDark ? 'text-white' : 'text-black'}`}>
+              He leído y acepto la{' '}
+              <button
+                type="button"
+                onClick={() => setIsPrivacyOpen(true)}
+                className="underline hover:opacity-80"
+              >
+                política de privacidad
+              </button>
+              .
+            </label>
+          </div>
+          {fieldErrors.privacy && (
+            <div className="mb-4 flex items-center gap-2 text-xs md:text-sm" style={{ color: isDark ? '#F27405' : '#0476D9' }}>
+              <AlertCircle className="w-4 h-4" />
+              {fieldErrors.privacy}
+            </div>
+          )}
           <button
             type="submit"
             disabled={isSubmitting}
@@ -355,17 +468,46 @@ const ContactForm = () => {
         </div>
 
         {/* Status Messages */}
-        {submitStatus === 'success' && (
-          <div className="p-4 rounded-xl bg-green-50 border-2 border-green-200 text-green-700 text-center">
-            ¡Mensaje enviado correctamente! Te contactaremos pronto.
-          </div>
-        )}
-        {submitStatus === 'error' && (
-          <div className="p-4 rounded-xl bg-red-50 border-2 border-red-200 text-red-700 text-center">
-            Hubo un error al enviar el mensaje. Por favor, inténtalo de nuevo.
-          </div>
-        )}
+        <div aria-live="polite" role="status">
+          {submitStatus === 'success' && (
+            <div className="p-4 rounded-xl bg-green-50 border-2 border-green-200 text-green-700 text-center">
+              ¡Mensaje enviado correctamente! Te contactaremos pronto.
+            </div>
+          )}
+          {submitStatus === 'error' && (
+            <div className="p-4 rounded-xl bg-red-50 border-2 border-red-200 text-red-700 text-center">
+              {formError ?? 'Hubo un error al enviar el mensaje. Por favor, inténtalo de nuevo.'}
+            </div>
+          )}
+        </div>
       </form>
+
+      {isPrivacyOpen && (
+        <div className="fixed inset-0 z-[9999] flex items-center justify-center p-4 bg-black/50">
+          <div className={`w-full max-w-2xl rounded-2xl p-6 md:p-8 ${isDark ? 'bg-gray-900 text-white' : 'bg-white text-black'}`}>
+            <div className="flex items-start justify-between gap-4 mb-4">
+              <h3 className="text-lg md:text-xl font-bold">Política de privacidad</h3>
+              <button
+                type="button"
+                onClick={() => setIsPrivacyOpen(false)}
+                className="text-sm underline hover:opacity-80"
+              >
+                Cerrar
+              </button>
+            </div>
+            <div className="space-y-3 text-sm md:text-base">
+              <p><strong>Responsable:</strong> SetLux. Email de contacto: setluxapp@gmail.com</p>
+              <p><strong>Finalidad:</strong> gestionar solicitudes de acceso, responder consultas y mantener comunicación relacionada con el acceso y evolución del producto.</p>
+              <p><strong>Datos tratados:</strong> nombre, email, rol, interés y mensaje.</p>
+              <p><strong>Base legal:</strong> consentimiento del usuario.</p>
+              <p><strong>Conservación:</strong> durante la gestión de la solicitud y un máximo de 12 meses.</p>
+              <p><strong>Destinatarios:</strong> Formspree como encargado de tratamiento.</p>
+              <p><strong>Derechos:</strong> acceso, rectificación y supresión escribiendo a setluxapp@gmail.com.</p>
+              <p><strong>Seguridad:</strong> se aplican medidas razonables para proteger la información.</p>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   )
 }
