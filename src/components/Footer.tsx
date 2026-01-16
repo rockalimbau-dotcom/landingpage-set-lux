@@ -58,7 +58,7 @@ const Footer = () => {
                 </li>
                 <li>
                   <Link 
-                    to="/#features" 
+                    to="/caracteristicas" 
                     className="hover:opacity-80 transition-opacity block relative pl-0 group text-sm md:text-base"
                     style={{ color: isDark ? '#F27405' : '#0476D9' }}
                   >
@@ -68,7 +68,7 @@ const Footer = () => {
                 </li>
                 <li>
                   <Link 
-                    to="/#benefits" 
+                    to="/ventajas" 
                     className="hover:opacity-80 transition-opacity block relative pl-0 group text-sm md:text-base"
                     style={{ color: isDark ? '#F27405' : '#0476D9' }}
                   >
@@ -78,7 +78,7 @@ const Footer = () => {
                 </li>
                 <li>
                   <Link 
-                    to="/#use-cases" 
+                    to="/casos-de-uso" 
                     className="hover:opacity-80 transition-opacity block relative pl-0 group text-sm md:text-base"
                     style={{ color: isDark ? '#F27405' : '#0476D9' }}
                   >

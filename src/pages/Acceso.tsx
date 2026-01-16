@@ -48,11 +48,11 @@ const Acceso = () => {
               </li>
             </ul>
           </div>
-          <p className="text-sm md:text-base mb-4 md:mb-6 px-2 text-black">
+          <p className={`text-sm md:text-base mb-4 md:mb-6 px-2 ${isDark ? 'text-white' : 'text-black'}`}>
             Rellena el formulario y nos pondremos en contacto contigo.
           </p>
           <ContactForm />
-          <p className="text-xs md:text-sm mt-4 md:mt-6 px-2 text-black">
+          <p className={`text-xs md:text-sm mt-4 md:mt-6 px-2 ${isDark ? 'text-white' : 'text-black'}`}>
             No spam.
             <br />
             Solo comunicación relacionada con el acceso y evolución de SetLux.

@@ -189,7 +189,7 @@ const ContactForm = () => {
               onClick={() => setIsRoleOpen(prev => !prev)}
               className={`w-full px-3 md:px-4 py-3 md:py-3.5 rounded-xl border-2 focus:outline-none focus:ring-2 transition-all duration-300 text-base min-h-[44px] text-left flex items-center justify-between gap-3 ${
                 isDark
-                  ? 'bg-gray-800 text-white border-gray-600 focus:border-orange-500 focus:ring-orange-500/20'
+                  ? 'bg-white text-black border-gray-300 focus:border-orange-500 focus:ring-orange-500/20'
                   : 'bg-white text-slate-900 border-slate-200 shadow-sm focus:border-blue-400 focus:ring-blue-100'
               }`}
             >
@@ -208,7 +208,7 @@ const ContactForm = () => {
                 role="listbox"
                 aria-labelledby="rol"
                 className={`absolute left-0 right-0 mt-2 rounded-xl border shadow-xl overflow-hidden z-20 ${
-                  isDark ? 'bg-gray-800 border-gray-700' : 'bg-white border-slate-200'
+                  isDark ? 'bg-white border-gray-200' : 'bg-white border-slate-200'
                 }`}
               >
                 {roles.map(role => (
@@ -225,7 +225,7 @@ const ContactForm = () => {
                       isDark
                         ? formData.rol === role.value
                           ? 'bg-gray-700 text-white'
-                          : 'text-white hover:bg-[#F27405]'
+                          : 'text-black hover:bg-orange-100'
                         : formData.rol === role.value
                           ? 'bg-blue-50 text-slate-900'
                           : 'text-slate-700 hover:bg-blue-100'
@@ -253,7 +253,7 @@ const ContactForm = () => {
               onClick={() => setIsInterestOpen(prev => !prev)}
               className={`w-full px-3 md:px-4 py-3 md:py-3.5 rounded-xl border-2 focus:outline-none focus:ring-2 transition-all duration-300 text-base min-h-[44px] text-left flex items-center justify-between gap-3 ${
                 isDark
-                  ? 'bg-gray-800 text-white border-gray-600 focus:border-orange-500 focus:ring-orange-500/20'
+                  ? 'bg-white text-black border-gray-300 focus:border-orange-500 focus:ring-orange-500/20'
                   : 'bg-white text-slate-900 border-slate-200 shadow-sm focus:border-blue-400 focus:ring-blue-100'
               }`}
             >
@@ -275,7 +275,7 @@ const ContactForm = () => {
                 role="listbox"
                 aria-labelledby="interes"
                 className={`absolute left-0 right-0 mt-2 rounded-xl border shadow-xl overflow-hidden z-20 ${
-                  isDark ? 'bg-gray-800 border-gray-700' : 'bg-white border-slate-200'
+                  isDark ? 'bg-white border-gray-200' : 'bg-white border-slate-200'
                 }`}
               >
                 {interestOptions.map(option => {
@@ -298,7 +298,7 @@ const ContactForm = () => {
                         isDark
                           ? isSelected
                             ? 'bg-[#F27405] text-white'
-                            : 'text-white hover:bg-[#F27405]'
+                            : 'text-black hover:bg-orange-100'
                           : isSelected
                             ? 'bg-blue-50 text-slate-900'
                             : 'text-slate-700 hover:bg-blue-100'

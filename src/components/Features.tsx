@@ -14,7 +14,7 @@ const allFeatures = [
   {
     icon: Users,
     title: 'Gestión de Equipo',
-    description: 'Organiza tu equipo de iluminación con roles diferenciados (Gaffer, Best Boy, Eléctrico, etc.) y equipos especializados (Base, Prelight, Pickup).',
+    description: 'Organiza tu equipo de iluminación con roles diferenciados (Gaffer, Best Boy, Eléctrico, etc.) y equipos (Base, Prelight, Recogida).',
     color: 'orange',
   },
   {
