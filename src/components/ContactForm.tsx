@@ -1,7 +1,7 @@
 
 
 import { useState, useRef, useEffect } from 'react'
-import { Send, Mail } from 'lucide-react'
+import { Send } from 'lucide-react'
 import { useTheme } from '../contexts/ThemeContext'
 
 const ContactForm = () => {
