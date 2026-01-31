@@ -1,6 +1,6 @@
 
 
-import { Mail, Instagram } from 'lucide-react'
+import { Mail, Instagram, X } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import Logo from './Logo'
 import { useTheme } from '../contexts/ThemeContext'
@@ -115,6 +115,19 @@ const Footer = () => {
                     style={{ color: isDark ? '#F27405' : '#0476D9' }}
                   >
                     @setluxapp
+                  </a>
+                </li>
+                <li className="flex items-center">
+                  <X className="w-4 h-4 md:w-5 md:h-5 mr-2 md:mr-3 flex-shrink-0" style={{ color: isDark ? '#ffffff' : '#000000' }} />
+                  <a 
+                    href="https://x.com/SetLuxApp" 
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:opacity-80 transition-opacity text-sm md:text-base" 
+                    aria-label="X"
+                    style={{ color: isDark ? '#F27405' : '#0476D9' }}
+                  >
+                    @SetLuxApp
                   </a>
                 </li>
               </ul>
