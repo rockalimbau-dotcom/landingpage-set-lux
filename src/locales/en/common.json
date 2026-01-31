@@ -26,7 +26,7 @@
   "benefits": {
     "label": "BENEFITS",
     "title": "Why SetLux?",
-    "subtitle": "",
+    "subtitle": "A clearer, more professional and reliable way to work in the lighting department.",
     "cta": "View all benefits",
     "homeItem": {
       "title": "Less on‑set improvisation",
@@ -34,55 +34,55 @@
     },
     "items": {
       "saveTime": {
-        "title": "Time savings",
-        "description": "Fewer duplicates, fewer scattered messages, and fewer errors."
+        "title": "Less management, more shooting",
+        "description": "Reduce repetitive tasks, eliminate duplication and centralize all project information in one place."
       },
       "reduceErrors": {
-        "title": "Reduce Errors",
-        "description": "Eliminate human errors with precise automatic calculations and smart validation at every step."
+        "title": "Reliable calculations",
+        "description": "Avoid errors in workdays, overtime and economic concepts thanks to automatic calculations based on real conditions."
       },
       "documentation": {
-        "title": "Professional Documentation",
-        "description": "Generate high‑quality PDF documents ready to share with production and accounting."
+        "title": "Clear PDFs ready for production",
+        "description": "Generate professional documents directly from the calendar and reports, without redoing information."
       },
       "transparency": {
-        "title": "Increase Transparency",
-        "description": "All calculations are visible and verifiable, improving communication and legal compliance."
+        "title": "Everything visible, everything clear",
+        "description": "Workdays, extras, per diems and payroll are always visible and verifiable for the whole team."
       },
       "allInOne": {
-        "title": "All in One",
-        "description": "The only platform that integrates planning, team, conditions, reports and payroll in one place."
+        "title": "A single workflow",
+        "description": "From conditions to payroll, the entire lighting‑department workflow connected in one tool."
       },
       "legal": {
-        "title": "Legal Compliance",
-        "description": "References to labor agreements and clear policies that make compliance easier."
+        "title": "Aligned with the agreement",
+        "description": "Conditions, workdays and calculations based on the collective agreement and real audiovisual‑sector practices."
       }
     }
   },
   "useCases": {
     "label": "USE CASES",
     "title": "Use cases",
-    "subtitle": "SetLux adapts to different roles and production types.",
+    "subtitle": "How SetLux adapts to different types of shoots in the lighting department.",
     "cta": "View detailed use cases",
     "items": {
       "fiction": {
-        "title": "Mid‑size and large shoots",
-        "description": "When team coordination and equipment control are key.",
+        "title": "Fiction and television",
+        "description": "For shoots with weekly continuity, stable crews and precise control of workdays, rest and labor conditions.",
         "features": [
-          "Team coordination",
-          "Equipment control",
-          "Technical planning",
-          "On‑set communication"
+          "Weekly shoot planning",
+          "Team organization by days and phases",
+          "Workday, overtime and turnaround logging",
+          "Automatic payroll calculation from the calendar"
         ]
       },
       "ads": {
-        "title": "Advertising Production",
-        "description": "Ad‑specific conditions, technical locations management, load/unload calculations, and specialized payroll structures.",
+        "title": "Advertising",
+        "description": "Designed for shoots with specific conditions, variable crews and advertising‑style schedules.",
         "features": [
-          "Ad‑specific conditions",
-          "Technical locations",
-          "Load/unload calculations",
-          "Specialized payroll"
+          "Advertising‑specific economic conditions",
+          "Technical planning by shooting day",
+          "Managing reinforcements, special days and holidays",
+          "Payroll adapted to advertising structures"
         ]
       }
     }
@@ -90,32 +90,28 @@
   "features": {
     "label": "FEATURES",
     "title": "Main features",
-    "subtitle": "Essential tools to manage your department",
+    "subtitle": "Tools designed for real lighting‑department work, from set to payroll.",
     "cta": "View all features",
     "items": {
       "labor": {
-        "title": "Project management",
-        "description": "Centralize technical information for each production in one place."
+        "title": "Shoot conditions",
+        "description": "Configure the economic and labor conditions of the shoot: workdays, overtime, per diems, night work, and holidays."
       },
       "team": {
         "title": "Team Management",
-        "description": "Organize your lighting team with differentiated roles (Gaffer, Best Boy, Electrician, etc.) and teams (Base, Prelight, Wrap)."
+        "description": "Organize the lighting team by roles and work phases: base, extra, prelight and wrap."
       },
-      "planning": {
-        "title": "Planning",
-        "description": "Complete shooting planning system with interactive calendar, week management, team assignment and professional export."
+      "calendar": {
+        "title": "Calendar",
+        "description": "Plan shooting weeks, locations, team, and technical needs in a single operational calendar."
       },
       "reports": {
         "title": "Reports",
-        "description": "Advanced weekly reporting with overtime, turnarounds, night work, per diems, and all economic concepts."
+        "description": "Log the day‑to‑day of the shoot: overtime, turnarounds, night work, per diems, transport and any economic concept for the team."
       },
       "payroll": {
         "title": "Payroll",
-        "description": "Automatic monthly payroll calculation with detailed breakdown of days worked, extra concepts and accounting export."
-      },
-      "needs": {
-        "title": "Needs",
-        "description": "Manage all department needs during production with customizable lists and professional export."
+        "description": "Automatically calculate team payroll from the calendar and reports, with a clear breakdown and exports for production, accounting and each worker individually."
       }
     }
   },
@@ -219,22 +215,24 @@
     "features": {
       "breadcrumb": "Features",
       "title": "Features",
-      "description": "Functions designed for real lighting department work.",
-      "closing": "Discover how these features fit into your day‑to‑day work.",
+      "description": "Tools designed for real lighting‑department work, from set to payroll.",
+      "closing": "Everything connected in a single workflow, built for the real pace of the shoot.",
       "cta": "Request access"
     },
     "benefits": {
       "breadcrumb": "Benefits",
       "title": "Benefits",
       "description": "A clearer and more organized way to work in production.",
+      "closingTitle": "Less improvisation. More control.",
+      "closingText": "SetLux brings order to lighting‑department work, from set to payroll.",
       "cta": "Request access"
     },
     "useCases": {
       "breadcrumb": "Use Cases",
       "title": "Use cases",
-      "description": "Real lighting department scenarios.",
+      "description": "How SetLux adapts to different types of shoots in the lighting department.",
       "blockTitle": "Do you see yourself in any of these scenarios?",
-      "blockText": "SetLux is built together with industry professionals.",
+      "blockText": "Whatever the shoot type, SetLux adapts to the real way lighting departments work.",
       "blockCta": "Request access"
     }
   }

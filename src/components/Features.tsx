@@ -1,6 +1,6 @@
 
 
-import { Calendar, Users, FileText, BarChart3, DollarSign, ClipboardList, ArrowRight } from 'lucide-react'
+import { Calendar, Users, FileText, BarChart3, DollarSign, ArrowRight } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import { useTheme } from '../contexts/ThemeContext'
 import { useTranslation } from 'react-i18next'
@@ -8,10 +8,9 @@ import { useTranslation } from 'react-i18next'
 const featureConfigs = [
   { key: 'labor', icon: FileText, color: 'blue' },
   { key: 'team', icon: Users, color: 'orange' },
-  { key: 'planning', icon: Calendar, color: 'blue' },
+  { key: 'calendar', icon: Calendar, color: 'blue' },
   { key: 'reports', icon: BarChart3, color: 'orange' },
   { key: 'payroll', icon: DollarSign, color: 'blue' },
-  { key: 'needs', icon: ClipboardList, color: 'orange' },
 ]
 
 const getFeatures = (t: (key: string) => string) =>

@@ -18,8 +18,8 @@ const Logo = ({ size = 'md', className = '', isDark: propIsDark, style }: LogoPr
     xl: 'w-20 h-20',
   }
 
-  const logoLight = '/logos/Logo_SetLux_02_01.png' // Logo para modo claro (fondo azul, elementos naranjas)
-  const logoDark = '/logos/Logo_SetLux_02.png'     // Logo para modo oscuro (fondo naranja, elementos azules)
+  const logoLight = '/logos/nuevologo_v3.png' // Logo para modo claro
+  const logoDark = '/logos/01_nuevo_logo_modo_oscuro.png' // Logo para modo oscuro
 
   return (
     <img

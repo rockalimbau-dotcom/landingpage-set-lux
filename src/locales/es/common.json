@@ -26,7 +26,7 @@
   "benefits": {
     "label": "VENTAJAS",
     "title": "¿Por qué SetLux?",
-    "subtitle": "",
+    "subtitle": "Una forma más clara, profesional y fiable de trabajar en el departamento de iluminación.",
     "cta": "Ver todas las ventajas",
     "homeItem": {
       "title": "Menos improvisación en set",
@@ -34,55 +34,55 @@
     },
     "items": {
       "saveTime": {
-        "title": "Ahorro de tiempo",
-        "description": "Menos duplicaciones, menos mensajes dispersos y menos errores."
+        "title": "Menos gestión, más rodaje",
+        "description": "Reduce tareas repetitivas, elimina duplicaciones y centraliza toda la información del proyecto en un solo lugar."
       },
       "reduceErrors": {
-        "title": "Reduce Errores",
-        "description": "Elimina errores humanos con cálculos automáticos precisos y validación inteligente en cada paso del proceso."
+        "title": "Cálculos fiables",
+        "description": "Evita errores en jornadas, horas extra y conceptos económicos gracias a cálculos automáticos basados en condiciones reales."
       },
       "documentation": {
-        "title": "Documentación Profesional",
-        "description": "Genera documentos PDF de alta calidad listos para compartir con producción y contabilidad."
+        "title": "PDFs claros y listos para producción",
+        "description": "Genera documentos profesionales directamente desde el calendario y los reportes, sin rehacer información."
       },
       "transparency": {
-        "title": "Aumenta la Transparencia",
-        "description": "Todos los cálculos son visibles y verificables, facilitando la comunicación y el cumplimiento legal."
+        "title": "Todo visible, todo claro",
+        "description": "Jornadas, extras, dietas y nóminas siempre visibles y verificables para todo el equipo implicado."
       },
       "allInOne": {
-        "title": "Todo en Uno",
-        "description": "Única plataforma que integra planificación, equipo, condiciones, reportes y nóminas en un solo lugar."
+        "title": "Un único flujo de trabajo",
+        "description": "Desde las condiciones hasta la nómina, todo el flujo del departamento de iluminación conectado en una sola herramienta."
       },
       "legal": {
-        "title": "Cumplimiento Legal",
-        "description": "Referencias al convenio colectivo y políticas claras que facilitan el cumplimiento de normativas laborales."
+        "title": "Trabajo alineado a convenio",
+        "description": "Condiciones, jornadas y cálculos basados en el convenio colectivo y prácticas reales del sector audiovisual."
       }
     }
   },
   "useCases": {
     "label": "CASOS DE USO",
     "title": "Casos de uso",
-    "subtitle": "SetLux se adapta a distintos roles y tipos de producción.",
+    "subtitle": "Cómo SetLux se adapta a distintos tipos de rodaje en el departamento de iluminación.",
     "cta": "Ver casos de uso detallados",
     "items": {
       "fiction": {
-        "title": "Rodajes medianos y grandes",
-        "description": "Cuando la coordinación del equipo y el control del material es clave.",
+        "title": "Ficción y televisión",
+        "description": "Para rodajes con continuidad semanal, equipos estables y control preciso de jornadas, descansos y condiciones de trabajo.",
         "features": [
-          "Coordinación de equipo",
-          "Control de material",
-          "Planificación técnica",
-          "Comunicación en set"
+          "Planificación semanal del rodaje",
+          "Organización del equipo por días y fases",
+          "Registro de jornadas, horas extra y turn around",
+          "Cálculo automático de nómina a partir del calendario"
         ]
       },
       "ads": {
-        "title": "Producción de Publicidad",
-        "description": "Condiciones específicas de publicidad, gestión de localizaciones técnicas, cálculo de carga/descarga y nóminas con estructura especializada.",
+        "title": "Publicidad",
+        "description": "Pensado para rodajes con condiciones específicas, equipos variables y estructuras de jornada propias de la publicidad.",
         "features": [
-          "Condiciones específicas de publicidad",
-          "Localizaciones técnicas",
-          "Cálculo de carga/descarga",
-          "Nóminas especializadas"
+          "Condiciones económicas específicas de publicidad",
+          "Planificación técnica por días de rodaje",
+          "Gestión de refuerzos, jornadas especiales y festivos",
+          "Nóminas adaptadas a estructuras publicitarias"
         ]
       }
     }
@@ -90,32 +90,28 @@
   "features": {
     "label": "CARACTERÍSTICAS",
     "title": "Características principales",
-    "subtitle": "Las herramientas esenciales para gestionar tu departamento",
+    "subtitle": "Herramientas diseñadas para el trabajo real del departamento de iluminación, del set a la nómina.",
     "cta": "Ver todas las características",
     "items": {
       "labor": {
-        "title": "Gestión de proyectos",
-        "description": "Centraliza la información técnica de cada producción en un solo espacio."
+        "title": "Condiciones de rodaje",
+        "description": "Configura las condiciones económicas y laborales del rodaje: jornadas, horas extra, dietas, nocturnidad y festivos."
       },
       "team": {
-        "title": "Gestión de Equipo",
-        "description": "Organiza tu equipo de iluminación con roles diferenciados (Gaffer, Best Boy, Eléctrico, etc.) y equipos (Base, Prelight, Recogida)."
+        "title": "Gestión de equipo",
+        "description": "Organiza el equipo de iluminación por roles y fases de trabajo: base, extra, prelight y recogida."
       },
-      "planning": {
-        "title": "Planificación",
-        "description": "Sistema completo de planificación de rodaje con calendario interactivo, gestión de semanas, asignación de equipo y exportación profesional."
+      "calendar": {
+        "title": "Calendario",
+        "description": "Planifica semanas de rodaje, localizaciones, equipo y necesidades técnicas en un calendario único y operativo."
       },
       "reports": {
         "title": "Reportes",
-        "description": "Sistema avanzado de reportes semanales con registro de horas extra, turn arounds, nocturnidad, dietas y todos los conceptos económicos."
+        "description": "Registra el día a día del rodaje: horas extra, turn arounds, nocturnidad, dietas, transporte y cualquier concepto económico del equipo."
       },
       "payroll": {
         "title": "Nómina",
-        "description": "Cálculo automático de nóminas mensuales con desglose detallado de días trabajados, conceptos adicionales y exportación para contabilidad."
-      },
-      "needs": {
-        "title": "Necesidades",
-        "description": "Gestiona todas las necesidades del departamento durante la producción con listas personalizables y exportación profesional."
+        "description": "Calcula automáticamente la nómina del equipo a partir del calendario y los reportes, con desglose claro y exportación para producción, contabilidad y a cada trabajador de forma individual."
       }
     }
   },
@@ -219,22 +215,24 @@
     "features": {
       "breadcrumb": "Características",
       "title": "Características",
-      "description": "Funciones pensadas para el trabajo real del departamento de iluminación.",
-      "closing": "Descubre cómo estas funciones encajan en tu día a día.",
+      "description": "Herramientas diseñadas para el trabajo real del departamento de iluminación, del set a la nómina.",
+      "closing": "Todo conectado en un solo flujo de trabajo, pensado para el ritmo real del rodaje.",
       "cta": "Solicitar acceso"
     },
     "benefits": {
       "breadcrumb": "Ventajas",
       "title": "Ventajas",
       "description": "Una forma más clara y ordenada de trabajar en producción.",
+      "closingTitle": "Menos improvisación. Más control.",
+      "closingText": "SetLux pone orden en el trabajo del departamento de iluminación, del set a la nómina.",
       "cta": "Solicitar acceso"
     },
     "useCases": {
       "breadcrumb": "Casos de Uso",
       "title": "Casos de uso",
-      "description": "Escenarios reales del departamento de iluminación.",
+      "description": "Cómo SetLux se adapta a distintos tipos de rodaje en el departamento de iluminación.",
       "blockTitle": "¿Te ves reflejado en alguno de estos escenarios?",
-      "blockText": "SetLux se construye junto a profesionales del sector.",
+      "blockText": "Sea cual sea el tipo de rodaje, SetLux se adapta a la forma real de trabajar del departamento de iluminación.",
       "blockCta": "Solicitar acceso"
     }
   }

@@ -26,7 +26,7 @@
   "benefits": {
     "label": "AVANTATGES",
     "title": "Per què SetLux?",
-    "subtitle": "",
+    "subtitle": "Una manera més clara, professional i fiable de treballar al departament d'il·luminació.",
     "cta": "Veure tots els avantatges",
     "homeItem": {
       "title": "Menys improvisació al set",
@@ -34,55 +34,55 @@
     },
     "items": {
       "saveTime": {
-        "title": "Estalvi de temps",
-        "description": "Menys duplicacions, menys missatges dispersos i menys errors."
+        "title": "Menys gestió, més rodatge",
+        "description": "Redueix tasques repetitives, elimina duplicacions i centralitza tota la informació del projecte en un sol lloc."
       },
       "reduceErrors": {
-        "title": "Redueix errors",
-        "description": "Elimina errors humans amb càlculs automàtics precisos i validació intel·ligent en cada pas del procés."
+        "title": "Càlculs fiables",
+        "description": "Evita errors en jornades, hores extra i conceptes econòmics gràcies a càlculs automàtics basats en condicions reals."
       },
       "documentation": {
-        "title": "Documentació professional",
-        "description": "Genera documents PDF d'alta qualitat llestos per compartir amb producció i comptabilitat."
+        "title": "PDFs clars i llestos per a producció",
+        "description": "Genera documents professionals directament des del calendari i els informes, sense rehacer informació."
       },
       "transparency": {
-        "title": "Augmenta la transparència",
-        "description": "Tots els càlculs són visibles i verificables, facilitant la comunicació i el compliment legal."
+        "title": "Tot visible, tot clar",
+        "description": "Jornades, extres, dietes i nòmines sempre visibles i verificables per a tot l'equip implicat."
       },
       "allInOne": {
-        "title": "Tot en un",
-        "description": "Única plataforma que integra planificació, equip, condicions, informes i nòmines en un sol lloc."
+        "title": "Un únic flux de treball",
+        "description": "Des de les condicions fins a la nòmina, tot el flux del departament d'il·luminació connectat en una sola eina."
       },
       "legal": {
-        "title": "Compliment legal",
-        "description": "Referències al conveni col·lectiu i polítiques clares que faciliten el compliment de normatives laborals."
+        "title": "Feina alineada al conveni",
+        "description": "Condicions, jornades i càlculs basats en el conveni col·lectiu i pràctiques reals del sector audiovisual."
       }
     }
   },
   "useCases": {
     "label": "CASOS D'ÚS",
     "title": "Casos d'ús",
-    "subtitle": "SetLux s'adapta a diferents rols i tipus de producció.",
+    "subtitle": "Com SetLux s'adapta a diferents tipus de rodatge al departament d'il·luminació.",
     "cta": "Veure casos d'ús detallats",
     "items": {
       "fiction": {
-        "title": "Rodatges mitjans i grans",
-        "description": "Quan la coordinació de l'equip i el control del material és clau.",
+        "title": "Ficció i televisió",
+        "description": "Per a rodatges amb continuïtat setmanal, equips estables i control precís de jornades, descansos i condicions de treball.",
         "features": [
-          "Coordinació d'equip",
-          "Control de material",
-          "Planificació tècnica",
-          "Comunicació al set"
+          "Planificació setmanal del rodatge",
+          "Organització de l'equip per dies i fases",
+          "Registre de jornades, hores extra i turn around",
+          "Càlcul automàtic de nòmina a partir del calendari"
         ]
       },
       "ads": {
-        "title": "Producció de publicitat",
-        "description": "Condicions específiques de publicitat, gestió de localitzacions tècniques, càlcul de càrrega/descàrrega i nòmines amb estructura especialitzada.",
+        "title": "Publicitat",
+        "description": "Pensat per a rodatges amb condicions específiques, equips variables i estructures de jornada pròpies de la publicitat.",
         "features": [
-          "Condicions específiques de publicitat",
-          "Localitzacions tècniques",
-          "Càlcul de càrrega/descàrrega",
-          "Nòmines especialitzades"
+          "Condicions econòmiques específiques de publicitat",
+          "Planificació tècnica per dies de rodatge",
+          "Gestió de reforços, jornades especials i festius",
+          "Nòmines adaptades a estructures publicitàries"
         ]
       }
     }
@@ -90,32 +90,28 @@
   "features": {
     "label": "CARACTERÍSTIQUES",
     "title": "Característiques principals",
-    "subtitle": "Les eines essencials per gestionar el teu departament",
+    "subtitle": "Eines dissenyades per a la feina real del departament d'il·luminació, del set a la nòmina.",
     "cta": "Veure totes les característiques",
     "items": {
       "labor": {
-        "title": "Gestió de projectes",
-        "description": "Centralitza la informació tècnica de cada producció en un sol espai."
+        "title": "Condicions de rodatge",
+        "description": "Configura les condicions econòmiques i laborals del rodatge: jornades, hores extra, dietes, nocturnitat i festius."
       },
       "team": {
         "title": "Gestió d'equip",
-        "description": "Organitza el teu equip d'il·luminació amb rols diferenciats (Gaffer, Best Boy, Elèctric, etc.) i equips (Base, Prelight, Recollida)."
+        "description": "Organitza l'equip d'il·luminació per rols i fases de treball: base, extra, prelight i recollida."
       },
-      "planning": {
-        "title": "Planificació",
-        "description": "Sistema complet de planificació de rodatge amb calendari interactiu, gestió de setmanes, assignació d'equip i exportació professional."
+      "calendar": {
+        "title": "Calendari",
+        "description": "Planifica setmanes de rodatge, localitzacions, equip i necessitats tècniques en un calendari únic i operatiu."
       },
       "reports": {
         "title": "Informes",
-        "description": "Sistema avançat d'informes setmanals amb registre d'hores extra, turn arounds, nocturnitat, dietes i tots els conceptes econòmics."
+        "description": "Registra el dia a dia del rodatge: hores extra, turn arounds, nocturnitat, dietes, transport i qualsevol concepte econòmic de l'equip."
       },
       "payroll": {
         "title": "Nòmina",
-        "description": "Càlcul automàtic de nòmines mensuals amb desglossament detallat de dies treballats, conceptes addicionals i exportació per a comptabilitat."
-      },
-      "needs": {
-        "title": "Necessitats",
-        "description": "Gestiona totes les necessitats del departament durant la producció amb llistes personalitzables i exportació professional."
+        "description": "Calcula automàticament la nòmina de l'equip a partir del calendari i els informes, amb desglossament clar i exportació per a producció, comptabilitat i cada treballador de forma individual."
       }
     }
   },
@@ -219,22 +215,24 @@
     "features": {
       "breadcrumb": "Característiques",
       "title": "Característiques",
-      "description": "Funcions pensades per a la feina real del departament d'il·luminació.",
-      "closing": "Descobreix com aquestes funcions encaixen en el teu dia a dia.",
+      "description": "Eines dissenyades per a la feina real del departament d'il·luminació, del set a la nòmina.",
+      "closing": "Tot connectat en un sol flux de treball, pensat per al ritme real del rodatge.",
       "cta": "Sol·licitar accés"
     },
     "benefits": {
       "breadcrumb": "Avantatges",
       "title": "Avantatges",
       "description": "Una manera més clara i ordenada de treballar en producció.",
+      "closingTitle": "Menys improvisació. Més control.",
+      "closingText": "SetLux posa ordre a la feina del departament d'il·luminació, del set a la nòmina.",
       "cta": "Sol·licitar accés"
     },
     "useCases": {
       "breadcrumb": "Casos d'ús",
       "title": "Casos d'ús",
-      "description": "Escenaris reals del departament d'il·luminació.",
+      "description": "Com SetLux s'adapta a diferents tipus de rodatge al departament d'il·luminació.",
       "blockTitle": "Et veus reflectit en algun d'aquests escenaris?",
-      "blockText": "SetLux es construeix amb professionals del sector.",
+      "blockText": "Sigui quin sigui el tipus de rodatge, SetLux s'adapta a la manera real de treballar del departament d'il·luminació.",
       "blockCta": "Sol·licitar accés"
     }
   }

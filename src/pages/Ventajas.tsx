@@ -66,8 +66,20 @@ const Ventajas = () => {
             })}
           </div>
 
+        <div className="mt-10 md:mt-12 text-center px-2">
+          <p
+            className="text-base md:text-lg font-semibold mb-2 transition-colors duration-700"
+            style={{ color: isDark ? '#F27405' : '#0476D9' }}
+          >
+            {t('pages.benefits.closingTitle')}
+          </p>
+          <p className={`text-sm md:text-base transition-colors duration-700 ${isDark ? 'text-white' : 'text-black'}`}>
+            {t('pages.benefits.closingText')}
+          </p>
+        </div>
+
           {/* CTA */}
-          <div className="mt-12 md:mt-16 text-center">
+          <div className="mt-6 md:mt-8 text-center">
           <Link
             to="/solicitud-acceso"
             className="inline-flex items-center gap-2 text-white px-8 md:px-10 py-4 md:py-5 rounded-xl font-bold text-base md:text-lg shadow-2xl transform hover:-translate-y-2 hover:scale-105 transition-all duration-300 w-full sm:w-auto min-h-[44px]"
