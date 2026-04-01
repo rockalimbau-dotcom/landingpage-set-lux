@@ -1,4 +1,4 @@
-import { Film, Video, ArrowRight } from 'lucide-react'
+import { Film, Video, Tv, ArrowRight } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import { useTheme } from '../contexts/ThemeContext'
 import { useTranslation } from 'react-i18next'
@@ -6,6 +6,7 @@ import { useTranslation } from 'react-i18next'
 const useCaseConfigs = [
   { key: 'fiction', icon: Film, color: 'blue' },
   { key: 'ads', icon: Video, color: 'orange' },
+  { key: 'tv', icon: Tv, color: 'blue' },
 ]
 
 const getUseCases = (t: (key: string, options?: { returnObjects?: boolean }) => any) =>
@@ -21,6 +22,7 @@ const UseCases = () => {
   const isDark = theme === 'dark'
   const { t } = useTranslation()
   const allUseCases = getUseCases(t)
+  const featuredUseCases = allUseCases.slice(0, 2)
   
   return (
     <section id="use-cases" className="py-12 md:py-16 relative overflow-hidden transition-colors duration-700" style={{ backgroundColor: isDark ? '#1e293b' : '#fff7ed' }}>
@@ -47,7 +49,7 @@ const UseCases = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 mb-8 md:mb-10">
-          {allUseCases.map((useCase, index) => {
+          {featuredUseCases.map((useCase, index) => {
             const Icon = useCase.icon
             const bgColor = isDark ? '#F27405' : '#0476D9' // Naranja en oscuro, azul en claro
             

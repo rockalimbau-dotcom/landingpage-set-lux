@@ -26,36 +26,36 @@
   "benefits": {
     "label": "VENTAJAS",
     "title": "¿Por qué SetLux?",
-    "subtitle": "Una forma más clara, profesional y fiable de trabajar en el departamento de iluminación.",
+    "subtitle": "Ventajas pensadas para el trabajo real de gaffers y best boys, con más continuidad entre la operativa y el control económico.",
     "cta": "Ver todas las ventajas",
     "homeItem": {
-      "title": "Menos improvisación en set",
-      "description": "Toda la información centralizada para reducir errores y pérdidas de tiempo."
+      "title": "Menos archivos sueltos, más continuidad",
+      "description": "Proyecto, equipo, calendario y seguimiento económico conectados en un mismo flujo."
     },
     "items": {
       "saveTime": {
-        "title": "Menos gestión, más rodaje",
-        "description": "Reduce tareas repetitivas, elimina duplicaciones y centraliza toda la información del proyecto en un solo lugar."
+        "title": "Menos gestión fuera del rodaje",
+        "description": "Reduce tareas repetitivas y evita duplicar información entre proyecto, calendario, reportes y nómina."
       },
       "reduceErrors": {
-        "title": "Cálculos fiables",
-        "description": "Evita errores en jornadas, horas extra y conceptos económicos gracias a cálculos automáticos basados en condiciones reales."
+        "title": "Menos errores operativos y económicos",
+        "description": "Evita malentendidos en jornadas, horas, extras y conceptos económicos gracias a una información más conectada."
       },
       "documentation": {
-        "title": "PDFs claros y listos para producción",
-        "description": "Genera documentos profesionales directamente desde el calendario y los reportes, sin rehacer información."
+        "title": "Continuidad entre lo planificado y lo ejecutado",
+        "description": "Lo que preparas en calendario y equipo sirve después para reportes, nómina y timesheets sin rehacer trabajo."
       },
       "transparency": {
-        "title": "Todo visible, todo claro",
-        "description": "Jornadas, extras, dietas y nóminas siempre visibles y verificables para todo el equipo implicado."
+        "title": "Más claridad sobre el resultado económico",
+        "description": "Ten una visión más clara de jornadas, extras y seguimiento económico por persona dentro del mismo proyecto."
       },
       "allInOne": {
-        "title": "Un único flujo de trabajo",
-        "description": "Desde las condiciones hasta la nómina, todo el flujo del departamento de iluminación conectado en una sola herramienta."
+        "title": "Un único flujo para iluminación",
+        "description": "Desde condiciones y equipo hasta reportes, nómina y timesheets, todo queda conectado en una sola herramienta."
       },
       "legal": {
-        "title": "Trabajo alineado a convenio",
-        "description": "Condiciones, jornadas y cálculos basados en el convenio colectivo y prácticas reales del sector audiovisual."
+        "title": "Pensado para cómo trabaja el equipo",
+        "description": "Diseñado para la operativa real del departamento de iluminación, no para adaptar hojas de cálculo genéricas."
       }
     }
   },
@@ -66,13 +66,13 @@
     "cta": "Ver casos de uso detallados",
     "items": {
       "fiction": {
-        "title": "Ficción y televisión",
-        "description": "Para rodajes con continuidad semanal, equipos estables y control preciso de jornadas, descansos y condiciones de trabajo.",
+        "title": "Ficción",
+        "description": "Para proyectos con continuidad de rodaje, planificación por semanas, evolución del equipo y seguimiento detallado de jornadas y necesidades.",
         "features": [
-          "Planificación semanal del rodaje",
-          "Organización del equipo por días y fases",
-          "Registro de jornadas, horas extra y turn around",
-          "Cálculo automático de nómina a partir del calendario"
+          "Planificación semanal del proyecto",
+          "Organización del equipo por fases y necesidades",
+          "Seguimiento de jornadas y cambios durante el rodaje",
+          "Continuidad entre calendario, reportes, nómina y timesheets"
         ]
       },
       "ads": {
@@ -83,6 +83,16 @@
           "Planificación técnica por días de rodaje",
           "Gestión de refuerzos, jornadas especiales y festivos",
           "Nóminas adaptadas a estructuras publicitarias"
+        ]
+      },
+      "tv": {
+        "title": "TV",
+        "description": "Para producciones de televisión con ritmo continuo, cambios frecuentes y necesidad de coordinar equipo, planificación y seguimiento con agilidad.",
+        "features": [
+          "Organización ágil de equipos por días y semanas",
+          "Adaptación rápida a cambios de planificación",
+          "Control operativo y económico dentro del mismo flujo",
+          "Seguimiento continuo del proyecto sin perder contexto"
         ]
       }
     }
@@ -104,6 +114,10 @@
       "calendar": {
         "title": "Calendario",
         "description": "Planifica semanas de rodaje, localizaciones, equipo y necesidades técnicas en un calendario único y operativo."
+      },
+      "timesheet": {
+        "title": "Timesheet",
+        "description": "Registro semanal del horario de cada trabajador, automatizado a partir del calendario."
       },
       "reports": {
         "title": "Reportes",
@@ -222,9 +236,9 @@
     "benefits": {
       "breadcrumb": "Ventajas",
       "title": "Ventajas",
-      "description": "Una forma más clara y ordenada de trabajar en producción.",
-      "closingTitle": "Menos improvisación. Más control.",
-      "closingText": "SetLux pone orden en el trabajo del departamento de iluminación, del set a la nómina.",
+      "description": "Razones para trabajar con más continuidad, menos fricción y más control dentro del departamento de iluminación.",
+      "closingTitle": "Menos dispersión. Más control real.",
+      "closingText": "SetLux conecta la parte operativa y económica del proyecto dentro de un mismo flujo de trabajo.",
       "cta": "Solicitar acceso"
     },
     "useCases": {

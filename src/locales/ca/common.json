@@ -26,36 +26,36 @@
   "benefits": {
     "label": "AVANTATGES",
     "title": "Per què SetLux?",
-    "subtitle": "Una manera més clara, professional i fiable de treballar al departament d'il·luminació.",
+    "subtitle": "Avantatges pensats per a la feina real de gaffers i best boys, amb més continuïtat entre l'operativa i el control econòmic.",
     "cta": "Veure tots els avantatges",
     "homeItem": {
-      "title": "Menys improvisació al set",
-      "description": "Tota la informació centralitzada per reduir errors i pèrdues de temps."
+      "title": "Menys informació dispersa, més continuïtat",
+      "description": "Projecte, equip, calendari i seguiment econòmic connectats en un mateix flux."
     },
     "items": {
       "saveTime": {
-        "title": "Menys gestió, més rodatge",
-        "description": "Redueix tasques repetitives, elimina duplicacions i centralitza tota la informació del projecte en un sol lloc."
+        "title": "Menys gestió fora del rodatge",
+        "description": "Redueix tasques repetitives i evita duplicar informació entre projecte, calendari, informes i nòmina."
       },
       "reduceErrors": {
-        "title": "Càlculs fiables",
-        "description": "Evita errors en jornades, hores extra i conceptes econòmics gràcies a càlculs automàtics basats en condicions reals."
+        "title": "Menys errors operatius i econòmics",
+        "description": "Evita malentesos en jornades, hores, extres i conceptes econòmics gràcies a una informació més connectada."
       },
       "documentation": {
-        "title": "PDFs clars i llestos per a producció",
-        "description": "Genera documents professionals directament des del calendari i els informes, sense rehacer informació."
+        "title": "Continuïtat entre el que planifiques i el que executes",
+        "description": "El que prepares al calendari i a l'equip serveix després per a informes, nòmina i timesheets sense refer feina."
       },
       "transparency": {
-        "title": "Tot visible, tot clar",
-        "description": "Jornades, extres, dietes i nòmines sempre visibles i verificables per a tot l'equip implicat."
+        "title": "Més claredat sobre el resultat econòmic",
+        "description": "Tingues una visió més clara de jornades, extres i seguiment econòmic per persona dins del mateix projecte."
       },
       "allInOne": {
-        "title": "Un únic flux de treball",
-        "description": "Des de les condicions fins a la nòmina, tot el flux del departament d'il·luminació connectat en una sola eina."
+        "title": "Un únic flux per a il·luminació",
+        "description": "Des de condicions i equip fins a informes, nòmina i timesheets, tot queda connectat en una sola eina."
       },
       "legal": {
-        "title": "Feina alineada al conveni",
-        "description": "Condicions, jornades i càlculs basats en el conveni col·lectiu i pràctiques reals del sector audiovisual."
+        "title": "Pensat per com treballa l'equip",
+        "description": "Dissenyat per a l'operativa real del departament d'il·luminació, no per adaptar fulls de càlcul genèrics."
       }
     }
   },
@@ -66,13 +66,13 @@
     "cta": "Veure casos d'ús detallats",
     "items": {
       "fiction": {
-        "title": "Ficció i televisió",
-        "description": "Per a rodatges amb continuïtat setmanal, equips estables i control precís de jornades, descansos i condicions de treball.",
+        "title": "Ficció",
+        "description": "Per a projectes amb continuïtat de rodatge, planificació per setmanes, evolució de l'equip i seguiment detallat de jornades i necessitats.",
         "features": [
-          "Planificació setmanal del rodatge",
-          "Organització de l'equip per dies i fases",
-          "Registre de jornades, hores extra i turn around",
-          "Càlcul automàtic de nòmina a partir del calendari"
+          "Planificació setmanal del projecte",
+          "Organització de l'equip per fases i necessitats",
+          "Seguiment de jornades i canvis durant el rodatge",
+          "Continuïtat entre calendari, informes, nòmina i timesheets"
         ]
       },
       "ads": {
@@ -83,6 +83,16 @@
           "Planificació tècnica per dies de rodatge",
           "Gestió de reforços, jornades especials i festius",
           "Nòmines adaptades a estructures publicitàries"
+        ]
+      },
+      "tv": {
+        "title": "TV",
+        "description": "Per a produccions de televisió amb ritme continu, canvis freqüents i necessitat de coordinar equip, planificació i seguiment amb agilitat.",
+        "features": [
+          "Organització àgil d'equips per dies i setmanes",
+          "Adaptació ràpida a canvis de planificació",
+          "Control operatiu i econòmic dins del mateix flux",
+          "Seguiment continu del projecte sense perdre context"
         ]
       }
     }
@@ -104,6 +114,10 @@
       "calendar": {
         "title": "Calendari",
         "description": "Planifica setmanes de rodatge, localitzacions, equip i necessitats tècniques en un calendari únic i operatiu."
+      },
+      "timesheet": {
+        "title": "Timesheet",
+        "description": "Registre setmanal de l'horari de cada treballador, automatitzat a partir del calendari."
       },
       "reports": {
         "title": "Informes",
@@ -222,9 +236,9 @@
     "benefits": {
       "breadcrumb": "Avantatges",
       "title": "Avantatges",
-      "description": "Una manera més clara i ordenada de treballar en producció.",
-      "closingTitle": "Menys improvisació. Més control.",
-      "closingText": "SetLux posa ordre a la feina del departament d'il·luminació, del set a la nòmina.",
+      "description": "Motius per treballar amb més continuïtat, menys fricció i més control dins del departament d'il·luminació.",
+      "closingTitle": "Menys dispersió. Més control real.",
+      "closingText": "SetLux connecta la part operativa i econòmica del projecte dins d'un mateix flux de treball.",
       "cta": "Sol·licitar accés"
     },
     "useCases": {

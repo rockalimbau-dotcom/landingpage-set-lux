@@ -26,36 +26,36 @@
   "benefits": {
     "label": "BENEFITS",
     "title": "Why SetLux?",
-    "subtitle": "A clearer, more professional and reliable way to work in the lighting department.",
+    "subtitle": "Benefits shaped around the real work of gaffers and best boys, with stronger continuity between operations and financial follow-up.",
     "cta": "View all benefits",
     "homeItem": {
-      "title": "Less on‑set improvisation",
-      "description": "All information centralized to reduce errors and time loss."
+      "title": "Less scattered info, more continuity",
+      "description": "Project, crew, calendar and financial follow-up connected in one flow."
     },
     "items": {
       "saveTime": {
-        "title": "Less management, more shooting",
-        "description": "Reduce repetitive tasks, eliminate duplication and centralize all project information in one place."
+        "title": "Less admin outside the shoot",
+        "description": "Reduce repetitive tasks and avoid duplicating information between project setup, calendar, reports and payroll."
       },
       "reduceErrors": {
-        "title": "Reliable calculations",
-        "description": "Avoid errors in workdays, overtime and economic concepts thanks to automatic calculations based on real conditions."
+        "title": "Fewer operational and financial errors",
+        "description": "Avoid misunderstandings around workdays, hours, extras and financial concepts thanks to more connected information."
       },
       "documentation": {
-        "title": "Clear PDFs ready for production",
-        "description": "Generate professional documents directly from the calendar and reports, without redoing information."
+        "title": "Continuity from plan to execution",
+        "description": "What you prepare in the calendar and crew setup feeds reports, payroll and timesheets without redoing the work."
       },
       "transparency": {
-        "title": "Everything visible, everything clear",
-        "description": "Workdays, extras, per diems and payroll are always visible and verifiable for the whole team."
+        "title": "Clearer financial visibility",
+        "description": "Get a clearer view of workdays, extras and per-person financial follow-up inside the same project."
       },
       "allInOne": {
-        "title": "A single workflow",
-        "description": "From conditions to payroll, the entire lighting‑department workflow connected in one tool."
+        "title": "One workflow for lighting",
+        "description": "From conditions and crew to reports, payroll and timesheets, everything stays connected in one tool."
       },
       "legal": {
-        "title": "Aligned with the agreement",
-        "description": "Conditions, workdays and calculations based on the collective agreement and real audiovisual‑sector practices."
+        "title": "Built for how the crew actually works",
+        "description": "Designed around real lighting department operations, not around forcing generic spreadsheets to fit."
       }
     }
   },
@@ -66,13 +66,13 @@
     "cta": "View detailed use cases",
     "items": {
       "fiction": {
-        "title": "Fiction and television",
-        "description": "For shoots with weekly continuity, stable crews and precise control of workdays, rest and labor conditions.",
+        "title": "Fiction",
+        "description": "For projects with shooting continuity, week-based planning, evolving crew needs and detailed tracking of workdays and requirements.",
         "features": [
-          "Weekly shoot planning",
-          "Team organization by days and phases",
-          "Workday, overtime and turnaround logging",
-          "Automatic payroll calculation from the calendar"
+          "Weekly project planning",
+          "Crew organization by phases and needs",
+          "Tracking of workdays and on-shoot changes",
+          "Continuity between calendar, reports, payroll and timesheets"
         ]
       },
       "ads": {
@@ -83,6 +83,16 @@
           "Technical planning by shooting day",
           "Managing reinforcements, special days and holidays",
           "Payroll adapted to advertising structures"
+        ]
+      },
+      "tv": {
+        "title": "TV",
+        "description": "For television productions with ongoing pace, frequent changes and the need to coordinate crew, planning and follow-up with speed.",
+        "features": [
+          "Agile crew organization by day and week",
+          "Fast adaptation to planning changes",
+          "Operational and financial control in the same workflow",
+          "Continuous project follow-up without losing context"
         ]
       }
     }
@@ -104,6 +114,10 @@
       "calendar": {
         "title": "Calendar",
         "description": "Plan shooting weeks, locations, team, and technical needs in a single operational calendar."
+      },
+      "timesheet": {
+        "title": "Timesheet",
+        "description": "Weekly schedule record for each worker, automatically generated from the calendar."
       },
       "reports": {
         "title": "Reports",
@@ -222,9 +236,9 @@
     "benefits": {
       "breadcrumb": "Benefits",
       "title": "Benefits",
-      "description": "A clearer and more organized way to work in production.",
-      "closingTitle": "Less improvisation. More control.",
-      "closingText": "SetLux brings order to lighting‑department work, from set to payroll.",
+      "description": "Reasons to work with more continuity, less friction and more control inside the lighting department.",
+      "closingTitle": "Less fragmentation. More real control.",
+      "closingText": "SetLux connects the operational and financial sides of the project inside one workflow.",
       "cta": "Request access"
     },
     "useCases": {
